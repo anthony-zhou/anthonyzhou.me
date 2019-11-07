@@ -1,16 +1,337 @@
 <!doctype html>
 <html>
 <head>
-
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anthony Zhou</title>
+<script title="autoscroll">
+  window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 50) return;
+        c.scrollTop = a + (b - a) / 50 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+    }
+</script>
+
 </head>
 <body>
-  <h1>Welcome to my site.</h1>
-  <p>I am a web developer. Here are a few projects I've been working on:</p>
-  <ul>
-    <li><a target = "_blank" href="http://www.verdantlife.org/nutrition-calculator.html">Nutrition Calculator</a></li>
-    <li><a target = "_blank" href="https://www.verdantleaf.org">Verdant Leaf, an article publishing site</a></li>
-    <li><a target = "_blank" href="https://www.uta.edu/zhoulab">Zhou Lab, a university research group website</a></li>
-  </ul>
+<div id="root">
+  <div id="progress-bar"></div>
+  <!--<div id="navbar">
+    <a id="site-heading" href="index.html">Anthony Zhou</a>
+  </div>-->
+  <div class="topnav">
+    <a class="unselectable" href="index.html" id="site-heading">anthony zhou</a>
+  </div>
+  <style>
+    /* top navigation bar */
+    .topnav {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 30px 0px 0px 50px; /*top right bottom left*/
+    }
+    .unselectable {
+      -moz-user-select: -moz-none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+
+      /*
+        Introduced in IE 10.
+        See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+      */
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .topnav-scrolling-up {
+      position: fixed;
+      animation-name: fillin;
+      animation-duration: 0.6s;
+    }
+    .topnav-scrolling-down {
+    	position: fixed;
+      animation-name: slideout;
+      animation-duration: 0.6s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fillin {
+      from {position: fixed; top: -10vh;}
+      to {top: 0}
+    }
+    @keyframes slideout {
+      from {top: 0}
+      to {top: -15vh; }
+    }
+  </style>
+
+
+
+  <div id="intro">
+    <!--<div class="intro-background-container">
+      <img class = "intro-background-image visible" src="img/code.jpg" name="web developer" alt="code on laptop background">
+      <img class = "intro-background-image" src="img/piano.jpg" name="musician" alt="music on piano background">
+      <img class = "intro-background-image" src="img/Watercolors.jpg" name="artist" alt="watercolors background">
+      <img class = "intro-background-image" src="img/books.jpg" name="reader" alt="books background">
+    </div>
+    <p id="interest-list"><a style="font-weight: bold" href="#" onclick="smoothScroll(document.getElementById('projects'))">web developer</a></br>
+      <a>musician</a></br>
+      <a href="artwork.html">artist</a></br>
+      <a>reader</a></p>-->
+      <p id="hero-text">FREELANCE WEB DEVELOPER</p>
+      <a id="animation-btn" href="#">allspice, cloves, and a touch of ginger</a>
+      <a href="#" onclick="smoothScroll(document.getElementById('projects'))"><img id="arrow" src="img/arrow.png" alt="arrow"></a>
+  </div>
+  <div class="section" id="projects">
+    <h1 class="section-heading">SELECTED WORK</h1>
+    <ul id="project-list">
+      <li>
+        <a target = "_blank" href="https://apalebluedot.world/">
+          <div class="project">
+            <div class="inner">
+              <img class = "project-img" src="img/PaleBlueDot.jpg" alt="pale blue dot">
+              <h3>A Pale Blue Dot</h3>
+              <p>an homage to Carl Sagan</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a target = "_blank" href="https://www.verdantleaf.org">
+          <div class="project">
+            <div class="inner">
+              <img class = "project-img" src="img/leaf-background.jpg" alt="leaf background">
+              <h3>Verdant Leaf</h3>
+              <p>an article publishing site</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a target = "_blank" href="https://www.uta.edu/zhoulab">
+          <div class="project">
+            <div class="inner">
+              <img class = "project-img" src="img/laser.jpg" alt="red laser banner">
+              <h3>Zhou Lab</h3>
+              <p>a university research group website</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a target = "_blank" href="http://www.verdantlife.org/nutrition-calculator.html">
+          <div class="project">
+            <div class="inner">
+              <img class = "project-img" src="img/Kale.jpg" alt="kale">
+              <h3>Verdant Life</h3>
+              <p>a nutrition calculator</p>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="section" id="about">
+    <h1 class="section-heading">ABOUT ME</h1>
+    <div class="center-text">
+      <p>I'm a full stack web developer who believes technology should have a conscience. In addition to the above projects, I also contribute to open source. You can find some of my work on <a target="_blank" class="special-link" href="https://github.com/anthony-zhou">Github</a> and
+      <a target="_blank" class="special-link" href="https://www.linkedin.com/in/anthonyzhou42">LinkedIn</a>. </p>
+      <p>When I'm not coding, I enjoy reading, playing trumpet, piano, and guitar, and traveling the world.</p>
+    </div>
+    </div>
+  <div class="section" id="contact">
+    <h1 class="section-heading">CONTACT</h1>
+    <div class="center-text">
+      <p>
+        Want to build something great together? <a class="special-link" href="mailto:anthony.zhou03@gmail.com">Let's do it!</a>
+      </p>
+    </div>
+  </div>
+  <div class="section" id="footer">
+    <p>© 2019 by Anthony Zhou</p>
+  </div>
+</div>
+
+<script title="intro-background">
+  /* code for slide change without crossfade effect
+  const interests = document.querySelectorAll("#interest-list a");
+  var introBox = document.getElementById("intro");
+  var imgurls = {
+    "web developer": "code.jpg",
+    "musician": "piano.jpg",
+    "artist": "Watercolors.jpg",
+    "reader": "books.jpg"
+  }
+  for (var i = 0; i < interests.length; i++) {
+    interests[i].setAttribute("onmouseover", "interestHover(interests["+i+"])");
+  }
+  function interestHover(interest) {
+    interests.forEach(function(i) {
+      if(i != interest) {
+        console.log(i);
+        i.style.fontWeight = "normal";
+      }
+    });
+    interest.style.fontWeight = "bold";
+    introBox.style.background = "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/" + imgurls[interest.innerText]+ "')";
+  }
+  */
+  const interests = document.querySelectorAll("#interest-list a");
+  var introBox = document.getElementById("intro");
+
+  //set up backround images in a dictionary as "interest: [imgobject]"
+  var backgroundImageList = document.getElementsByClassName("intro-background-image");
+  var backgroundImageDict = {};
+  for(var i = 0; i < backgroundImageList.length; i++) {
+    backgroundImageDict[backgroundImageList[i].getAttribute("name")] = backgroundImageList[i];
+  }
+
+  //assign the hover property to each link
+  for (var i = 0; i < interests.length; i++) {
+    interests[i].setAttribute("onmouseover", "interestHover(interests["+i+"])");
+  }
+  function interestHover(interest) {
+    for(var i = 0; i < interests.length; i++) {
+      if(interests[i] != interest) {
+        interests[i].style.fontWeight = "normal";
+        backgroundImageDict[interests[i].innerText].classList.remove("visible");
+      }
+    };
+    backgroundImageDict[interest.innerText].classList.add("visible");
+    interest.style.fontWeight = "bold";
+  }
+</script>
+<script title="perspective effect">
+  var projects = document.querySelectorAll(".project");
+  projects.forEach(function(project) {
+    // Init
+    var container = project,
+        inner = project.querySelector(".inner");
+    // Mouse
+    var mouse = {
+      _x: 0,
+      _y: 0,
+      x: 0,
+      y: 0,
+      updatePosition: function(event) {
+        var e = event || window.event;
+        this.x = e.clientX - this._x;
+        this.y = (e.clientY - this._y) * -1;
+      },
+      setOrigin: function(e) {
+        this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
+        this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
+      },
+      show: function() {
+        return "(" + this.x + ", " + this.y + ")";
+      }
+    };
+
+    // Track the mouse position relative to the center of the container.
+    mouse.setOrigin(inner);
+
+    //----------------------------------------------------
+
+    var counter = 0;
+    var refreshRate = 10;
+    var isTimeToUpdate = function() {
+      return counter++ % refreshRate === 0;
+    };
+
+    //----------------------------------------------------
+
+    var onMouseEnterHandler = function(event) {
+      update(event);
+    };
+
+    var onMouseLeaveHandler = function() {
+      inner.style = "";
+    };
+
+    var onMouseMoveHandler = function(event) {
+      if (isTimeToUpdate()) {
+        update(event);
+      }
+    };
+
+    //----------------------------------------------------
+
+    var update = function(event) {
+      mouse.updatePosition(event);
+      updateTransformStyle(
+        (mouse.y / inner.offsetHeight / 2).toFixed(2),
+        (mouse.x / inner.offsetWidth / 2).toFixed(2)
+      );
+    };
+
+    var updateTransformStyle = function(x, y) {
+      var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+      inner.style.transform = style;
+      inner.style.webkitTransform = style;
+      inner.style.mozTranform = style;
+      inner.style.msTransform = style;
+      inner.style.oTransform = style;
+    };
+
+    //--------------------------------------------------------
+
+    container.onmousemove = onMouseMoveHandler;
+    container.onmouseleave = onMouseLeaveHandler;
+    container.onmouseenter = onMouseEnterHandler;
+
+  });
+</script>
+<script title="onscroll">
+  var lastScrollTop = 0;
+  var progressBar = document.getElementById("progress-bar");
+  window.onscroll = function() {
+    var y = document.body.scrollTop == 0 ? document.documentElement.scrollTop : document.body.scrollTop;
+    var screenHeight = screen.height;
+
+    //set progress bar to be width proportional to current vertical scroll amount
+    progressBar.style.width = (((y / (document.body.scrollHeight - screenHeight))) * 100) + "%";
+
+    //fadeout of intro text
+    document.getElementById("intro").style.opacity = 1 - (y / screenHeight);
+
+    //scrolling header
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+  if(st >= lastScrollTop) {
+    if(document.getElementsByClassName("topnav-scrolling-up").length > 0) {
+      document.getElementsByClassName("topnav-scrolling-up")[0].classList.add("topnav-scrolling-down");
+      document.getElementsByClassName("topnav-scrolling-up")[0].classList.remove("topnav-scrolling-up");
+    }
+  } else {
+    document.getElementsByClassName("topnav")[0].classList.remove("topnav-scrolling-down");
+    document.getElementsByClassName("topnav")[0].classList.add("topnav-scrolling-up");
+  }
+  lastScrollTop = st <= 0 ? 0: st;
+  if(window.pageYOffset <= 0) {
+    if(document.getElementsByClassName("topnav-scrolling-up").length > 0) {
+      if(document.getElementsByClassName("topnav-scrolling-down").length > 0) {
+        document.getElementsByClassName("topnav-scrolling-down")[0].classList.remove("topnav-scrolling-down");
+      }
+      document.getElementsByClassName("topnav-scrolling-up")[0].classList.remove("topnav-scrolling-up");
+    }
+  }
+  }
+</script>
 </body>
 </html>
