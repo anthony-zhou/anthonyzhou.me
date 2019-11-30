@@ -41,6 +41,38 @@
     <a class="unselectable" href="index.html" id="site-heading">anthony zhou</a>
   </div>
   <style>
+
+/* BEGIN STYLES FROM THEME.SCSS */
+
+  .navbar {
+	 position: absolute;
+	 top: 0;
+	 right: 5vw;
+   z-index: 101; /*higher than topnav element*/
+}
+ .navbar a {
+	 color: inherit;
+}
+ .navbar ul {
+	 list-style-type: none;
+}
+ .navbar ul li {
+   display: inline;
+	 border: 1px solid #fff;
+	 float: left;
+	 padding: 10px 25px;
+	 transition: background-color 0.3s ease-in;
+}
+ .navbar ul li:not(:first-child) {
+	 border-left: 0;
+}
+ .navbar ul li:hover {
+	 background-color: rgba(255, 255, 255, 0.15);
+	 cursor: pointer;
+}
+/* END STYLES FROM THEME.SCSS */
+
+
     /* top navigation bar */
     .topnav {
     position: absolute;
@@ -96,7 +128,7 @@
       <a>musician</a></br>
       <a href="artwork.html">artist</a></br>
       <a>reader</a></p>-->
-      <p id="hero-text">FREELANCE WEB DEVELOPER</p>
+      <p id="hero-text">PROJECTS</p>
       <a id="animation-btn" href="#">allspice, cloves, and a touch of ginger</a>
       <a href="#" onclick="smoothScroll(document.getElementById('projects'))"><img id="arrow" src="img/arrow.png" alt="arrow"></a>
   </div>

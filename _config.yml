@@ -1,1 +1,84 @@
-theme: jekyll-theme-cayman
+name: Anthony Zhou
+
+# Site/SEO settings
+email: anthony.zhou03@gmail.com
+baseurl: ""
+permalink: /:year/:month/:day/:title/
+google_analytics:
+
+title: Anthony Zhou
+description: >
+  Anthony Zhou is a software and web developer.
+url: https://anthony-zhou.github.io
+twitter_username: Anthony97655896
+default_img: /assets/images/seo.jpg
+social:
+  - name: twitter
+    url: https://twitter.com/Anthony97655896
+  - name: instagram
+    url: https://www.instagram.com/anthonyz9587/
+  - name: linkedin
+    url: https://www.linkedin.com/in/anthonyzhou42/
+  - name: github
+    url: https://github.com/anthony-zhou
+
+# Contact settings
+contact_img: /assets/images/placeholder-28.jpg
+formcarry: https://formcarry.com/s/HkIo0nMb7
+
+# Disqus settings
+disqus: test-apkdzgmqhj
+
+# MailChimp settings
+mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
+mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
+
+# Author settings
+author:
+  - name: Anthony Zhou
+    bio: Anthony Zhou is a web and software developer.
+    url: https://anthony-zhou.github.io
+
+# Pagination settings
+pagination:
+  enabled: true
+  debug: false
+  per_page: 12
+  permalink: '/page/:num/'
+  title: ':title'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+autopages:
+  enabled: true
+  categories:
+    enabled: true
+  collections:
+    enabled: true
+  tags:
+    layouts:
+      - 'tag.html'
+    title: ':tag'
+    permalink: '/tag/:tag'
+    slugify:
+      mode: raw
+      cased: true
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
+exclude:
+  - node_modules
+  - .DS_Store
+  - barber.jpg
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - README.md

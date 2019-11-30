@@ -1,13 +1,5 @@
----
-#the top navbar for all pages on the site
----
-<div id="navbar">
-  <a href="index.html"><h4>Anthony Zhou</h4></a>
-</div>
-<style>
-  #navbar {
-    position: fixed;
-    padding-left: 2vw;
-    z-index: 1;
-  }
-</style>
+<header class="header">
+  <a class="header__title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+
+  {% include navigation.html %}
+</header>
