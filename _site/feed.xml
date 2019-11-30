@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anthony Zhou</title>
+    <description>Anthony Zhou is a software and web developer.
+</description>
+    <link>https://anthony-zhou.github.io</link>
+    <atom:link href="https://anthony-zhou.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 30 Nov 2019 13:27:49 -0600</pubDate>
+    <lastBuildDate>Sat, 30 Nov 2019 13:27:49 -0600</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>How to Scan a Barcode with Flutter</title>
+        <description>&lt;p&gt;Here’s how to set up a simple barcode scanning function, starting from a basic flutter app. In this tutorial we’ll be using the &lt;a href=&quot;https://pub.dev/packages/barcode_scan&quot;&gt;barcode_scan Flutter package&lt;/a&gt;. The package site has its own tutorial, but the tutorial has some outdated information, so I thought I’d try and correct that here.&lt;/p&gt;
+
+&lt;h1 id=&quot;set-up-the-configuration-files&quot;&gt;Set up the configuration files&lt;/h1&gt;
+&lt;p&gt;As listed on &lt;a href=&quot;https://pub.dev/packages/barcode_scan&quot;&gt;barcode_scan’s about page&lt;/a&gt; on Dart Pub, start by making the following changes:&lt;/p&gt;
+
+&lt;h2 id=&quot;for-android&quot;&gt;For Android:&lt;/h2&gt;
+
+&lt;p&gt;Add this line to your AndroidManifest.xml to request permission to use the user’s camera:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add this line (to allow the BarcodeScanner activity) to your AndroidManifest.xml. Do NOT modify the name.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;activity android:name=&quot;com.apptreesoftware.barcodescan.BarcodeScannerActivity&quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Install the Kotlin plugin for Android Studio or your default editor&lt;/p&gt;
+
+&lt;p&gt;Edit your project-level build.gradle file to look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      buildscript {
+          ext.kotlin_version = '1.2.31'
+          ...
+          dependencies {
+              ...
+              classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;
+          }
+      }
+      ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Edit your app-level build.gradle file to look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    apply plugin: 'kotlin-android'
+    ...
+    dependencies {
+        implementation &quot;org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version&quot;
+        ...
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In your pubspec.yaml file, add &lt;code class=&quot;highlighter-rouge&quot;&gt;barcode_scan: ^1.0.0&lt;/code&gt; to the list of dependencies, as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    dependencies:
+      flutter:
+        sdk: flutter
+      # other dependencies...
+      barcode_scan: ^1.0.0
+
+Note: for some reason many tutorials, including that of the publishers themselves, say to add `barcode_scan: ^0.0.3` to your pubspec.yaml file. This tends to cause problems because 0.0.3 is an unsupported version of this dependency.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Click “Packages get” in Android Studio or run flutter packages get in your project folder.&lt;/p&gt;
+
+&lt;h2 id=&quot;for-ios&quot;&gt;For iOS:&lt;/h2&gt;
+&lt;p&gt;To use on iOS, you must add the the camera usage description to your Info.plist&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;
+    &amp;lt;string&amp;gt;Camera permission is required for barcode scanning.&amp;lt;/string&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;write-the-testing-code&quot;&gt;Write the testing code&lt;/h1&gt;
+&lt;p&gt;The package barcode_scan should now be successfully installed and configured in your flutter application. Now all that remains is to use the package in your app!&lt;/p&gt;
+
+&lt;p&gt;Outside of the formatting, the key to this example is the call to &lt;code class=&quot;highlighter-rouge&quot;&gt;BarcodeScanner.scan()&lt;/code&gt;, which uses the imported package &lt;code class=&quot;highlighter-rouge&quot;&gt;barcode_scan&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;completed-code-in-maindart&quot;&gt;Completed code in main.dart&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import 'dart:async';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main() {
+  runApp(new MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() =&amp;gt; new _MyAppState();
+}
+
+class _MyAppState extends State&amp;lt;MyApp&amp;gt; {
+  String barcode = &quot;&quot;;
+
+  @override
+  initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Barcode Scanner'),
+          ),
+          body: Center(
+            child: Column(
+              children: &amp;lt;Widget&amp;gt;[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(&quot;Press the button to scan an item:&quot;),
+                ),
+                Container(
+                  child: RaisedButton(onPressed: scan, child: Text(&quot;Scan&quot;)),
+                  padding: const EdgeInsets.all(8.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(barcode),
+                ),
+              ],
+            ),
+          )),
+    );
+  }
+
+  //scan a barcode, store result in this.barcode
+  Future scan() async {
+    try {
+      //use barcode_scan to scan the barcode
+      String barcode = await BarcodeScanner.scan();
+
+      //if the barcode has been obtained, display it
+      if (barcode.length &amp;gt; 0)
+        setState(
+            () =&amp;gt; this.barcode = &quot;The barcode you scanned was: &quot; + barcode);
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          this.barcode = 'Camera permission was not granted';
+        });
+      } else {
+        setState(() =&amp;gt; this.barcode = 'Unknown error: $e');
+      }
+    } on FormatException {
+      //the user probably just pressed the back button, no need to print an error message
+      setState(() =&amp;gt; this.barcode = '');
+    } catch (e) {
+      setState(() =&amp;gt; this.barcode = 'Unknown error: $e');
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 26 Nov 2019 00:00:00 -0600</pubDate>
+        <link>https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/</link>
+        <guid isPermaLink="true">https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/</guid>
+        
+        <category>flutter</category>
+        
+        <category>dart</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to make toast</title>
+        <description>&lt;p&gt;Though not everyone can make a juicy Beef Wellington or perfectly crunchy macarons, well-toasted bread should be something we can all have. After all, the materials are so simple: a toaster and a slice of bread. It couldn’t be so hard, right? Wrong.&lt;/p&gt;
+
+&lt;p&gt;In fact, perfectly-toasted bread is not merely a simple daily task; it is a science. Consistently creating a crispy, golden-brown exterior and a soft, flavorful interior requires extreme care, from the cooking time to the model of toaster, to even the way the bread is sliced.&lt;/p&gt;
+
+&lt;p&gt;Fortunately for us, this delicacy has been meticulously researched. We even know how to make toast without a toaster. Unfortunately, reading all that information about toast would take a lifetime, so here’s a simple flowchart for all your toast-making needs:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/toast-flowchart.jpg&quot; alt=&quot;Toast flowchart&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So now you know more than you ever wanted to know about making toast. Time to revel in your enlightenment and savor the glorious golden-brown toast. Pretty soon, you’ll be making the perfect toast for lunch and dinner, when friends come over, when you’re hosting a meal for the General Assembly of the United Nations! Or maybe just for breakfast.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 09 Sep 2018 00:00:00 -0500</pubDate>
+        <link>https://anthony-zhou.github.io/2018/09/09/how-to-make-toast/</link>
+        <guid isPermaLink="true">https://anthony-zhou.github.io/2018/09/09/how-to-make-toast/</guid>
+        
+        <category>concrete</category>
+        
+        <category>research</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Communication Between Trees</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;All over the world, trees stand guard over their forest ecosystems, like still, silent, sentinels. However, these trees might not be so silent after all. There is evidence that trees can communicate and help each other, uprooting the traditional idea of competition between trees as the only way they adapt.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-importance-of-fungi&quot;&gt;The Importance of Fungi&lt;/h2&gt;
+&lt;p&gt;There are many adaptations and structures that make communication and aid between trees possible. Many of these structures are ectomycorrhizal fungi, members a type of fungi that have a symbiotic relationship with trees and partially live within the tree roots. One study found that thirty-nine, give or take one percent, of total soil microbial biomass was contributed by ectomycorrhizal fungi, showing the important role of mycorrhizal networks in the below-ground transfer of carbon between trees (Högberg, Mona N., et al. 491). This evidence explains that the ectomycorrhizal fungi are an important part of the ecosystem. These mycorrhizal fungi form underground networks of mycelium, root-like structures. Specifically, Laccaria bicolor is a species of ectomycorrhizal fungi that has been studied. Researchers discovered that the genome of Laccaria bicolor increased in the areas of protein-protein interaction and signal transduction mechanisms, which could signal specialization for the purpose of symbiosis(Martin, F., et al. 88). They also observed other interesting features of the species’ genome and life: “expression of several SSPs was downregulated in ectomycorrhizal root tips, suggesting a complex interplay between these secreted proteins in the symbiosis interaction”(Martin, F., et al. 88). These results show that the fungi L. bicolor may use small secreted proteins to aid in their mutualistic relationship with trees. In conclusion, “the rich assortment of MISSPs[mycorrhiza-induced small secreted proteins] may therefore act as effector proteins to manipulate host cell signalling or to suppress defence pathways during infection”(Martin, F., et al. 88). L. bicolor certainly contributes greatly to the networks between trees, and trees also help the fungi. One group researching fungi found that ”the C [carbon] used for production of these sporocarps is from tree below-ground allocation in the late season”(Högberg, Mona N., et al. 490). Trees place carbon underground and send some to other trees, while some of this carbon goes to benefit the fungi. Ectomycorrhizae are the main structures in the the networks connecting trees.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/mushroom.jpg&quot; alt=&quot;Mushrooms&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;forms-of-communication&quot;&gt;Forms of Communication&lt;/h2&gt;
+&lt;p&gt;Trees can communicate a variety of signals and materials. One of the most common of these materials is carbon, which is transferred through root connections between trees. The transfer of carbon has been shown in numerous studies (Simard, Perry 581). Trees also send each other defense signals, though one study suggests that the communication of defense signals may not be through the root networks: “Even though root connections can trigger physiological responses to defoliation in non-defoliated aspen suckers (Baret and DesRochers 2011), our results suggest that these root pathways do not automatically lead to induction of defensive traits that are expressed in plants directly under herbivore attack”(Jelínková, Hana, et al. 1354).  Rather, it seems that the expression of defense signals and responses is regulated through airborne volatiles. The same study found that there was an upregulation of dihydroflavonol reductase and Kunitz trypsin inhibitor, two signs of defense response, in sibling ramets, whether they were connected to the control group or the wound-treated plants. This suggests a role of herbivore-induced plant volatiles (HIPV) in spreading defense signals throughout the population(Jelínková, Hana, et al. 1353). Communications are sent through the air as well as the roots. Trees can send carbon and defense signals to each other.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Trees send each other defense signals… through airborne volatiles.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;further-evidence-of-tree-communication&quot;&gt;Further Evidence of Tree Communication&lt;/h2&gt;
+&lt;p&gt;Trees help each other in other ways as well, creating mutualistic relationships between them. In order to continue the genetic lineage, clonal parent plants will help out their connected ramets. In one species of a water plant, clonal parent plants were found to transfer 10% of their carbon to connected ramets, and this has been shown to increase the survival and growth of the ramets(Warembourg, Roy 1459).  One group of Canadian scientists researched the relationship between Douglas Fir(Pseudotsuga menziesii) and Paper Birch(Betula papyrifera) using radioactive and stable isotopes of carbon. They noted that “Net transfer from B. papyrifera to P. menziesii was associated with whole-seedling net photosynthetic rates 1.5 and 4.3 times greater for B. papyrifera than for P. menziesii in full light and deep shade, respectively, and foliar nitrogen concentrations twice as great for B. papyrifera as for P. menziesii”(Simard, Perry 580). In other words, the birch helped out the fir because the fir was converting less energy from sunlight into glucose. They concluded that “when P. menziesii seedlings are establishing and growing in the shade of illuminated B. papyrifera in natural, mixed communities, they may benefit directly from their association with B. papyrifera through supplemental gains in transferred carbon”(Simard, Perry 581). Trees benefit from their relationships with each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/birch.jpg&quot; alt=&quot;Mushrooms&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;consequences-of-tree-communication&quot;&gt;Consequences of Tree Communication&lt;/h2&gt;
+&lt;p&gt;In general, trees that communicate and have mutualistic relationships with other trees are more successful than other trees. A group of researchers studying Canadian pine forests found that the late-season increase in the carbon allocation of boreal pine forests doubled the increase found in a study of temperate poplar forests, and this could be the reason for the decrease in leaf area of poplars during the late season(Högberg, Mona N., et al. 490). The trees that communicated in the form of carbon had larger leaf area later in the season. There is a growing body of evidence showing that trees communicate, and that the communication could be a large part of their survival strategies. However, there is still reasonable room for doubt, because of the proven fallibility of science, and the principles governing scientific reasoning. Pioneering studies may prove to be flawed, and many biologists acknowledge this, including the group studying colonies of aspen: “To clarify the role of aspen root networks in anti-herbivore defense, further studies employing real insect feeding are needed”(Jelínková, Hana, et al. 1354). In the world of science, study results are always taken with skepticism, as they should be, and the relatively new science of tree communication should be treated as such. However, so far, the trees can be seen to benefit from communication.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Trees can likely communicate in ways that are beneficial to them, through carbon transfer, airborne volatiles, and networks of fungi. Behind the quiet exterior of a stand of trees, there may be a lively conversation taking place. It just takes a careful listener to hear it.&lt;/p&gt;
+
+&lt;h2 id=&quot;works-cited&quot;&gt;Works Cited&lt;/h2&gt;
+
+&lt;p&gt;Albert, P., F. R. Warembourg, and J. Roy. “Transport of Carbon among Connected Ramets of
+Eichhornia Crassipes (Pontederiaceae) at Normal and High Levels of CO2.”American Journal of Botany 78 (1991): 1459-466. United States Department of Agriculture National Agricultural Library. United States Department of Agriculture. Web. 04 Apr. 2017.&lt;/p&gt;
+
+&lt;p&gt;Högberg, Mona N., et al. “Quantification of Effects of Season and Nitrogen Supply on Tree
+Below-Ground Carbon Transfer to Ectomycorrhizal Fungi and Other Soil Organisms in a Boreal Pine Forest.” New Phytologist, vol. 187, no. 2, 15 July 2010, pp. 485-493. EBSCOhost, doi:10.1111/j.1469-8137.2010.03274.x.&lt;/p&gt;
+
+&lt;p&gt;Jelínková, Hana, et al. “Herbivore-Simulated Induction of Defenses in Clonal Networks of
+Trembling Aspen (Populus Tremuloides).” Tree Physiology, vol. 32, no. 11, Nov. 2012, pp. 1348-1356. EBSCOhost, search.ebscohost.com/login.aspx?direct=true&amp;amp;db=a9h&amp;amp;AN=83483949.&lt;/p&gt;
+
+&lt;p&gt;Martin, F., et al. “The genome of Laccaria bicolor provides insights into mycorrhizal symbiosis.”
+Nature, vol. 452, no. 7183, 2008, p. 88+. General OneFile, go.galegroup.com/ps/i.do?p=ITOF&amp;amp;sw=w&amp;amp;u
+=j220919043&amp;amp;v=2.1&amp;amp;it=r&amp;amp;id=GALE%7CA189654068&amp;amp;asid=
+07b463289bd8b6cce0e7a45ad784f41e. Accessed 30 Mar. 2017.&lt;/p&gt;
+
+&lt;p&gt;Simard, Suzanne W. and David A. Perry. “Net Transfer of Carbon between Ectomycorrhizal Tree
+Species in the Field. (Cover Story).” Nature, vol. 388, no. 6642, 07 Aug. 1997, p. 579. EBSCOhost, search.ebscohost.com/login.aspx?direct=true&amp;amp;db=a9h&amp;amp;AN=9708140900.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Apr 2017 00:00:00 -0500</pubDate>
+        <link>https://anthony-zhou.github.io/2017/04/17/communication-between-trees/</link>
+        <guid isPermaLink="true">https://anthony-zhou.github.io/2017/04/17/communication-between-trees/</guid>
+        
+        <category>biology</category>
+        
+        <category>research</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Concrete</title>
+        <description>&lt;p&gt;A mixture that is both universally noticed and universally ignored.&lt;/p&gt;
+
+&lt;p&gt;When you think of concrete, you may imagine it as something boring and common. However, it is actually fascinating in that such a simple substance could change our world’s infrastructure so greatly. Here I will explain where it came from, how it is made, and how it works.&lt;/p&gt;
+
+&lt;p&gt;It all started in the year 3000 BC. According to Auburn University, that was when Egyptians first began mixing mud with straw to bind dried bricks. Also around this time, the ancient Chinese began using cementitious materials to hold together the bamboo on their boats and to make the Great Wall of China. Concrete was made in Ancient Rome by mixing one part lime, four parts sand, and animal fat, milk or blood. However, sometime around AD 400, the art of concrete was lost with the fall of the Roman Empire. Finally, in 1756, John Smeaton, a British engineer, rediscovered hydraulic cement (mixing cement with water) by repeatedly testing mortar in both fresh and salt water. In 1779, Bry Higgins was issued a patent for hydraulic cement (also known as stucco). In 1824,Joseph Aspdin, bricklayer and mason in Leeds, England, patented what he called Portland cement, since it resembled the stone quarried on the Isle of Portland off the British coast. Little did he know how important the cement would be in the near future. Throughout the rest of the 1800s Portland cement concrete became widely used in poles, beams, ships, buildings, canals, bridges, even skyscrapers… In just 100 years from rediscovery, concrete was already becoming essential to infrastructure. Concrete was becoming more and more popular by the day. Now, we are surrounded by it.&lt;/p&gt;
+
+&lt;p&gt;But how does this amazing mixture get made? According to cement.org, concrete is basically just three things: water, Portland cement, and aggregates (rock and sand). It could also contain admixtures, which are just things added to alter the texture or other properties of the finished concrete. The proportions are roughly 6% air, 11% portland cement, 41% coarse aggregate (think gravel-like), 26% fine aggregate (sand), and 16% water. Any drinkable water can be used for concrete; however, the purer the better. The materials are then mixed together until they are workable. After that all that remains is to put the concrete in the form and cure it by sprinkling water fog. The older the concrete is, the stronger it gets.&lt;/p&gt;
+
+&lt;p&gt;Sure, concrete is useful and we know how it’s made, but how does this all work? According to Northwestern University, the first step is called dissolution, where the cement dissolves, releasing ions into the water. Eventually, the density of the ionic species becomes so great that they will want to become solid. This brings us to the next step, precipitation, where the water-cement mixture forms a new solid substance. This substance coats and sticks to the aggregates to form concrete.&lt;/p&gt;
+
+&lt;p&gt;As you can see, concrete is a very interesting substance that has greatly affected the world in many positive ways.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Feb 2015 00:00:00 -0600</pubDate>
+        <link>https://anthony-zhou.github.io/2015/02/25/concrete/</link>
+        <guid isPermaLink="true">https://anthony-zhou.github.io/2015/02/25/concrete/</guid>
+        
+        <category>concrete</category>
+        
+        <category>research</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

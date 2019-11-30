@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to Scan a Barcode with Flutter | Anthony Zhou</title><meta name="description" content="Anthony Zhou is a software and web developer. "><meta itemprop="name" content="Anthony Zhou"><meta itemprop="description" content="How to set up a cross-platform app to scan barcodes."><meta itemprop="image" content="https://anthony-zhou.github.io/assets/images/scan-barcode-with-flutter.jpeg"><meta property="og:url" content="https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/"><meta property="og:type" content="website"><meta property="og:title" content="How to Scan a Barcode with Flutter | Anthony Zhou"><meta property="og:site_name" content="Anthony Zhou"><meta property="og:description" content="How to set up a cross-platform app to scan barcodes."><meta property="og:image" content="https://anthony-zhou.github.io/assets/images/scan-barcode-with-flutter.jpeg"><meta name="twitter:url" content="https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="How to Scan a Barcode with Flutter | Anthony Zhou"><meta name="twitter:site" content="Anthony Zhou"><meta name="twitter:description" content="How to set up a cross-platform app to scan barcodes."><meta name="twitter:creator" content="@Anthony97655896"><meta property="twitter:image" content="https://anthony-zhou.github.io/assets/images/scan-barcode-with-flutter.jpeg"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="/assets/css/app.min.css"><link rel="stylesheet" href="/assets/css/override.css"><link rel="alternate" type="application/rss+xml" title="Anthony Zhou" href="/feed.xml"><link rel="canonical" href="/2019/11/26/how-to-scan-a-barcode-in-flutter/"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/atom-one-light.min.css"> <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad();</script></head><body id="how-to-scan-a-barcode-with-flutter" class="post-layout"><header class="header"> <a class="header__title" href="https://anthony-zhou.github.io/">Anthony Zhou</a><nav><ul class="header__list"><li><a href="/">Stories</a></li><li><a href="/projects">Projects</a></li><li><span class="popup__open">Contact</span></li></ul></nav></header><main class="💈"><div class="post"><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"><div class="post__header section-padding--double"><div class="grid-small"><h2 itemprop="name headline">How to Scan a Barcode with Flutter</h2><time class="post__date" datetime="2019-11-26T00:00:00-06:00" itemprop="datePublished">26 Nov 2019</time></div></div><div class="post__img"><div><figure class="absolute-bg" style="background-image: url('/assets/images/scan-barcode-with-flutter.jpeg');"></figure></div></div><div class="post__content section-padding"><div class="grid"><div id="markdown" itemprop="articleBody"><p>Here’s how to set up a simple barcode scanning function, starting from a basic flutter app. In this tutorial we’ll be using the <a href="https://pub.dev/packages/barcode_scan">barcode_scan Flutter package</a>. The package site has its own tutorial, but the tutorial has some outdated information, so I thought I’d try and correct that here.</p><h1 id="set-up-the-configuration-files">Set up the configuration files</h1><p>As listed on <a href="https://pub.dev/packages/barcode_scan">barcode_scan’s about page</a> on Dart Pub, start by making the following changes:</p><h2 id="for-android">For Android:</h2><p>Add this line to your AndroidManifest.xml to request permission to use the user’s camera:</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;uses-permission android:name="android.permission.CAMERA" /&gt;
+</code></pre></div></div><p>Add this line (to allow the BarcodeScanner activity) to your AndroidManifest.xml. Do NOT modify the name.</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;activity android:name="com.apptreesoftware.barcodescan.BarcodeScannerActivity"/&gt;
+</code></pre></div></div><p>Install the Kotlin plugin for Android Studio or your default editor</p><p>Edit your project-level build.gradle file to look like this:</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      buildscript {
+          ext.kotlin_version = '1.2.31'
+          ...
+          dependencies {
+              ...
+              classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+          }
+      }
+      ...
+</code></pre></div></div><p>Edit your app-level build.gradle file to look like this:</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    apply plugin: 'kotlin-android'
+    ...
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+        ...
+    }
+</code></pre></div></div><p>In your pubspec.yaml file, add <code class="highlighter-rouge">barcode_scan: ^1.0.0</code> to the list of dependencies, as follows:</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    dependencies:
+      flutter:
+        sdk: flutter
+      # other dependencies...
+      barcode_scan: ^1.0.0
+
+Note: for some reason many tutorials, including that of the publishers themselves, say to add `barcode_scan: ^0.0.3` to your pubspec.yaml file. This tends to cause problems because 0.0.3 is an unsupported version of this dependency.
+</code></pre></div></div><p>Click “Packages get” in Android Studio or run flutter packages get in your project folder.</p><h2 id="for-ios">For iOS:</h2><p>To use on iOS, you must add the the camera usage description to your Info.plist</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+    &lt;string&gt;Camera permission is required for barcode scanning.&lt;/string&gt;
+</code></pre></div></div><h1 id="write-the-testing-code">Write the testing code</h1><p>The package barcode_scan should now be successfully installed and configured in your flutter application. Now all that remains is to use the package in your app!</p><p>Outside of the formatting, the key to this example is the call to <code class="highlighter-rouge">BarcodeScanner.scan()</code>, which uses the imported package <code class="highlighter-rouge">barcode_scan</code>.</p><h2 id="completed-code-in-maindart">Completed code in main.dart</h2><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import 'dart:async';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main() {
+  runApp(new MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() =&gt; new _MyAppState();
+}
+
+class _MyAppState extends State&lt;MyApp&gt; {
+  String barcode = "";
+
+  @override
+  initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Barcode Scanner'),
+          ),
+          body: Center(
+            child: Column(
+              children: &lt;Widget&gt;[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Press the button to scan an item:"),
+                ),
+                Container(
+                  child: RaisedButton(onPressed: scan, child: Text("Scan")),
+                  padding: const EdgeInsets.all(8.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(barcode),
+                ),
+              ],
+            ),
+          )),
+    );
+  }
+
+  //scan a barcode, store result in this.barcode
+  Future scan() async {
+    try {
+      //use barcode_scan to scan the barcode
+      String barcode = await BarcodeScanner.scan();
+
+      //if the barcode has been obtained, display it
+      if (barcode.length &gt; 0)
+        setState(
+            () =&gt; this.barcode = "The barcode you scanned was: " + barcode);
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          this.barcode = 'Camera permission was not granted';
+        });
+      } else {
+        setState(() =&gt; this.barcode = 'Unknown error: $e');
+      }
+    } on FormatException {
+      //the user probably just pressed the back button, no need to print an error message
+      setState(() =&gt; this.barcode = '');
+    } catch (e) {
+      setState(() =&gt; this.barcode = 'Unknown error: $e');
+    }
+  }
+}
+</code></pre></div></div></div><ul class="post__social"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/intent/tweet?&text=How to Scan a Barcode with Flutter+https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/+by+Anthony Zhou" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://plus.google.com/share?url=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&source=How to Scan a Barcode with Flutter&summary=How to set up a cross-platform app to scan barcodes.&url=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.stumbleupon.com/badge/?url=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li><li><a href="https://www.reddit.com/submit?url=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li><li><a href="https://www.tumblr.com/share/link?url=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.pinterest.com/pin/create/link/?description=How to set up a cross-platform app to scan barcodes.&media=https://anthony-zhou.github.io/assets/images/scan-barcode-with-flutter.jpeg&url=https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/" target="_blank"><i class="fa fa-pinterest"></i></a></li></ul></div></div><div class="section-padding--none"><div class="grid"><hr class="sep"/></div></div><div class="section-padding"><div class="grid-small"> <span class="post__author">Posted by <a href="https://anthony-zhou.github.io" title="More By Anthony Zhou">Anthony Zhou</a></span><p class="post__bio">Anthony Zhou is a web and software developer.</p></div></div></article></div><section class="related section-padding"><div class="grid-xlarge"><h2 class="related__title">Related</h2><div class="related__container"><article class="related__post"> <a class="related__link" href="https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/"><figure class="related__img"> <img src="/assets/images/scan-barcode-with-flutter.jpeg" alt="How to Scan a Barcode with Flutter"/></figure><div><h2 class="related__text">How to Scan a Barcode with Flutter</h2></div></a></article></div></div></section></main><footer class="footer section-padding"><div class="grid"><div class="subscribe" id="subscribe"><div class="subscribe__container"> <span class="subscribe__title">Subscribe</span><p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p><form method="POST" action="https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f&amp;c=?" id="mc-signup" name="mc-embedded-subscribe-form" novalidate><div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="b_66ddf555dab480e6a8606430b_89b3ee034f" tabindex="-1" value=""></div><div class="form-group"> <input id="mce-EMAIL" type="email" name="EMAIL" placeholder="Email Address"></div><div class="form__btn"> <input id="mc-submit" type="submit" value="Sign Up" name="subscribe"></div></form><p class="subscribe__error hidden"></p></div></div><hr class="sep--white"/><div class="footer__container"><ul class="footer__tags"><li><a class="footer__link" href="/tag/research">Research</a></li><li><a class="footer__link" href="/tag/concrete">Concrete</a></li><li><a class="footer__link" href="/tag/flutter">Flutter</a></li><li><a class="footer__link" href="/tag/dart">Dart</a></li><li><a class="footer__link" href="/tag/biology">Biology</a></li></ul><ul class="footer__social"><li><a href="https://twitter.com/Anthony97655896" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://www.instagram.com/anthonyz9587/" target="_blank"><i class="fa fa-instagram"></i></a></li><li><a href="https://www.linkedin.com/in/anthonyzhou42/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://github.com/anthony-zhou" target="_blank"><i class="fa fa-github"></i></a></li></ul></div></div></footer><section class="contact popup"><div class="popup__close"><div class="popup__exit"></div></div><div class="contact__container popup__container"><div class="contact__img"><figure class="absolute-bg" style="background-image: url(/assets/images/placeholder-28.jpg);"></figure></div><div class="contact__content"><div class="contact__mast section-padding--half"><div class="grid"><h2>Contact</h2></div></div><div class="section-padding--none"><hr class="sep"/></div><div class="contact__form section-padding--half"><div class="grid-xlarge"> <form id="form" class="form" action="https://formcarry.com/s/HkIo0nMb7" method="POST"><div class="form__subcontainer"><div> <label for="form-first-name">First Name</label> <input type="text" name="first-name" id="form-first-name" required></div><div> <label for="form-last-name">Last Name</label> <input type="text" name="last-name" id="form-last-name" required></div></div><div> <label for="form-email">E-Mail</label> <input type="email" name="email" id="form-email" required></div><div> <label for="form-message">Message</label> <textarea name="message" id="form-message" rows="3"></textarea></div><div class="form__submit"><div class="form__btn"> <input type="submit" value="Send"></div></div><p class="form__message"></p></form></div></div></div></div></section><script src="/assets/js/app.min.js"></script></body></html>
+  
