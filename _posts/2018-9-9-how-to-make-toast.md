@@ -15,6 +15,6 @@ In fact, perfectly-toasted bread is not merely a simple daily task; it is a scie
 
 Fortunately for us, this delicacy has been meticulously researched. We even know how to make toast without a toaster. Unfortunately, reading all that information about toast would take a lifetime, so here's a simple flowchart for all your toast-making needs:
 
-![Toast flowchart](assets/images/toast-flowchart.jpg)
+![Toast flowchart](/assets/images/toast-flowchart.jpg)
 
 So now you know more than you ever wanted to know about making toast. Time to revel in your enlightenment and savor the glorious golden-brown toast. Pretty soon, you'll be making the perfect toast for lunch and dinner, when friends come over, when you're hosting a meal for the General Assembly of the United Nations! Or maybe just for breakfast.
