@@ -6,7 +6,7 @@ description: How to
 image: /assets/images/toast-cropped.jpg
 author: Anthony Zhou
 tags:
-  - concrete
+  - food
   - research
 ---
 Though not everyone can make a juicy Beef Wellington or perfectly crunchy macarons, well-toasted bread should be something we can all have. After all, the materials are so simple: a toaster and a slice of bread. It couldn’t be so hard, right? Wrong.
