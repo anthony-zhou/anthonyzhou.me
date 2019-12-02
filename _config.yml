@@ -9,7 +9,7 @@ google_analytics:
 title: Anthony Zhou
 description: >
   Anthony Zhou is a software and web developer.
-url: https://anthony-zhou.github.io
+url: https://anthonyzhou.me
 twitter_username: Anthony97655896
 default_img: /assets/images/seo.jpg
 social:
@@ -37,7 +37,7 @@ mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
 author:
   - name: Anthony Zhou
     bio: Anthony Zhou is a web and software developer.
-    url: https://anthony-zhou.github.io
+    url: https://anthonyzhou.me
 
 # Pagination settings
 pagination:
