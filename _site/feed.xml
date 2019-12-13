@@ -4,11 +4,88 @@
     <title>Anthony Zhou</title>
     <description>Anthony Zhou is a software and web developer.
 </description>
-    <link>https://anthony-zhou.github.io</link>
-    <atom:link href="https://anthony-zhou.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Nov 2019 13:27:49 -0600</pubDate>
-    <lastBuildDate>Sat, 30 Nov 2019 13:27:49 -0600</lastBuildDate>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 12 Dec 2019 20:10:50 -0600</pubDate>
+    <lastBuildDate>Thu, 12 Dec 2019 20:10:50 -0600</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>How to Download an Image as a PDF using jsPDF</title>
+        <description>&lt;p&gt;PDF documents are great because they preserve the format of a page. In other words, the content in a PDF document typically does not get distorted, pixelated, stretched, or compressed. Because of this, an image, once it’s been converted to a PDF, will typically preserve its dimensions and clarity. Making sure an image always looks sharp and focused is almost always a concern of designers, developers, and even just regular old people. When making a site that deals with images, developers may increasingly consider implementing “Save as PDF” as an attractive option for exporting an image. That’s why I decided to document some of the successes and struggles I encountered while working on this feature.&lt;/p&gt;
+
+&lt;p&gt;My goal was to add a “Save as PDF” option to an image processing web app. The dependency I chose to use was &lt;a href=&quot;https://www.npmjs.com/package/jspdf&quot;&gt;jspdf&lt;/a&gt;, which is a free library that lets you use Javascript to generate PDFs of all kinds. Because the library is not designed specifically for converting images to PDF documents, the main struggle I faced was creating a PDF document with dimensions that matched those of the image, so I could avoid those distasteful white margins and unintentionally cropped images that would result from using a standard-sized page. Here’s the way I set up jsPDF to make sure images could be smoothly downloaded as PDFs:&lt;/p&gt;
+
+&lt;h1 id=&quot;set-up-jspdf&quot;&gt;Set up jsPDF&lt;/h1&gt;
+&lt;p&gt;Follow the instructions from &lt;a href=&quot;https://www.npmjs.com/package/jspdf&quot;&gt;npm&lt;/a&gt;. The easiest way to use jsPDF in a web-based project is to add a script tag linking to the cloud:
+        &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js&quot; integrity=&quot;sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;convert-the-image-to-a-data-uri&quot;&gt;Convert the image to a data URI&lt;/h1&gt;
+&lt;p&gt;For now, jsPDF can only add an image to a PDF if the image is in &lt;a href=&quot;https://en.wikipedia.org/wiki/Data_URI_scheme&quot;&gt;data URI format&lt;/a&gt;. For the web app I was working on, the image I wanted to download already had a data URI as its source. In other words, it looked something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAA
+  ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+  //8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU
+  5ErkJggg==&quot; alt=&quot;Red dot&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;(Example taken from &lt;a href=&quot;https://en.wikipedia.org/wiki/Data_URI_scheme#HTML&quot;&gt;Wikipedia&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;This example would show up as a red dot: &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAA ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4 //8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU 5ErkJggg==&quot; alt=&quot;Red dot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If your image is not already a data URI, it’s relatively easy to convert it. First, put the image on a canvas. Next, call canvas.toDataURL() to get the data URI of the image. You can find a great implementation of this method &lt;a href=&quot;https://davidwalsh.name/convert-image-data-uri-javascript&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;generate-the-pdf-based-on-the-data-uri&quot;&gt;Generate the PDF based on the data URI&lt;/h1&gt;
+&lt;p&gt;The key to downloading an image as a PDF is to get the right image dimensions, to make sure the PDF page dimensions match those of the image.
+In my case, the image dimensions were conveniently stored in order to facilitate image processing, but in a more general case you could get the image dimensions using &lt;code class=&quot;highlighter-rouge&quot;&gt;image.naturalHeight&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;image.naturalWidth&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Download the given image URL as a PDF file.
+function savePDF(imageDataURL) {
+  // Get the dimensions of the image.
+  var image = new Image();
+
+  image.onload = function() {
+    let pageWidth = image.naturalWidth;
+    let pageHeight = image.naturalHeight;
+
+    // Create a new PDF with the same dimensions as the image.
+    const pdf = new jsPDF({
+      orientation: pageHeight &amp;gt; pageWidth ? &quot;portrait&quot;: &quot;landscape&quot;,
+      unit: &quot;px&quot;,
+      format: [pageHeight, pageWidth]
+    });
+
+    // Add the image to the PDF with dimensions equal to the internal dimensions of the page.
+    pdf.addImage(imageDataURL, 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
+
+    // Save the PDF with the filename specified here:
+    pdf.save(&quot;index.pdf&quot;);
+  }
+
+  image.src = imageDataURL;
+} Note: naturalWidth and naturalHeight are only supported in modern browsers. [These are the browsers that support these properties.](https://caniuse.com/#feat=img-naturalwidth-naturalheight)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And that’s how to use Javascript to give users the option to download an image as a PDF. To summarize:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Set up jsPDF.&lt;/li&gt;
+  &lt;li&gt;Make sure the image you want to download is in data URI form.&lt;/li&gt;
+  &lt;li&gt;Use jsPDF to add the image to a new PDF document.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;a-footnote-data-url-vs-data-uri&quot;&gt;A footnote: Data URL vs. Data URI&lt;/h4&gt;
+&lt;p&gt;The form of image data dealt with in this tutorial can be called both a data URL and a data URI. This is because URLs (Uniform Resource Locators) are a subset of URIs (Uniform Resource Identifiers). As to whether HTML data URIs can be considered URLs,&lt;/p&gt;
+</description>
+        <pubDate>Thu, 12 Dec 2019 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2019/12/12/how-to-download-an-image-as-a-pdf-using-jsPDF/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/12/how-to-download-an-image-as-a-pdf-using-jsPDF/</guid>
+        
+        <category>javascript</category>
+        
+        <category>coding</category>
+        
+        
+      </item>
     
       <item>
         <title>How to Scan a Barcode with Flutter</title>
@@ -162,12 +239,14 @@ class _MyAppState extends State&amp;lt;MyApp&amp;gt; {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 26 Nov 2019 00:00:00 -0600</pubDate>
-        <link>https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/</link>
-        <guid isPermaLink="true">https://anthony-zhou.github.io/2019/11/26/how-to-scan-a-barcode-in-flutter/</guid>
+        <link>http://localhost:4000/2019/11/26/how-to-scan-a-barcode-in-flutter/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/26/how-to-scan-a-barcode-in-flutter/</guid>
         
         <category>flutter</category>
         
         <category>dart</category>
+        
+        <category>coding</category>
         
         
       </item>
@@ -180,15 +259,15 @@ class _MyAppState extends State&amp;lt;MyApp&amp;gt; {
 
 &lt;p&gt;Fortunately for us, this delicacy has been meticulously researched. We even know how to make toast without a toaster. Unfortunately, reading all that information about toast would take a lifetime, so here’s a simple flowchart for all your toast-making needs:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/images/toast-flowchart.jpg&quot; alt=&quot;Toast flowchart&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/toast-flowchart.jpg&quot; alt=&quot;Toast flowchart&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So now you know more than you ever wanted to know about making toast. Time to revel in your enlightenment and savor the glorious golden-brown toast. Pretty soon, you’ll be making the perfect toast for lunch and dinner, when friends come over, when you’re hosting a meal for the General Assembly of the United Nations! Or maybe just for breakfast.&lt;/p&gt;
 </description>
         <pubDate>Sun, 09 Sep 2018 00:00:00 -0500</pubDate>
-        <link>https://anthony-zhou.github.io/2018/09/09/how-to-make-toast/</link>
-        <guid isPermaLink="true">https://anthony-zhou.github.io/2018/09/09/how-to-make-toast/</guid>
+        <link>http://localhost:4000/2018/09/09/how-to-make-toast/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/09/how-to-make-toast/</guid>
         
-        <category>concrete</category>
+        <category>food</category>
         
         <category>research</category>
         
@@ -244,8 +323,8 @@ Nature, vol. 452, no. 7183, 2008, p. 88+. General OneFile, go.galegroup.com/ps/i
 Species in the Field. (Cover Story).” Nature, vol. 388, no. 6642, 07 Aug. 1997, p. 579. EBSCOhost, search.ebscohost.com/login.aspx?direct=true&amp;amp;db=a9h&amp;amp;AN=9708140900.&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 Apr 2017 00:00:00 -0500</pubDate>
-        <link>https://anthony-zhou.github.io/2017/04/17/communication-between-trees/</link>
-        <guid isPermaLink="true">https://anthony-zhou.github.io/2017/04/17/communication-between-trees/</guid>
+        <link>http://localhost:4000/2017/04/17/communication-between-trees/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/17/communication-between-trees/</guid>
         
         <category>biology</category>
         
@@ -269,8 +348,8 @@ Species in the Field. (Cover Story).” Nature, vol. 388, no. 6642, 07 Aug. 1997
 &lt;p&gt;As you can see, concrete is a very interesting substance that has greatly affected the world in many positive ways.&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Feb 2015 00:00:00 -0600</pubDate>
-        <link>https://anthony-zhou.github.io/2015/02/25/concrete/</link>
-        <guid isPermaLink="true">https://anthony-zhou.github.io/2015/02/25/concrete/</guid>
+        <link>http://localhost:4000/2015/02/25/concrete/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/02/25/concrete/</guid>
         
         <category>concrete</category>
         
