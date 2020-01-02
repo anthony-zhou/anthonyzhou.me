@@ -11,6 +11,7 @@ pagination:
   <div class="intro" id="markdown">
     <h1>Stories</h1>
     <p>I like to code, but I also do other stuff, and I like to write about it. Below you can check out some articles I've written. Check out my <a href="/projects">projects</a> too!</p>
+    <p id="featured-tags">Sort by tag: <a href="/tag/programming">programming</a> <a href="/tag/science">science</a> <a href="/tag/tutorials">tutorials</a> <a href="/tag/essays">essays</a> <a href="/tag/javascript">javascript</a></p>
   </div>
   <div class="grid-xlarge">
     <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
