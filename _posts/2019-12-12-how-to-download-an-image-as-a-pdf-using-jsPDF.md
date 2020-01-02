@@ -7,7 +7,8 @@ image: /assets/images/png-to-pdf.png
 author: Anthony Zhou
 tags:
   - javascript
-  - coding
+  - programming
+  - tutorials
 ---
 
 PDF documents are great because they preserve the format of a page. In other words, the content in a PDF document typically does not get distorted, pixelated, stretched, or compressed. Because of this, an image, once it's been converted to a PDF, will typically preserve its dimensions and clarity. Making sure an image always looks sharp and focused is almost always a concern of designers, developers, and even just regular old people. When making a site that deals with images, developers may increasingly consider implementing "Save as PDF" as an attractive option for exporting an image. That's why I decided to document some of the successes and struggles I encountered while working on this feature.

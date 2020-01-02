@@ -8,7 +8,8 @@ author: Anthony Zhou
 tags:
   - flutter
   - dart
-  - coding
+  - programming
+  - tutorials
 ---
 
 Here's how to set up a simple barcode scanning function, starting from a basic flutter app. In this tutorial we'll be using the [barcode_scan Flutter package](https://pub.dev/packages/barcode_scan). The package site has its own tutorial, but the tutorial has some outdated information, so I thought I'd try and correct that here.

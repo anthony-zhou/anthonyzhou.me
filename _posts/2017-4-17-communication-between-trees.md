@@ -7,7 +7,8 @@ image: /assets/images/forest.jpg
 author: Anthony Zhou
 tags:
   - biology
-  - research
+  - science
+  - essays
 ---
 ## Introduction
 
