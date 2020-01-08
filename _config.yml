@@ -4,7 +4,7 @@ name: Anthony Zhou
 email: anthony.zhou03@gmail.com
 baseurl: ""
 permalink: /:year/:month/:day/:title/
-google_analytics:
+google_analytics: UA-155734640-1
 
 title: Anthony Zhou
 description: >
@@ -24,14 +24,14 @@ social:
 
 # Contact settings
 contact_img: /assets/images/placeholder-28.jpg
-formcarry: https://formcarry.com/s/HkIo0nMb7
+formcarry: https://formcarry.com/s/JyLRy7KkVib
 
 # Disqus settings
-disqus: test-apkdzgmqhj
+disqus: anthonyzhou
 
 # MailChimp settings
-mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
-mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
+mailchimp_action: https://anthonyzhou.us4.list-manage.com/subscribe/post?u=5a6e7d003b2fa5aa5a64c2b43&amp;id=6caec32f58
+mailchimp_input: b_5a6e7d003b2fa5aa5a64c2b43_6caec32f58
 
 # Author settings
 author:
