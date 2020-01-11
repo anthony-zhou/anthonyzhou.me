@@ -12,9 +12,9 @@ const MailChimp = (() => {
   return {
     settings() {
       return {
-        form: $('#mc-signup'),
-        formAction: $('#mc-signup').attr('action'),
-        formSubmit: $('#mc-submit'),
+        form: $('#mc-embedded-subscribe-form'),
+        formAction: $('#mc-embedded-subscribe-form').attr('action'),
+        formSubmit: $('#mc-embedded-subscribe'),
         formMessage: $('.subscribe__error'),
         animation: 'fade-in'
       };
