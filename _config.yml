@@ -29,6 +29,9 @@ formcarry: https://formcarry.com/s/JyLRy7KkVib
 # Disqus settings
 disqus: anthonyzhou
 
+#MailChimp settings
+mailchimp_action: https://anthonyzhou.us4.list-manage.com/subscribe/post-json?u=5a6e7d003b2fa5aa5a64c2b43&amp;id=6caec32f58
+
 # Author settings
 author:
   - name: Anthony Zhou
