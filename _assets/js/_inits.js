@@ -23,7 +23,6 @@ $(() => {
     easing: 'ease-in-out',
     once: true
   });
-  MailChimp.init();
   PageTransition.init();
 
   if ($('.posts').length && $('.posts__next').length) {

@@ -19,3 +19,26 @@
 .posts__img:hover {
   filter: grayscale(0);
 }
+
+
+/* MailChimp subscribe form styles */
+.subscribe__text {
+  margin-bottom: 0.75em;
+}
+.mc-left-half, .mc-right-half {
+  display: inline-block;
+  width: 49%;
+}
+.mc-left-half {
+  float: left;
+  margin-right: 2%;
+}
+.mc-right-half {
+  float: right;
+}
+.mc-field-group {
+  margin-bottom: 10px;
+}
+.footer .form__btn {
+  width: 100%;
+}

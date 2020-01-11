@@ -8,7 +8,7 @@ google_analytics: UA-155734640-1
 
 title: Anthony Zhou
 description: >
-  Anthony Zhou is a software and web developer.
+  Anthony Zhou is a web and software developer enthusiastic about psychology and economics.
 url: https://anthonyzhou.me
 twitter_username: Anthony97655896
 default_img: /assets/images/seo.jpg
@@ -29,14 +29,10 @@ formcarry: https://formcarry.com/s/JyLRy7KkVib
 # Disqus settings
 disqus: anthonyzhou
 
-# MailChimp settings
-mailchimp_action: https://anthonyzhou.us4.list-manage.com/subscribe/post?u=5a6e7d003b2fa5aa5a64c2b43&amp;id=6caec32f58
-mailchimp_input: b_5a6e7d003b2fa5aa5a64c2b43_6caec32f58
-
 # Author settings
 author:
   - name: Anthony Zhou
-    bio: Anthony Zhou is a web and software developer.
+    bio: Anthony Zhou is a web and software developer. his interests include psychology, economics, and music.
     url: https://anthonyzhou.me
 
 # Pagination settings
