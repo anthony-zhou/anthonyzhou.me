@@ -7,7 +7,6 @@ import './vendor/_transition.js';
 import './vendor/_zoom.js';
 import Formcarry from './components/_formcarry.js';
 import InfiniteScroll from './components/_infiniteScroll.js';
-import MailChimp from './components/_mailChimp.js';
 import { miscFlexVid, miscZoom, miscSocialShare } from './components/_miscellaneous.js';
 import PageTransition from './components/_pageTransition.js';
 import Popup from './components/_popup.js';
