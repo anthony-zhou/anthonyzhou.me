@@ -3,10 +3,11 @@
     {% if post.image %}
       <figure class="posts__img">
         <img src="{{ post.image }}" alt="{{ post.title }}" data-aos="fade-in" itemprop="image"/>
+        <div class="tagtext"><span>{{ post.tags[0] }}</span></div>
       </figure>
     {% endif %}
     <div>
-      <h2 class="posts__text"><strong itemprop="name">{{ post.title }}</strong> — <span itemprop="description">{{ post.content | strip_html | truncatewords: 35, "" }}</span></h2>
+      <h2 class="posts__text"><strong itemprop="name">{{ post.title }}</strong><span itemprop="description">{{ post.content | strip_html | truncatewords: 35, "" }}</span></h2>
     </div>
   </a>
 </article>

@@ -12,14 +12,20 @@
 .section-heading {
   text-align: center;
 }
-.posts__img {
-  filter: grayscale(1);
-  transition: 0.4s;
-}
-.posts__img:hover {
-  filter: grayscale(0);
-}
 
+/* Post list */
+.posts__text strong {
+  display: block;
+}
+.tagtext {
+  margin-top: -2em;
+  z-index: 10;
+}
+.tagtext span {
+  padding: 10px;
+  color: white;
+  background-color: rgba(255, 33, 33, 0.5);
+}
 
 /* MailChimp subscribe form styles */
 .subscribe__text {
