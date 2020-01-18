@@ -25,14 +25,6 @@ pagination:
         {% endfor %}
       </div>
     </div>
-
-    <div class="sidebar">
-      <h2>Categories</h2>
-      <ul>
-        <a href="/tag/science">Science</a>
-        <a href="/tag/programming">Programming</a>
-      </ul>
-    </div>
   </div>
   {% include pagination.html %}
 </div>
