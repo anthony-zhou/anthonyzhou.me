@@ -18,10 +18,9 @@ Van Gogh represents the classic ideal of the tortured artist. Alienated, misunde
 
 Our increasing understanding of neuroscience and psychology gives us revolutionary insights into how our brains work. This knowledge allows us to explore the surprising links between mood and productivity. Used properly, this knowledge could enhance creativity and work output, all without compromising life satisfaction. In this series of articles, I will draw on history and science to address a potentially controversial series of questions relating mood and productivity:
 - Is there any truth to the trope of the tortured genius?
-- Does happiness improve memory?
 - How can happiness be enhanced?
-- Does happiness live up to the hype?
-- Does negativity improve focus?
+- What does happiness do for productivity?
+- Is negativity good for anything?
 - How can *negativity* be enhanced?
 
 First off, let's turn our attention to a hot topic of the moment: happiness. There is certainly great value to the pursuit of happiness, but neglecting the less desirable emotions may not be sustainable. Where should happiness be applied, and when does it hinder us more than it helps? Read on to find out.
