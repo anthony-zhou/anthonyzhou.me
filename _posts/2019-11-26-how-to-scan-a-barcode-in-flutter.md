@@ -3,13 +3,10 @@ layout: post
 title: "How to Scan a Barcode with Flutter"
 date: 2019-11-26
 description: How to set up a cross-platform app to scan barcodes.
-image: /assets/images/scan-barcode-with-flutter.jpeg
-author: Anthony Zhou
-tags:
-  - flutter
-  - dart
-  - programming
-  - tutorials
+image: assets/images/scan-barcode-with-flutter.jpeg
+author: anthony
+categories: [programming, tutorials]
+tags: [flutter, dart]
 ---
 
 Here's how to set up a simple barcode scanning function, starting from a basic flutter app. In this tutorial we'll be using the [barcode_scan Flutter package](https://pub.dev/packages/barcode_scan). The package site has its own tutorial, but the tutorial has some outdated information, so I thought I'd try and correct that here.

@@ -1,83 +1,63 @@
-name: Anthony Zhou
+# Site
+name: "Anthony Zhou"
+title: "Anthony Zhou"
+description: "Psychology, Economics, Programming, or anything interesting. Updated Weekly."
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: ''
+google_analytics: 'UA-155734640-1'
+disqus: 'anthonyzhou'
+mailchimp-list: 'https://anthonyzhou.us4.list-manage.com/subscribe/post?u=5a6e7d003b2fa5aa5a64c2b43&amp;id=6caec32f58" method="post" id="mc-embedded-subscribe-form'
+include: ["_pages"]
+permalink: /:title/
 
-# Site/SEO settings
-email: anthony.zhou03@gmail.com
-baseurl: ""
-permalink: /:year/:month/:day/:title/
-google_analytics: UA-155734640-1
+# Authors
+authors:
+  anthony:
+    name: Anthony Zhou
+    display_name: Anthony Zhou
+    gravatar: 5e2d9c4831fea6196ab6e552ae857d08
+    email: azhou.blog@gmail.com
+    web: https://anthonyzhou.me
+    twitter: https://twitter.com/Anthony97655896
+    description: "Blog author and computer science enthusiast."
 
-title: Anthony Zhou
-description: >
-  Anthony Zhou is a web and software developer enthusiastic about psychology and economics.
-url: https://anthonyzhou.me
-twitter_username: Anthony97655896
-default_img: /assets/images/seo.jpg
-social:
-  - name: twitter
-    url: https://twitter.com/Anthony97655896
-  - name: instagram
-    url: https://www.instagram.com/anthonyz9587/
-  - name: linkedin
-    url: https://www.linkedin.com/in/anthonyzhou42/
-  - name: github
-    url: https://github.com/anthony-zhou
-
-# Contact settings
-contact_img: /assets/images/placeholder-28.jpg
-formcarry: https://formcarry.com/s/JyLRy7KkVib
-
-# Disqus settings
-disqus: anthonyzhou
-
-#MailChimp settings
-mailchimp_action: https://anthonyzhou.us4.list-manage.com/subscribe/post-json?u=5a6e7d003b2fa5aa5a64c2b43&amp;id=6caec32f58
-
-# Author settings
-author:
-  - name: Anthony Zhou
-    bio: Anthony Zhou is a web and software developer. his interests include psychology, economics, and music.
-    url: https://anthonyzhou.me
-
-# Pagination settings
-pagination:
-  enabled: true
-  debug: false
-  per_page: 12
-  permalink: '/page/:num/'
-  title: ':title'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-autopages:
-  enabled: true
-  categories:
-    enabled: true
-  collections:
-    enabled: true
-  tags:
-    layouts:
-      - 'tag.html'
-    title: ':tag'
-    permalink: '/tag/:tag'
-    slugify:
-      mode: raw
-      cased: true
-
-# Build settings
-markdown: kramdown
+# Plugins
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-sitemap
-compress_html:
-  clippings: all
-  comments: all
-  startings: [html, head, body]
-exclude:
-  - node_modules
-  - .DS_Store
-  - barber.jpg
-  - Gemfile
-  - Gemfile.lock
-  - gulpfile.js
-  - package.json
-  - README.md
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+
+# Pagination
+paginate: 6
+paginate_path: /page:num/
+
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "enabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]

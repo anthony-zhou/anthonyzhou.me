@@ -1,28 +1,24 @@
 ---
 layout: default
 ---
-<section class="post">
-  <div>
-    <div class="post__header section-padding--double">
-      <div class="grid-small">
-        <h2>{{ page.title }}</h2>
-      </div>
+
+
+<section>
+    <div class="section-title">
+        <h2><span>{{ page.title }}</span></h2>
     </div>
 
-    {% if page.image %}
-      <div class="post__img">
-        <div>
-          <figure class="absolute-bg" style="background-image: url('{{ page.image }}');"></figure>
+    <div class="article-post">
+    {{content}}
+    </div>
+
+    {% if page.comments == true %}
+
+    <div id="comments" class="row mb-5">
+        <div class="col-md-8">
+            {% include disqus.html %}
         </div>
-      </div>
+    </div>
+
     {% endif %}
-
-    <div class="post__content section-padding">
-      <div class="grid">
-        <div id="markdown">
-          {{content}}
-        </div>
-      </div>
-    </div>
-  </div>
 </section>

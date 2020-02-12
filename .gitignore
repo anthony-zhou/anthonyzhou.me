@@ -1,8 +1,5 @@
-.env
+_site
 .DS_Store
-.s3-website.json
-node_modules/
-_site/
-
+*.swp
 .sass-cache
-.jekyll-metadata
+*~

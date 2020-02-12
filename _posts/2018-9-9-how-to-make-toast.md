@@ -2,12 +2,10 @@
 layout: post
 title: "How to make toast"
 date: 2018-9-9
-description: How to
-image: /assets/images/toast-cropped.jpg
-author: Anthony Zhou
-tags:
-  - food
-  - tutorials
+description: "How to make toast, with a detailed flowchart."
+image: assets/images/toast-cropped.jpg
+author: anthony
+categories: [food, tutorials]
 ---
 Though not everyone can make a juicy Beef Wellington or perfectly crunchy macarons, well-toasted bread should be something we can all have. After all, the materials are so simple: a toaster and a slice of bread. It couldn’t be so hard, right? Wrong.
 

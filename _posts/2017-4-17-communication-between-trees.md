@@ -2,13 +2,10 @@
 layout: post
 title: "Communication Between Trees"
 date: 2017-4-17
-description: A paper I wrote a few years ago about trees and how cool they are.
-image: /assets/images/forest.jpg
-author: Anthony Zhou
-tags:
-  - biology
-  - science
-  - essays
+description: "A paper I wrote a few years ago about trees and how cool they are."
+image: assets/images/forest.jpg
+author: anthony
+categories: [biology, science, essays]
 ---
 ## Introduction
 

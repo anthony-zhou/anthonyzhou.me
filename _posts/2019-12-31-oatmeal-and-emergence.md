@@ -2,14 +2,11 @@
 layout: post
 title: "Oatmeal and Emergence: How a whole can be greater than the sum of its parts"
 date: 2019-12-31
-description: How a whole can be greater than the sum of its parts
-image: /assets/images/oatmeal.jpg
-author: Anthony Zhou
-tags:
-  - emergence
-  - food
-  - essays
-  - science
+description: "How a whole can be greater than the sum of its parts"
+image: assets/images/oatmeal.jpg
+author: anthony
+categories: [food, essays, science]
+tags: [emergence]
 ---
 
 Oatmeal. At best, it is a nutritious and filling breakfast. At worst, a sloppy and unappetizing gruel. In short, oatmeal exhibits stunning diversity. However, amidst all these seemingly disparate varieties of oatmeal lies a surprising commonality, one that may leave you thinking about your breakfast long after the last bite.

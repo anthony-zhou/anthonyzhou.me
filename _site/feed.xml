@@ -2,13 +2,168 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anthony Zhou</title>
-    <description>Anthony Zhou is a web and software developer enthusiastic about psychology and economics.
-</description>
-    <link>http://localhost:4000</link>
+    <description>Psychology, Economics, Programming, or anything interesting. Updated Weekly.</description>
+    <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Jan 2020 11:08:20 -0600</pubDate>
-    <lastBuildDate>Wed, 15 Jan 2020 11:08:20 -0600</lastBuildDate>
-    <generator>Jekyll v3.8.6</generator>
+    <pubDate>Wed, 12 Feb 2020 15:13:14 -0600</pubDate>
+    <lastBuildDate>Wed, 12 Feb 2020 15:13:14 -0600</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Can we achieve symbiosis with machines? Neuralink and Facebook try to answer the question.</title>
+        <description>&lt;p&gt;Today’s internet-enabled devices are competing for our attention, all the time. What if there was some way we could escape the loop of digital addiction? What if we could become one with our machines?&lt;/p&gt;
+
+&lt;p&gt;Enter the Brain-Machine Interface (BMI), also known as a brain-computer interface (BCI), mind-machine interface (MMI), or direct neural interface (DNI): a device that translates neural signals into commands that control hardware or software.&lt;/p&gt;
+
+&lt;p&gt;The premise is simple. Currently, we interface with technology, and the outside world in general, through low-bandwidth options like keyboards and speech. For argument’s sake, assume that your words-per-minute (WPM) when speaking is 150 (about average, according to the National Center for Voice and Speech), and that your WPM when typing is 75 (you can get a rough estimate of your typing speed with &lt;a href=&quot;https://thetypingcat.com/typing-speed-test/1m&quot;&gt;this minute-long test&lt;/a&gt;). Compare that with your brain, a highly efficient computer that may have as many as 50 processes running at the same time, as noted in this article from &lt;a href=&quot;https://www.technologyreview.com/s/532291/fmri-data-reveals-the-number-of-parallel-processes-running-in-the-brain/&quot;&gt;the MIT Technology Review&lt;/a&gt;. Each one of us has a brain full of countless ideas and connections that never make it out into the real world, due simply to the ridiculously slow rate of communication between our powerful brains and the outside world.&lt;/p&gt;
+
+&lt;p&gt;Think about how much time the average American spends on any kind of technology. &lt;a href=&quot;https://www.inc.com/melanie-curtin/are-you-on-your-phone-too-much-average-person-spends-this-many-hours-on-it-every-day.html&quot;&gt;According to Inc magazine&lt;/a&gt;, the answer is &lt;em&gt;over four hours&lt;/em&gt;. Our society is just beginning to realize the way digital overload can isolate us from nature and the people closest to us, but becoming a hermit and moving to a cabin in the woods doesn’t seem so feasible. Is there any way we could use technology to enhance our lives rather than distracting from them? This is the vision Facebook Reality Labs has for its Brain-Computer Interface:&lt;/p&gt;
+
+&lt;h2 id=&quot;facebook-reality-labs&quot;&gt;Facebook Reality Labs&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Imagine a world where all the knowledge, fun, and utility of today’s smartphones were instantly accessible and completely hands-free. Where you could spend quality time with the people who matter most in your life, whenever you want, no matter where in the world you happen to be. And where you could connect with others in a meaningful way, regardless of external distractions, geographic constraints, and even physical disabilities and limitations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In July of 2019, Facebook Reality Labs released &lt;a href=&quot;https://tech.fb.com/imagining-a-new-interface-hands-free-communication-without-saying-a-word/&quot;&gt;this report&lt;/a&gt; detailing some cutting edge work with the BCI. The lab sponsored a group of University of California, San Francisco (UCSF) researchers who are working to help patients with neurological diseases like ALS use brain-computer interfaces to communicate. BCI technology, as the report notes, is not new: it already helps people “feed themselves, hold the hand of a loved one, and even fly a jet simulator.” So why don’t we all have computers in our brains? There are two limiting factors in BCI development: speed and invasiveness.&lt;/p&gt;
+
+&lt;h3 id=&quot;talking-fast-and-talking-slow-balancing-speed-and-invasiveness-in-bmis&quot;&gt;Talking fast and talking slow: balancing speed and invasiveness in BMIs&lt;/h3&gt;
+
+&lt;p&gt;Emily Mugler, an engineer on the Facebook Reality Labs BCI team, describes how the conventional approach of electroencephalography (EEG), where a cap of electrodes is placed on the subjects head, was just not fast enough for patients with ALS to communicate their ideas effectively. “It sometimes took 70 minutes for a patient to type a single sentence,” she says.&lt;/p&gt;
+
+&lt;p&gt;Later, some labs attempted using electrocorticography (ECoG), which was faster but required a surgical operation inserting electrodes into the brain. Herein lies the problem that plagued past attempt to develop an effective BCI: fast technologies tend to be too invasive, whereas noninvasive solutions tend to be too slow. Researchers found themselves perplexed with the problem of getting inside the brain without physically getting inside the brain.&lt;/p&gt;
+
+&lt;p&gt;Facebook Reality Labs, together with the lab at UCSF, plans to solve this problem with near-infrared light: by beaming harmless light waves into the subject’s brain, a wearable device can sense blood oxygenation—much like in an fMRI (functional magnetic resonance imaging) machine—and use the measurements to guess at brain activity. While the system is currently “bulky, slow, and unreliable,” the UCSF researchers have successfully converted thoughts to words in real time and hope to reach a speed of 100 words per minute on a 1000 word vocabulary with an error of less than 17% (&lt;a href=&quot;https://www.nature.com/articles/s41467-019-10994-4&quot;&gt;Read more in their &lt;em&gt;Nature Communications&lt;/em&gt; journal article&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The results are promising. Perhaps within a decade we will see keyboards by and large replaced by brain-machine interfaces, bringing us into a world where we could spend our lives connecting with others in a meaningful way, enabled by rather than encumbered by technology. But the universal adoption of BCIs raises serious issues of privacy. Can privacy even exist when our inner thoughts are exposed to the public? Moreover, Facebook is not the company many would most trust to safeguard their personal information, given its recent scandals.&lt;/p&gt;
+
+&lt;p&gt;Fear not, for Facebook is not the only one developing this technology: Elon Musk has founded a company developing the Neuralink, a brain-machine interface with no qualms about physically invading your brain.&lt;/p&gt;
+
+&lt;h2 id=&quot;neuralink---elon-musk&quot;&gt;Neuralink - Elon Musk&lt;/h2&gt;
+
+&lt;p&gt;Elon Musk’s justification for the need for a brain-machine interface goes something like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You could sort of think of humanity as a biological bootloader for digital superintelligence&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Elon Musk&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here, “bootloader” refers to the small piece of code needed to start up a computer. To explain this idea further, let’s examine the recent trends in artificial intelligence, as viewed in a Muskian mindset:&lt;/p&gt;
+
+&lt;p&gt;AI is set to overtake humanity as the next stage in the evolution of consciousness. We’ll have gone from amoebas to lizards to chimps to humans to machines. Or something like that. Scary, right? While the truth of Musk’s statement is debatable, the underlying trend rings true: artificial intelligence, and technology in general, is expanding to replace many traditionally human tasks, from manufacturing to truck driving to being a cashier at McDonald’s. How can we escape the ultimate supremacy of AI?&lt;/p&gt;
+
+&lt;p&gt;The answer is that we integrate the machines into ourselves, so that we can work together with our revolutionary technology rather than competing against it. A brain-machine interface would help us both drastically increase our productivity and avoid becoming obsolete. If you subscribe to Musk’s view of the inevitable march of technology (detailed in &lt;a href=&quot;https://www.youtube.com/watch?v=f3lUEnMaiAU&quot;&gt;this interview&lt;/a&gt;), we have two options: brain-machine interface or extinction as AI takes over.&lt;/p&gt;
+
+&lt;p&gt;How does the Neuralink work? By inserting tiny electrodes linked to wires with diameter of 4-6 microns, or less than a quarter of the thickness of a typical human hair. The procedure goes like this: drill a 2 mm hole in the subject’s brain, then use a “sewing machine” to weave up to 96 tiny threads into the brain, creating 3,072 channels. As with all things Elon, Musk plans to push the Neuralink forward at a rapid pace, starting human clinical trials by the end of 2020, focusing on brain diseases, and envisioning widespread adoption in 4 to 5 years.&lt;/p&gt;
+
+&lt;p&gt;It sounds scary because it is. With apparently little regard to the potential brain damage incurred by invasive surgery, the Neuralink in its current state creates two major health risks: glial scarring and broken electrodes. Glial scarring refers to scarring in the brain tissue that can inhibit communication and represents a reaction to serious brain damage. Meanwhile, the small electrodes used by the Neuralink are impossible to extract if broken, meaning they’ll just be stuck in the patient’s brain.&lt;/p&gt;
+
+&lt;p&gt;Musk offers a compelling vision of the future—one in which we have achieved a “symbiosis with machines”—but the Neuralink’s radical approach to and bold vision for the BMI may end up rushing to offer the world a half-cooked dish that leaves us a little sick to the stomach. Whether or not the technical and health-related challenges are resolved, the Muskian view would tell us that the need to stay relevant in a world of increasing automation outweighs the health risks incurred.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-happens-next&quot;&gt;What happens next&lt;/h2&gt;
+
+&lt;p&gt;As with any technology, the brain-machine interface has great benefits and drawbacks that will affect people unequally, although both the utopian and dystopian views are probably overstated. In the end, many of our fears will probably be nullified as the technology improves and as a lack of privacy becomes the new normal. After all, the subjective truths of today, like privacy, may not hold steady even ten years into the future.&lt;/p&gt;
+
+&lt;p&gt;And China’s going to do it anyway.&lt;/p&gt;
+
+&lt;p&gt;No matter what, it remains essential that the public holds Facebook, Neuralink, and the smorgasbord of BMI startups accountable, to ensure we don’t rush blindly into a technology without asking ourselves whether it truly makes the world a better place.&lt;/p&gt;
+
+&lt;h3 id=&quot;further-reading-and-works-cited&quot;&gt;Further reading and works cited&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An article on the Neuralink: https://venturebeat.com/2019/07/16/neuralinks-technology-embeds-tiny-wires-in-the-brain-to-read-electrical-pulses/&lt;/li&gt;
+  &lt;li&gt;The Neuralink plans to start clinical trials by the end of 2020: https://www.cnbc.com/2019/07/17/elon-musk-brain-machine-startup-neuralink-plans-human-trials-in-2020.html&lt;/li&gt;
+  &lt;li&gt;The Wikipedia article talking about glial scarring and broken electrodes: https://en.wikipedia.org/wiki/Neuralink&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 03 Feb 2020 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/brain-machine-interface/</link>
+        <guid isPermaLink="true">http://localhost:4000/brain-machine-interface/</guid>
+        
+        <category>neuroscience</category>
+        
+        <category>artificial intelligence</category>
+        
+        
+        <category>psychology</category>
+        
+        <category>essays</category>
+        
+        <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>The Many Definitions of Intelligence</title>
+        <description>&lt;p&gt;What was Albert Einstein’s IQ? Many sources online will tell you it was 160. But a quick foray into the supporting evidence for this number reveals that most sources have no scientific proof of Einstein’s IQ score. In fact, 160 may just be a relic of the scale used for measurement: WAIS-IV (Wechsler Adult Intelligence Scale 4), probably the most common IQ scoring system, happens to have a max score of — you guessed it — 160. Einstein could be the dictionary definition of genius in today’s society, yet we don’t even know his IQ. How, then, can we be sure of his intelligence?&lt;/p&gt;
+
+&lt;p&gt;Well, we could look at his creation of a revolutionary new way of understanding the world through theoretical physics. In addition, IQ is a construct related to but separate from intelligence. Given that IQ does not answer our question, how can we truly measure Albert Einstein’s intelligence?&lt;/p&gt;
+
+&lt;p&gt;As many recent critics of IQ have noted (duly), intelligence is a highly complex trait that cannot be reduced to a single score. However, IQ does demonstrate some correlation with job success, as noted &lt;a href=&quot;https://www.inc.com/business-insider/why-iq-big-factor-future-success-job-performance-according-science-research.html&quot;&gt;by Inc magazine&lt;/a&gt;. That is not to say that &lt;em&gt;intelligence&lt;/em&gt; correlates to job success, however.&lt;/p&gt;
+
+&lt;p&gt;What exactly is intelligence, how can we quantify it, and how does it differ from IQ? These are the questions this article will attempt to answer, based on psychological research. After outlining the broad types of intelligence, defining intelligence becomes even more problematic when examining the details. The cultural assumptions inherent in almost all attempts to measure intelligence lead to the formation of problems like exclusivity and perhaps even cultural supremacy.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-the-difference-between-iq-and-intelligence&quot;&gt;What’s the difference between IQ and intelligence?&lt;/h3&gt;
+
+&lt;p&gt;Beginning with some definitions will help us clarify this discussion. First, IQ (Intelligence Quotient) is an artificial score, much like a high score in Mario Kart, that measures a person’s ability to perform on certain metrics. With Mario Kart, these skills depend on a person’s ability to navigate complex terrain at a high pace, dodging banana peels and throwing turtle shells. IQ tests, meanwhile, measure a person’s aptitude for problem-solving and verbal and spatial skills. Simple enough.&lt;/p&gt;
+
+&lt;p&gt;Intelligence, however, has an deceptively simple definition. Oxford dictionary defines intelligence as “the ability to acquire and apply knowledge and skills.” This statement actually encompasses a vast variety of cognitive skills: memory, flexibility, and focus, just to name a few. Critically, defining intelligence in this way implies its dependence on environmental factors, because evidence has demonstrated that education has a clear influence on an individual’s ability to learn. Environmentally-influenced intelligence is the type that IQ is attempting to measure.&lt;/p&gt;
+
+&lt;p&gt;So how can we measure intelligence as an intrinsic trait, based in genetics? We start out by recognizing this type of intelligence as separate from the traditional idea of IQ. Let’s call it Intelligence A.&lt;/p&gt;
+
+&lt;h3 id=&quot;intelligence-a-vs-intelligence-b-vs-intelligence-c&quot;&gt;Intelligence A vs. Intelligence B vs. Intelligence C&lt;/h3&gt;
+
+&lt;p&gt;A more nuanced way of defining intelligence is to realize that there is more than one definition. In a book comparing genetic and environmental determinants of intelligence, Philip Vernon helps define three types of intelligence: Intelligence A is intrinsic. It depends on basic physiological factors like reaction time. Intelligence B includes the effects from the environment. It refers to the application of Intelligence A to the real world, and fits quite well with the Oxford definition of intelligence. Meanwhile, Intelligence C refers to the measurement of intelligence, as in IQ tests. Measured values of intelligence often correlate much more closely with Intelligence B, because it has closely matched the popular conception of intelligence for the last few decades.&lt;/p&gt;
+
+&lt;p&gt;Why is this distinction useful? Intelligence B, while clearly correlated with success, depends on the way a society is structured. In other words, it varies widely between cultures, and therefore between people. In other words, attempts to measure Intelligence B are highly variable and require that a new test is developed for every different culture. Meanwhile, Intelligence A consists of biological skills that should not vary across cultures.&lt;/p&gt;
+
+&lt;p&gt;So it’s not surprising that IQ tests correlate with success — they reflect traits valued by our society and are therefore strengthened by other success-enhancing factors like education and socioeconomic status. If we want to truly measure the influence of intelligence on success &lt;em&gt;irrespective of culture&lt;/em&gt;, we need to examine the biological basis of intelligence.&lt;/p&gt;
+
+&lt;p&gt;What exactly does a test of this type look like? The twentieth-century psychologist Hans Eysenck, known especially for his theory of introversion and extroversion, gives a possible example in the form of AEP (Auditory Evoked Potential), a test that allows researchers to measure the reaction time of subjects. He cited preliminary studies that found at least a 0.83 correlation between the AEP results and those of a WAIS test (the standard IQ test mentioned earlier). Apparently, this level of correlation is higher than those between functionally similar IQ tests like the WAIS and Binet tests. However, the study finding this correlation was performed on a notably small sample of individuals; therefore, it poorly represents the vast diversity in levels of education and socioeconomic status around the world.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-cultural-result-of-defining-intelligence&quot;&gt;The cultural result of defining intelligence&lt;/h3&gt;
+
+&lt;p&gt;As noted by &lt;a href=&quot;https://www.apa.org/monitor/feb03/intelligence&quot;&gt;this American Psychological Association (APA) cover story&lt;/a&gt;, traditional measures of intelligence translate quite poorly across borders, raising problematic implications for cross-cultural interaction — an IQ test as currently given encapsulates the traits that are considered intelligent &lt;em&gt;in a particular culture&lt;/em&gt;. If a person comes from a culture where those traits are not so valued, they may suddenly find themselves perceived as less intelligent for arbitrary cultural reasons. As noted earlier, IQ is correlated with success, so this cultural disparity may be a major factor behind the cultural barriers to success afflicting diverse modern societies.&lt;/p&gt;
+
+&lt;p&gt;The APA cover story explains that many psychologists no longer believe in the idea that a test can be completely absent of cultural bias, and probably for good reason. After all, the tests they are thinking of measure &lt;em&gt;Intelligence B&lt;/em&gt;, which by definition encompasses cultural knowledge. Perhaps focusing instead on intelligence A as the standard definition for intelligence, as Hans Eysenck suggested, may be a better way to obviate cultural biases by directly measuring brain activity. Modern brain-scanning technology certainly makes this a promising alternative to current tests. As the world as a whole moves to adopt fair values that appreciate, rather than punish, diversity, intelligence, critical to economic success, should be reconceived in a form that transcends cultural boundaries, as Intelligence A.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Intelligence, as traditionally defined, represents the sum of myriad genetic and cultural factors, including reaction time, education, socioeconomic status, and so on. Also known as Intelligence B, this is the type of trait commonly measured by IQ tests. Isolating the purely biological elements of intelligence as Intelligence A demonstrates that intelligence does not have to be the politically loaded, culturally and economically insensitive term that it is now, that there is hope for refining our definition of intelligence as both a biological and cultural phenomenon. Only then can we fully acknowledge the potential for growth that our current paradigm ignores all too frequently.&lt;/p&gt;
+
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;Here are some works that I drew content from, other than those linked in the article:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Eysenck, H. J. (1988). The biological basis of intelligence. In S. H. Irvine &amp;amp; J. W. Berry (Eds.), Human abilities in cultural context (p. 87–104). Cambridge University Press. https://psycnet.apa.org/record/1988-98683-003&lt;/li&gt;
+  &lt;li&gt;Wikipedia page on Intelligence Quotient: https://en.wikipedia.org/wiki/Intelligence_quotient&lt;/li&gt;
+  &lt;li&gt;Oxford Dictionary definition of intelligence: https://www.lexico.com/definition/intelligence&lt;/li&gt;
+  &lt;li&gt;Philip Vernon’s book on intelligence: https://trove.nla.gov.au/work/11823287?q&amp;amp;versionId=45253153&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;further-reading&quot;&gt;Further reading&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Definition of cultural intelligence from David C. Thomas: https://doi.org/10.1002/9781118785317.weom060051&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Jan 2020 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/cultural-intelligence/</link>
+        <guid isPermaLink="true">http://localhost:4000/cultural-intelligence/</guid>
+        
+        <category>intelligence</category>
+        
+        
+        <category>psychology</category>
+        
+        <category>essays</category>
+        
+        <category>science</category>
+        
+      </item>
     
       <item>
         <title>Mood and Productivity, Pt. 1: Does happiness live up to the hype?</title>
@@ -19,10 +174,9 @@
 &lt;p&gt;Our increasing understanding of neuroscience and psychology gives us revolutionary insights into how our brains work. This knowledge allows us to explore the surprising links between mood and productivity. Used properly, this knowledge could enhance creativity and work output, all without compromising life satisfaction. In this series of articles, I will draw on history and science to address a potentially controversial series of questions relating mood and productivity:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Is there any truth to the trope of the tortured genius?&lt;/li&gt;
-  &lt;li&gt;Does happiness improve memory?&lt;/li&gt;
   &lt;li&gt;How can happiness be enhanced?&lt;/li&gt;
-  &lt;li&gt;Does happiness live up to the hype?&lt;/li&gt;
-  &lt;li&gt;Does negativity improve focus?&lt;/li&gt;
+  &lt;li&gt;What does happiness do for productivity?&lt;/li&gt;
+  &lt;li&gt;Is negativity good for anything?&lt;/li&gt;
   &lt;li&gt;How can &lt;em&gt;negativity&lt;/em&gt; be enhanced?&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -84,17 +238,17 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 08 Jan 2020 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2020/01/08/mood-and-productivity/</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/01/08/mood-and-productivity/</guid>
+        <link>http://localhost:4000/mood-and-productivity-one/</link>
+        <guid isPermaLink="true">http://localhost:4000/mood-and-productivity-one/</guid>
+        
+        <category>happiness</category>
+        
         
         <category>psychology</category>
         
         <category>essays</category>
         
         <category>science</category>
-        
-        <category>happiness</category>
-        
         
       </item>
     
@@ -137,15 +291,15 @@
 &lt;p&gt;Service workers are not easy to deal with, but they can enable effective version management with offline web apps. This tutorial represents just one of the many ways version management can be implemented in an offline web app.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Jan 2020 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2020/01/01/service-workers-for-version-management/</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/01/01/service-workers-for-version-management/</guid>
-        
-        <category>programming</category>
+        <link>http://localhost:4000/service-workers-for-version-management/</link>
+        <guid isPermaLink="true">http://localhost:4000/service-workers-for-version-management/</guid>
         
         <category>javascript</category>
         
-        <category>tutorials</category>
         
+        <category>programming</category>
+        
+        <category>tutorials</category>
         
       </item>
     
@@ -180,17 +334,17 @@
 &lt;p&gt;Behind a humble breakfast food lies a scientific principle essential to our understanding of the world. Simple as it may be, oatmeal is symbolic of the power of a whole to be greater than the sum of its parts, giving us humans (plural) a good reason to play with our food in the morning.&lt;/p&gt;
 </description>
         <pubDate>Tue, 31 Dec 2019 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2019/12/31/oatmeal-and-emergence/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/31/oatmeal-and-emergence/</guid>
+        <link>http://localhost:4000/oatmeal-and-emergence/</link>
+        <guid isPermaLink="true">http://localhost:4000/oatmeal-and-emergence/</guid>
         
         <category>emergence</category>
+        
         
         <category>food</category>
         
         <category>essays</category>
         
         <category>science</category>
-        
         
       </item>
     
@@ -207,11 +361,15 @@
 &lt;h1 id=&quot;convert-the-image-to-a-data-uri&quot;&gt;Convert the image to a data URI&lt;/h1&gt;
 &lt;p&gt;For now, jsPDF can only add an image to a PDF if the image is in &lt;a href=&quot;https://en.wikipedia.org/wiki/Data_URI_scheme&quot;&gt;data URI format&lt;/a&gt;. For the web app I was working on, the image I wanted to download already had a data URI as its source. In other words, it looked something like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAA
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;  &amp;lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAA
   ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
   //8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU
   5ErkJggg==&quot; alt=&quot;Red dot&quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;(Example taken from &lt;a href=&quot;https://en.wikipedia.org/wiki/Data_URI_scheme#HTML&quot;&gt;Wikipedia&lt;/a&gt;)&lt;/p&gt;
 
@@ -223,7 +381,32 @@
 &lt;p&gt;The key to downloading an image as a PDF is to get the right image dimensions, to make sure the PDF page dimensions match those of the image.
 In my case, the image dimensions were conveniently stored in order to facilitate image processing, but in a more general case you could get the image dimensions using &lt;code class=&quot;highlighter-rouge&quot;&gt;image.naturalHeight&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;image.naturalWidth&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Download the given image URL as a PDF file.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;// Download the given image URL as a PDF file.
 function savePDF(imageDataURL) {
   // Get the dimensions of the image.
   var image = new Image();
@@ -248,7 +431,7 @@ function savePDF(imageDataURL) {
 
   image.src = imageDataURL;
 } Note: naturalWidth and naturalHeight are only supported in modern browsers. [These are the browsers that support these properties.](https://caniuse.com/#feat=img-naturalwidth-naturalheight)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And that’s how to use Javascript to give users the option to download an image as a PDF. To summarize:&lt;/p&gt;
 &lt;ol&gt;
@@ -261,15 +444,15 @@ function savePDF(imageDataURL) {
 &lt;p&gt;The form of image data dealt with in this tutorial can be called both a data URL and a data URI. This is because URLs (Uniform Resource Locators) are a subset of URIs (Uniform Resource Identifiers). As to whether HTML data URIs can be considered URLs,&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Dec 2019 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2019/12/12/how-to-download-an-image-as-a-pdf-using-jsPDF/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/12/how-to-download-an-image-as-a-pdf-using-jsPDF/</guid>
+        <link>http://localhost:4000/how-to-download-an-image-as-a-pdf-using-jsPDF/</link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-download-an-image-as-a-pdf-using-jsPDF/</guid>
         
         <category>javascript</category>
+        
         
         <category>programming</category>
         
         <category>tutorials</category>
-        
         
       </item>
     
@@ -284,19 +467,30 @@ function savePDF(imageDataURL) {
 
 &lt;p&gt;Add this line to your AndroidManifest.xml to request permission to use the user’s camera:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;    &amp;lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Add this line (to allow the BarcodeScanner activity) to your AndroidManifest.xml. Do NOT modify the name.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;activity android:name=&quot;com.apptreesoftware.barcodescan.BarcodeScannerActivity&quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;    &amp;lt;activity android:name=&quot;com.apptreesoftware.barcodescan.BarcodeScannerActivity&quot;/&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Install the Kotlin plugin for Android Studio or your default editor&lt;/p&gt;
 
 &lt;p&gt;Edit your project-level build.gradle file to look like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      buildscript {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;      buildscript {
           ext.kotlin_version = '1.2.31'
           ...
           dependencies {
@@ -305,37 +499,52 @@ function savePDF(imageDataURL) {
           }
       }
       ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Edit your app-level build.gradle file to look like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    apply plugin: 'kotlin-android'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;    apply plugin: 'kotlin-android'
     ...
     dependencies {
         implementation &quot;org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version&quot;
         ...
     }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;In your pubspec.yaml file, add &lt;code class=&quot;highlighter-rouge&quot;&gt;barcode_scan: ^1.0.0&lt;/code&gt; to the list of dependencies, as follows:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    dependencies:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;    dependencies:
       flutter:
         sdk: flutter
       # other dependencies...
       barcode_scan: ^1.0.0
 
 Note: for some reason many tutorials, including that of the publishers themselves, say to add `barcode_scan: ^0.0.3` to your pubspec.yaml file. This tends to cause problems because 0.0.3 is an unsupported version of this dependency.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Click “Packages get” in Android Studio or run flutter packages get in your project folder.&lt;/p&gt;
 
 &lt;h2 id=&quot;for-ios&quot;&gt;For iOS:&lt;/h2&gt;
 &lt;p&gt;To use on iOS, you must add the the camera usage description to your Info.plist&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;    &amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;
     &amp;lt;string&amp;gt;Camera permission is required for barcode scanning.&amp;lt;/string&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;write-the-testing-code&quot;&gt;Write the testing code&lt;/h1&gt;
 &lt;p&gt;The package barcode_scan should now be successfully installed and configured in your flutter application. Now all that remains is to use the package in your app!&lt;/p&gt;
@@ -343,7 +552,86 @@ Note: for some reason many tutorials, including that of the publishers themselve
 &lt;p&gt;Outside of the formatting, the key to this example is the call to &lt;code class=&quot;highlighter-rouge&quot;&gt;BarcodeScanner.scan()&lt;/code&gt;, which uses the imported package &lt;code class=&quot;highlighter-rouge&quot;&gt;barcode_scan&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;completed-code-in-maindart&quot;&gt;Completed code in main.dart&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import 'dart:async';
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;import 'dart:async';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -422,20 +710,20 @@ class _MyAppState extends State&amp;lt;MyApp&amp;gt; {
     }
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 26 Nov 2019 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2019/11/26/how-to-scan-a-barcode-in-flutter/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/11/26/how-to-scan-a-barcode-in-flutter/</guid>
+        <link>http://localhost:4000/how-to-scan-a-barcode-in-flutter/</link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-scan-a-barcode-in-flutter/</guid>
         
         <category>flutter</category>
         
         <category>dart</category>
         
+        
         <category>programming</category>
         
         <category>tutorials</category>
-        
         
       </item>
     
@@ -452,13 +740,13 @@ class _MyAppState extends State&amp;lt;MyApp&amp;gt; {
 &lt;p&gt;So now you know more than you ever wanted to know about making toast. Time to revel in your enlightenment and savor the glorious golden-brown toast. Pretty soon, you’ll be making the perfect toast for lunch and dinner, when friends come over, when you’re hosting a meal for the General Assembly of the United Nations! Or maybe just for breakfast.&lt;/p&gt;
 </description>
         <pubDate>Sun, 09 Sep 2018 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2018/09/09/how-to-make-toast/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/09/how-to-make-toast/</guid>
+        <link>http://localhost:4000/how-to-make-toast/</link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-make-toast/</guid>
+        
         
         <category>food</category>
         
         <category>tutorials</category>
-        
         
       </item>
     
@@ -509,15 +797,15 @@ Nature, vol. 452, no. 7183, 2008, p. 88+. General OneFile, &lt;a href=&quot;go.g
 Species in the Field. (Cover Story).” Nature, vol. 388, no. 6642, 07 Aug. 1997, p. 579. EBSCOhost, search.ebscohost.com/login.aspx?direct=true&amp;amp;db=a9h&amp;amp;AN=9708140900.&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2017/04/17/communication-between-trees/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/17/communication-between-trees/</guid>
+        <link>http://localhost:4000/communication-between-trees/</link>
+        <guid isPermaLink="true">http://localhost:4000/communication-between-trees/</guid>
+        
         
         <category>biology</category>
         
         <category>science</category>
         
         <category>essays</category>
-        
         
       </item>
     
@@ -536,15 +824,15 @@ Species in the Field. (Cover Story).” Nature, vol. 388, no. 6642, 07 Aug. 1997
 &lt;p&gt;As you can see, concrete is a very interesting substance that has greatly affected the world in many positive ways.&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Feb 2015 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2015/02/25/concrete/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/02/25/concrete/</guid>
+        <link>http://localhost:4000/concrete/</link>
+        <guid isPermaLink="true">http://localhost:4000/concrete/</guid>
+        
         
         <category>concrete</category>
         
         <category>science</category>
         
         <category>essays</category>
-        
         
       </item>
     

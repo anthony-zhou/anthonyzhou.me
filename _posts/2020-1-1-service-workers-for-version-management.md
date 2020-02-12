@@ -2,13 +2,11 @@
 layout: post
 title: "Version Management with a JavaScript Service Worker"
 date: 2020-1-1
-description: How to manage an app's version numbers with the Service Worker API
-image: /assets/images/gears.jpg
-author: Anthony Zhou
-tags:
-  - programming
-  - javascript
-  - tutorials
+description: "How to manage an app's version numbers with the Service Worker API"
+image: assets/images/js-serviceworker.png
+author: anthony
+categories: [programming, tutorials]
+tags: [javascript]
 ---
 The JavaScript service worker API is a way to give online web apps offline functionality. By running in the background of the browser, service workers are able to cache important files and give users a smooth offline experience.
 

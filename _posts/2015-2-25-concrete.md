@@ -3,12 +3,9 @@ layout: post
 title: "Concrete"
 date: 2015-2-25
 description: A paper I wrote several years ago about concrete.
-image: /assets/images/concrete.jpg
-author: Anthony Zhou
-tags:
-  - concrete
-  - science
-  - essays
+image: assets/images/concrete.jpg
+author: anthony
+categories: [concrete, science, essays]
 ---
 A mixture that is both universally noticed and universally ignored.
 

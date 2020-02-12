@@ -1,85 +1,181 @@
 ---
 layout: default
+disqus: false
+archive: false
+post_class: post-template
 ---
-<div class="post">
-  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="post__header section-padding--double">
-      <div class="grid-small">
-        <h2 itemprop="name headline">{{ page.title }}</h2>
 
-        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>
-      </div>
-    </div>
+<!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
 
-    {% if page.image %}
-      <div class="post__img">
-        <div>
-          <figure class="absolute-bg" style="background-image: url('{{ page.image }}');"></figure>
-        </div>
-      </div>
-    {% endif %}
-
-    <div class="post__content section-padding">
-      <div class="grid">
-        <div id="markdown" itemprop="articleBody">
-          {{content}}
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            {% include share.html %}
         </div>
 
-        {% include share.html %}
-      </div>
-    </div>
+        <!-- Post -->
+        {% assign author = site.authors[page.author] %}
 
-    <!-- Everything inside the #author tags pulls data from the author -->
-    {% if page.author %}
-      <div class="section-padding--none">
-        <div class="grid">
-          <hr class="sep"/>
-        </div>
-      </div>
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
 
-      <div class="section-padding">
-        <div class="grid-small">
-          {% for author in page.author %}
-            {% assign authorDetails = site.author | where: "name", author %}
-            {% if forloop.first == true %}
-              <span class="post__author">Posted by
-            {% else %}
-              <span class="post__author">&amp;
+                <!-- Author Box -->
+                {% if page.author %}
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        {% if author.avatar %}
+                        <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
+                        {% else %}
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
+                        <span class="author-description">{{ author.description }}</span>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Post Title -->
+                <h1 class="posttitle">{{ page.title }}</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            {% if site.adsense == "enabled" %}
+                {% include adsense-under-header.html %}
             {% endif %}
-            {% if authorDetails[0]["url"] %}<a href="{{ authorDetails[0]['url'] }}" title="More By {{ author }}">{% endif %}{{ author }}{% if authorDetails[0]["url"] %}</a>{% endif %}</span>
-            <p class="post__bio">{{ authorDetails[0]["bio"] }}</p>
-          {% endfor %}
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            {% if page.image %}
+
+            {% if site.lazyimages == "enabled" %}
+            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            {% else %}
+            <img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            {% endif %}
+
+            {% endif %}
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                {% if page.toc %}
+                    {% if page.beforetoc %}
+                        <p><em>{{page.beforetoc}}</em></p>
+                    {% endif %}
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        {% include toc.html html=content %}
+                    </div>
+                {% endif %}
+                <!-- End Toc -->
+                {{content}}
+            </div>
+
+            <!-- Rating -->
+            {% if page.rating %}
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> {% include star_rating.html %}
+            </div>
+            {% endif %}
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
+                {% if page.last_modified_at %}
+                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+                {% endif %}
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    {% assign sortedCategories = page.categories | sort %}
+                    {% for category in sortedCategories %}
+                    <li>
+                        <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    {% assign sortedTags = page.tags | sort %}
+                    {% for tag in sortedTags %}
+                    <li>
+                        <a class="smoothscroll" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            {% if page.previous.url %}
+            <a class="prev d-block col-md-6" href="{{ site.baseurl }}/{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
+            {% endif %}
+            {% if page.next.url %}
+            <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}/{{page.next.url}}">{{page.next.title}} &raquo; </a>
+            {% endif %}
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
         </div>
-      </div>
-    {% endif %}
+        <!-- End Post -->
 
-    {% include disqus.html %}
-
-  </article>
-</div>
-
-<!-- Links to Previous/Next posts -->
-{% assign relatedTag = page.tags | first %}
-{% if relatedTag %}
-  <section class="related section-padding">
-    <div class="grid-xlarge">
-      <h2 class="related__title">Related</h2>
-      <div class="related__container">
-        {% for post in site.tags[relatedTag] limit: 3 %}
-          <article class="related__post">
-            <a class="related__link" href="{{ post.url | absolute_url }}">
-              {% if post.image %}
-                <figure class="related__img">
-                  <img src="{{ post.image }}" alt="{{ post.title }}"/>
-                </figure>
-              {% endif %}
-              <div>
-                <h2 class="related__text">{{ post.title }}</h2>
-              </div>
-            </a>
-          </article>
-        {% endfor %}
-      </div>
     </div>
-  </section>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+{% if page.comments != false %}
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                {% include disqus.html %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+{% if page.rating %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "{{ page.title }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ author.display_name }}"
+  },
+  "datePublished": "{{ page.date | date:"%Y-%m-%d" }}",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating }}",
+    "bestRating": "5"
+  }
+}
+</script>
 {% endif %}

@@ -2,14 +2,12 @@
 layout: post
 title: "The Many Definitions of Intelligence"
 date: 2020-1-15
-description: Improving the way we define intelligence
-image: /assets/images/intelligence.jpg
-author: Anthony Zhou
-tags:
-  - psychology
-  - essays
-  - science
-  - intelligence
+description: "Improving the way we define intelligence"
+image: assets/images/intelligence.png
+author: anthony
+featured: true
+categories: [psychology, essays, science]
+tags: [intelligence]
 ---
 
 What was Albert Einstein's IQ? Many sources online will tell you it was 160. But a quick foray into the supporting evidence for this number reveals that most sources have no scientific proof of Einstein's IQ score. In fact, 160 may just be a relic of the scale used for measurement: WAIS-IV (Wechsler Adult Intelligence Scale 4), probably the most common IQ scoring system, happens to have a max score of — you guessed it — 160. Einstein could be the dictionary definition of genius in today's society, yet we don't even know his IQ. How, then, can we be sure of his intelligence?

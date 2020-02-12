@@ -3,12 +3,10 @@ layout: post
 title: "How to Download an Image as a PDF using jsPDF"
 date: 2019-12-12
 description: Using Javascript to give users a "Save as PDF" option
-image: /assets/images/png-to-pdf.png
-author: Anthony Zhou
-tags:
-  - javascript
-  - programming
-  - tutorials
+image: assets/images/png-to-pdf.png
+author: anthony
+categories: [programming, tutorials]
+tags: [javascript]
 ---
 
 PDF documents are great because they preserve the format of a page. In other words, the content in a PDF document typically does not get distorted, pixelated, stretched, or compressed. Because of this, an image, once it's been converted to a PDF, will typically preserve its dimensions and clarity. Making sure an image always looks sharp and focused is almost always a concern of designers, developers, and even just regular old people. When making a site that deals with images, developers may increasingly consider implementing "Save as PDF" as an attractive option for exporting an image. That's why I decided to document some of the successes and struggles I encountered while working on this feature.
