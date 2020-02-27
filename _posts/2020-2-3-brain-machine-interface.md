@@ -40,7 +40,7 @@ Fear not, for Facebook is not the only one developing this technology: Elon Musk
 Elon Musk's justification for the need for a brain-machine interface goes something like this:
 
 > You could sort of think of humanity as a biological bootloader for digital superintelligence
-> - Elon Musk
+> — Elon Musk
 
 Here, "bootloader" refers to the small piece of code needed to start up a computer. To explain this idea further, let's examine the recent trends in artificial intelligence, as viewed in a Muskian mindset:
 
