@@ -5,7 +5,6 @@ date: 2020-1-15
 description: "Improving the way we define intelligence"
 image: assets/images/intelligence.png
 author: anthony
-featured: true
 categories: [psychology, essays, science]
 tags: [intelligence]
 ---

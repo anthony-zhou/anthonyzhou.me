@@ -13,3 +13,15 @@
 	"syntax",
     "starsnonscss"
 ;
+.project-img {
+	margin: auto;
+}
+
+.project-img-caption {
+	margin: 0;
+	font-size: 3rem;
+	transform-origin: top left;
+	transform: translate(50%, -50%);
+	font-weight: bold;
+
+}
