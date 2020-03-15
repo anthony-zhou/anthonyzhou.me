@@ -6,8 +6,8 @@ description: "An analysis of investment incentives reveals a possible light at t
 image: assets/images/economics-of-sustainability.png
 author: anthony
 featured: true
-categories: [narrative, travel]
-tags: [italy, florence, language]
+categories: [essay, economics]
+tags: [climate change, investment, sustainability]
 ---
 
 > "We are on the edge of a fundamental reshaping of finance."  
