@@ -5,6 +5,7 @@ date: 2020-2-3
 description: "Recent attempts to create a brain-machine interface."
 image: assets/images/neuralink logo.jpg
 author: anthony
+featured: true
 categories: [psychology, essays, science]
 tags: [neuroscience, artificial intelligence]
 ---
