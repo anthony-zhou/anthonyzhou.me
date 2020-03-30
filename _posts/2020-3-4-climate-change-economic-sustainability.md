@@ -17,7 +17,7 @@ This January, BlackRock CEO Larry Fink announced in his [annual letter to CEOs](
 
 BlackRock – and by extension Larry Fink – manages nearly *$7 trillion* in investments, making it the largest asset manager in the world. With a proven track record as an astute financial advisor, the billionaire is a trusted voice in the world of business. If he says we should protect the climate, he is not acting as a tree-hugging hippie but as a representative of his clients' financial interests.
 
-In other words, Fink is saying that it makes financial sense for a company to invest in sustainability. To me, this was counterintuitive. Although I certainly hope we can slow climate change, I had always assumed that the profit models for companies that damage the environment demanded exploitation, even though such a model would be unsustainable in the long term. Short-term interests will trump long-term goals.
+In other words, Fink is saying that it makes financial sense for a company to invest in sustainability. To me, this was counterintuitive. Although I certainly hope we can slow climate change, I had always assumed that the profit models for companies that damage the environment demanded exploitation, even though such a model would be unsustainable in the long term. In other words, I thought that short-term interests will trump long-term goals.
 
 ## The Tragedy of the Commons
 
