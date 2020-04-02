@@ -139,7 +139,7 @@ To call the API, I used the `URLSession` module in Swift, and simply displayed t
         }
 
 # Final product
-I ended up with an iOS app that takes recordings and identifies the sounds in the recordings. Here is a screen recording of the app where I recorded myself whistling:
+I ended up with an iOS app that takes recordings and identifies the sounds in the recordings. Here is a screen recording of the app where I recorded myself whistling (video has no sound):
 
 <video style="margin:auto" controls>
   <source src="/assets/videos/Audio App Screen Recording.mp4" type="video/mp4">
