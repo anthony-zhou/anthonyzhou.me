@@ -5,9 +5,88 @@
     <description>Psychology, Economics, Programming, or anything interesting. Updated Weekly.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 11:18:28 -0500</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 11:18:28 -0500</lastBuildDate>
+    <pubDate>Fri, 03 Apr 2020 13:27:29 -0500</pubDate>
+    <lastBuildDate>Fri, 03 Apr 2020 13:27:29 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Get Involved: Open Source Technology Fighting COVID-19</title>
+        <description>&lt;p&gt;The purpose of this document is to provide a guide to the open source initiatives working to fight the novel coronavirus (COVID-19). Read on if you would like to help out.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Open source technology&lt;/strong&gt; refers to projects where the source code is freely available to the public, many of which would welcome anyone who can contribute.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you’re interested in contributing, see if these projects have issues in their GitHub repositories or other tasks that you might be able to help with. If you don’t think you have enough technical expertise, help spread the word! See if any of your friends and family might be able to help out with open source (1) Software or (2) Hardware.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-software&quot;&gt;1. Software&lt;/h2&gt;
+&lt;p&gt;In the table below you will find a few open source projects to contribute to/look at. &lt;a href=&quot;https://github.com/soroushchehresa/awesome-coronavirus&quot;&gt;Here is a more complete list&lt;/a&gt; (note that the projects with more stars are probably more impactful and better to contribute to).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Project Name&lt;/th&gt;
+      &lt;th&gt;Objective&lt;/th&gt;
+      &lt;th&gt;Language&lt;/th&gt;
+      &lt;th&gt;Code&lt;/th&gt;
+      &lt;th&gt;Demo&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CHIME: Covid-19 Hospital Impact Model for Epidemics&lt;/td&gt;
+      &lt;td&gt;Estimates the resources needed for hospitals (# of patients requiring ICUs, ventilation, etc.) for capacity planning.&lt;/td&gt;
+      &lt;td&gt;Python&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/CodeForPhilly/chime/&quot;&gt;GitHub&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://penn-chime.phl.io/&quot;&gt;Demo&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Locale.ai Covid-19 live visualization&lt;/td&gt;
+      &lt;td&gt;Visualizes the pandemic using open source data.&lt;/td&gt;
+      &lt;td&gt;JavaScript (Vue.js)&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/localeai/covid19-live-visualization&quot;&gt;GitHub&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://covid19.locale.ai/&quot;&gt;Demo&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tokyo Covid-19 Task Force Website&lt;/td&gt;
+      &lt;td&gt;Official government website for all information about Covid-19 in Tokyo.&lt;/td&gt;
+      &lt;td&gt;JavaScript (Node.js)&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/tokyo-metropolitan-gov/covid19&quot;&gt;GitHub&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://stopcovid19.metro.tokyo.lg.jp/&quot;&gt;Demo&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Novel Coronavirus Dataset (from JHU CSSE)&lt;/td&gt;
+      &lt;td&gt;Largest available official dataset of Covid-19 cases.&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/CSSEGISandData/COVID-19&quot;&gt;Dataset&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&quot;&gt;Visualization&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-hardware&quot;&gt;2. Hardware&lt;/h2&gt;
+&lt;p&gt;Probably even more important than software right now is open source hardware. Current projects include low-cost ventilators, PCR tools, and distributed computing. Whether you’re a designer, builder, or anything in between, these projects could use your help! Contributing is not as standardized as with software, so I’d suggest you go join the &lt;a href=&quot;https://discord.gg/duAtG5h&quot;&gt;Open Hardware Summit Discord Server&lt;/a&gt; to find out how you can help (they have a #covid-19 channel).&lt;/p&gt;
+
+&lt;p&gt;For an introduction to some of the biggest projects going on right now, check out &lt;a href=&quot;https://opensource.com/article/20/3/open-hardware-covid19&quot;&gt;this article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading and best of luck contributing. Stay safe out there!&lt;/p&gt;
+
+&lt;p&gt;— Anthony Zhou, open source advocate&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Apr 2020 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/covid-19-open-source-technology/</link>
+        <guid isPermaLink="true">http://localhost:4000/covid-19-open-source-technology/</guid>
+        
+        <category>coronavirus</category>
+        
+        <category>COVID-19</category>
+        
+        <category>open source</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>My Attempt at On-Device Machine Learning</title>
@@ -214,7 +293,7 @@
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;final-product&quot;&gt;Final product&lt;/h1&gt;
-&lt;p&gt;I ended up with an iOS app that takes recordings and identifies the sounds in the recordings. Here is a screen recording of the app where I recorded myself whistling:&lt;/p&gt;
+&lt;p&gt;I ended up with an iOS app that takes recordings and identifies the sounds in the recordings. Here is a screen recording of the app where I recorded myself whistling (video has no sound):&lt;/p&gt;
 
 &lt;video style=&quot;margin:auto&quot; controls=&quot;&quot;&gt;
   &lt;source src=&quot;/assets/videos/Audio App Screen Recording.mp4&quot; type=&quot;video/mp4&quot; /&gt;
@@ -260,7 +339,7 @@
 
 &lt;p&gt;BlackRock – and by extension Larry Fink – manages nearly &lt;em&gt;$7 trillion&lt;/em&gt; in investments, making it the largest asset manager in the world. With a proven track record as an astute financial advisor, the billionaire is a trusted voice in the world of business. If he says we should protect the climate, he is not acting as a tree-hugging hippie but as a representative of his clients’ financial interests.&lt;/p&gt;
 
-&lt;p&gt;In other words, Fink is saying that it makes financial sense for a company to invest in sustainability. To me, this was counterintuitive. Although I certainly hope we can slow climate change, I had always assumed that the profit models for companies that damage the environment demanded exploitation, even though such a model would be unsustainable in the long term. Short-term interests will trump long-term goals.&lt;/p&gt;
+&lt;p&gt;In other words, Fink is saying that it makes financial sense for a company to invest in sustainability. To me, this was counterintuitive. Although I certainly hope we can slow climate change, I had always assumed that the profit models for companies that damage the environment demanded exploitation, even though such a model would be unsustainable in the long term. In other words, I thought that short-term interests will trump long-term goals.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-tragedy-of-the-commons&quot;&gt;The Tragedy of the Commons&lt;/h2&gt;
 
@@ -1025,29 +1104,6 @@ class _MyAppState extends State&amp;lt;MyApp&amp;gt; {
         
         
         <category>programming</category>
-        
-        <category>tutorials</category>
-        
-      </item>
-    
-      <item>
-        <title>How to make toast</title>
-        <description>&lt;p&gt;Though not everyone can make a juicy Beef Wellington or perfectly crunchy macarons, well-toasted bread should be something we can all have. After all, the materials are so simple: a toaster and a slice of bread. It couldn’t be so hard, right? Wrong.&lt;/p&gt;
-
-&lt;p&gt;In fact, perfectly-toasted bread is not merely a simple daily task; it is a science. Consistently creating a crispy, golden-brown exterior and a soft, flavorful interior requires extreme care, from the cooking time to the model of toaster, to even the way the bread is sliced.&lt;/p&gt;
-
-&lt;p&gt;Fortunately for us, this delicacy has been meticulously researched. We even know how to make toast without a toaster. Unfortunately, reading all that information about toast would take a lifetime, so here’s a simple flowchart for all your toast-making needs:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/toast-flowchart.jpg&quot; alt=&quot;Toast flowchart&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So now you know more than you ever wanted to know about making toast. Time to revel in your enlightenment and savor the glorious golden-brown toast. Pretty soon, you’ll be making the perfect toast for lunch and dinner, when friends come over, when you’re hosting a meal for the General Assembly of the United Nations! Or maybe just for breakfast.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 09 Sep 2018 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/how-to-make-toast/</link>
-        <guid isPermaLink="true">http://localhost:4000/how-to-make-toast/</guid>
-        
-        
-        <category>food</category>
         
         <category>tutorials</category>
         

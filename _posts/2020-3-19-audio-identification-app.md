@@ -5,7 +5,6 @@ date: 2020-3-19
 description: "Using machine learning to identify audio from an iOS device."
 image: assets/images/iPhone in hand.jpg
 author: anthony
-featured: true
 categories: [narrative, programming]
 tags: [tensorflow, keras, python, swift, ios]
 ---

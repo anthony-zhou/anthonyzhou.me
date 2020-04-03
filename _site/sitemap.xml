@@ -49,6 +49,10 @@
 <lastmod>2020-03-19T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/covid-19-open-source-technology/</loc>
+<lastmod>2020-04-03T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/drafts/2020-2-26-florence-incident/</loc>
 </url>
 <url>
@@ -107,6 +111,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page3/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/old-pages/projects-old.html</loc>
