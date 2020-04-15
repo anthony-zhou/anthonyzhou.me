@@ -1,21 +1,39 @@
 ---
-layout: page
+layout: default
 title: Projects
 permalink: /projects
 ---
 
-<div class="row justify-content-between">
-<div class="col-md-8 pr-5">
+<!-- Featured
+================================================== -->
+<section class="featured-posts">
+    <div class="section-title">
+        <h2><span>Featured</span></h2>
+    </div>
+    <div class="row">
 
-<p>Here are some of the projects I've been working on: </p>
-<a target="_blank" href="https://apalebluedot.world"><p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/PaleBlueDot.jpg" alt="pale blue dot" /></p></a>
-<a target="_blank" href="https://www.verdantlife.org/nutrition-calculator.html"><p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/Kale.jpg" alt="kale" /></p></a>
-<a target="_blank" href="https://www.uta.edu/zhoulab"><p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/zhoulab-screenshot.png" alt="Zhou Lab screenshot" /></p></a>
-<a target="_blank" href="https://www.verdantleaf.org"><p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/leaf-background.jpg" alt="leaf background" /></p></a>
+    {% for post in site.projects %}
+        {% if post.categories contains "hackathon" %}
+            <!-- Do nothing -->
+        {% else %}
+            {% include featuredbox.html %}
+        {% endif %}
+    {% endfor %}
 
-</div>
+    </div>
+</section>
 
-<div class="col-md-4">
+<section class="">
+    <div class="section-title">
+        <h2><span>Hackathon Projects</span></h2>
+    </div>
+    <div class="row">
 
-</div>
-</div>
+    {% for post in site.projects %}
+        {% if post.categories contains "hackathon" %}
+            {% include featuredbox.html %}
+        {% endif %}
+    {% endfor %}
+
+    </div>
+</section>
