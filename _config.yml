@@ -22,14 +22,6 @@ authors:
     twitter: https://twitter.com/Anthony97655896
     description: "Blog author and computer science enthusiast. In my free time, I enjoy reading, playing the trumpet and rock climbing."
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-archives
-
 # Archives
 jekyll-archives:
   enabled:
@@ -65,3 +57,12 @@ exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
 collections:
   projects:
     output: true
+
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
