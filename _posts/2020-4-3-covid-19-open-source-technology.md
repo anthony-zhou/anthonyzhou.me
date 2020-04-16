@@ -5,7 +5,6 @@ date: 2020-4-3
 description: "A list of open source initiatives fighting the outbreak of novel coronavirus."
 image: assets/images/cdc-coronavirus.jpg
 author: anthony
-featured: true
 categories: [programming]
 tags: [coronavirus, COVID-19, open source]
 ---

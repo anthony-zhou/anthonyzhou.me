@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You are not a loan"
-date: 2020-3-19
+date: 2019-11-10
 description: "A financial literacy game made at HackUTD 2019."
 image: assets/images/hackathons/hackutd/game-screen.png
 author: anthony
@@ -9,7 +9,7 @@ categories: [hackathon]
 tags: [reactjs, javascript, game, financial literacy]
 ---
 
-This was my first hackathon submission ever! At HackUTD in November 2019, my teammates and I decided to build a game to help people learn how to manage their finances more effectively.
+This was my first hackathon submission ever! At HackUTD in November 2019, my teammates and I decided to build a game to help people learn how to manage their finances more effectively. Here is our Devpost submission from that hackathon:
 
 ## Inspiration
 Many students today are not well educated about their finances, and we'd like to fix that problem.

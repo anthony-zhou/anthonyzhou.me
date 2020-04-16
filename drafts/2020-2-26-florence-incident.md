@@ -36,10 +36,12 @@ While my plan appeared foolproof, I forgot to account for one glaring fact: the 
 
 The museum security had graciously provided a receptacle for these unwanted beverage containers, in the form of a cardboard box with a trash bag stretched over it. By this time, it was already filled with bottles of all denominations, some left partially open and leaking. I wanted to get rid of the water in my reusable bottle. I wanted to keep the water in the larger bottle.
 
-So I poured the water into the cardboard box.
+So I poured the water into the cardboard box. Whoops.
 
 What followed was bedlam: the security guard exploded into a vicious verbal tirade, ridiculing my unprecedented stupidity. Hearing the commotion, the neighboring security guard joined him in his outraged comments, also in Italian. All eyes in the room turned towards me, some with expressions of disgust and others with quiet sympathy. Apparently, I had done something terribly wrong, though I couldn’t understand what it could have been. But I wasn’t done yet—I still had to transfer the water from my larger bottle into the now-empty reusable one.
 
 It must have taken no more than five seconds. And yet, the seconds it took to refill my water bottle slowed the rushing river of time to the pace of a half-frozen, mushy creek in the winter. Meanwhile, despite the museum’s ample air-conditioning system, my ears began to redden as I absorbed the heat shooting at me from the security guards’ incomprehensible insults and the crowd’s inexplicable attention.
 
-Finally, the moment was finished. With a satisfying *click!*, I screwed tight and shut the water bottle, replaced it in my bag, and continued into the museum, feigning deafness to the enraged shouts of the guards that still echoed off the walls behind me.
+Finally, the moment was finished. With a satisfying *click!*, I screwed tight and shut the water bottle, replaced it in my bag, and continued into the museum with red ears, feigning deafness to the enraged shouts of the guards that still echoed off the walls behind me.
+
+Reflecting on this moment now, I realize it may have been a mistake to pour the water into the box, even though it didn't hurt anyone. I have now concluded that some knowledge of Italian would have been necessary to avoid completely misunderstanding the situation. What do you think? Leave a comment below!

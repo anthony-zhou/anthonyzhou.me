@@ -4,33 +4,20 @@ title: Projects
 permalink: /projects
 ---
 
+I am currently working on a very cool projects page with lots of pictures and detailed descriptions. For now, though, here are a few programming tutorials:
+
 <!-- Featured
 ================================================== -->
-<section class="featured-posts">
-    <div class="section-title">
-        <h2><span>Featured</span></h2>
-    </div>
-    <div class="row">
 
-    {% for post in site.projects %}
-        {% if post.categories contains "hackathon" %}
-            <!-- Do nothing -->
-        {% else %}
-            {% include featuredbox.html %}
-        {% endif %}
-    {% endfor %}
-
-    </div>
-</section>
 
 <section class="">
     <div class="section-title">
-        <h2><span>Hackathon Projects</span></h2>
+        <h2><span>Tutorials</span></h2>
     </div>
     <div class="row">
 
     {% for post in site.projects %}
-        {% if post.categories contains "hackathon" %}
+        {% if post.categories contains "tutorials" %}
             {% include featuredbox.html %}
         {% endif %}
     {% endfor %}
