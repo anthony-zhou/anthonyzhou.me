@@ -11,6 +11,16 @@ mailchimp-list: 'https://anthonyzhou.us4.list-manage.com/subscribe/post?u=5a6e7d
 include: ["_pages"]
 permalink: /:title/
 
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+  
 # Authors
 authors:
   anthony:
@@ -57,12 +67,3 @@ exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
 collections:
   projects:
     output: true
-
-
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-archives
