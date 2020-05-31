@@ -5,7 +5,6 @@ date: 2020-2-26
 description: "A true story from my trip to Florence."
 image: assets/images/motorcycles-florence.jpg
 author: anthony
-featured: true
 categories: [narrative, travel]
 tags: [italy, florence, language]
 ---

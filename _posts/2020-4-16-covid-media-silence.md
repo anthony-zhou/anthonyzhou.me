@@ -5,7 +5,6 @@ date: 2020-4-16
 description: "An essay describing the reasons we should feel hopeful for our ability to persevere and help others amidst a global pandemic."
 image: assets/images/2020/4/newspapers.jpg
 author: anthony
-featured: true
 categories: [media, essay]
 tags: [coronavirus, COVID-19, optimism]
 ---

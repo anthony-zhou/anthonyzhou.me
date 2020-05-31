@@ -1,10 +1,8 @@
 ---
 layout: default
-title: Projects
-permalink: /projects
+title: Tutorials
+permalink: /tutorials
 ---
-
-I am currently working on a very cool projects page with lots of pictures and detailed descriptions. For now, though, here are a few programming tutorials:
 
 <!-- Featured
 ================================================== -->
