@@ -5,12 +5,153 @@
     <description>Psychology, Economics, Programming, or anything interesting. Updated biweekly.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 31 May 2020 17:47:36 -0500</pubDate>
-    <lastBuildDate>Sun, 31 May 2020 17:47:36 -0500</lastBuildDate>
+    <pubDate>Sat, 13 Jun 2020 14:47:22 -0500</pubDate>
+    <lastBuildDate>Sat, 13 Jun 2020 14:47:22 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Scheduling for Summer</title>
+        <title>How I Built a Semi-Automated Matching System for Big &amp; Mini</title>
+        <description>&lt;p&gt;I co-founded Big &amp;amp; Mini in early April, as a nonprofit organization dedicated to combatting social isolation and creating virtual connections by matching older and younger people for video calls. Since then, the platform has taken off, featured in media outlets like &lt;a href=&quot;https://www.houstonchronicle.com/techburger/article/seniors-teens-coronavirus-social-distance-online-15228449.php?utm_campaign=tbgr&quot;&gt;The Houston Chronicle&lt;/a&gt; and we are continuously updating our technology to keep up.&lt;/p&gt;
+
+&lt;p&gt;As co-founder and CTO, I helped create a system where users can sign up and get matched to a Big or a Mini through our website, at &lt;a href=&quot;https://bigandmini.org&quot;&gt;https://bigandmini.org&lt;/a&gt;. This is my report describing the latest major release of our technology.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Big &amp;amp; Mini 2.0 is now live!&lt;/strong&gt; It’s similar to the previous system, but more automated. In this report, I will share the reasoning behind this change, as well as an explanation of how the new system works. Our major new features are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An automated training quiz&lt;/li&gt;
+  &lt;li&gt;Automated matching system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With the initial version of Big &amp;amp; Mini, our team was spending too much time manually verifying training completion and making matches. Automation fixes both of these issues. Here’s how the system works. When they sign up, new users are sent to a staging area. Then, after verifying their email address and completing the training quiz, they are added to the pool of new users ready for a match.&lt;/p&gt;
+
+&lt;p&gt;Once a week on Sunday, a system administrator will press a button to trigger automatic matching for the upcoming week.&lt;/p&gt;
+
+&lt;h2 id=&quot;training-quiz&quot;&gt;Training Quiz&lt;/h2&gt;
+&lt;p&gt;The training quiz is pretty straightforward — answer all the questions correctly, and you have completed training. The multiple-choice questions on this quiz, based on our training documents, replace the short-answer Google Form we were using previously. Now, instead of asking a human reviewer to spend time reading through the same answers over and over again, the quiz answers are automatically graded by the computer.&lt;/p&gt;
+
+&lt;h2 id=&quot;automated-matching&quot;&gt;Automated Matching&lt;/h2&gt;
+&lt;p&gt;This is where the magic happens — in our new automated matching system, we use an algorithm that can achieve even better results than a human matcher.&lt;/p&gt;
+
+&lt;p&gt;It turns out matching is not a trivial problem. To illustrate my point, consider this simple example:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Times&lt;/th&gt;
+      &lt;th&gt;Bigs&lt;/th&gt;
+      &lt;th&gt;Minis&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 10am&lt;/td&gt;
+      &lt;td&gt;A, B, C&lt;/td&gt;
+      &lt;td&gt;D, E, F, G, H, I&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 2pm&lt;/td&gt;
+      &lt;td&gt;J, K, L&lt;/td&gt;
+      &lt;td&gt;D, E, F&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;A naive approach would be to match people up as we get to them (a greedy algorithm). But this would give us 3 matches for 10 am (A &amp;amp; D, B &amp;amp; E, C &amp;amp; F) and no matches for 2 pm, leaving out 6 of our 12 Bigs and Minis.&lt;/p&gt;
+
+&lt;p&gt;If you were asked to do the matching, how would you do it?&lt;/p&gt;
+
+&lt;p&gt;Well, if you look closely, you’ll notice there’s a way to make sure everyone gets matched:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Times&lt;/th&gt;
+      &lt;th&gt;Bigs&lt;/th&gt;
+      &lt;th&gt;Minis&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 10am&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;G&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 10am&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;H&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 10am&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;I&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 2pm&lt;/td&gt;
+      &lt;td&gt;J&lt;/td&gt;
+      &lt;td&gt;D&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 2pm&lt;/td&gt;
+      &lt;td&gt;K&lt;/td&gt;
+      &lt;td&gt;E&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday 2pm&lt;/td&gt;
+      &lt;td&gt;L&lt;/td&gt;
+      &lt;td&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Now all twelve of our Bigs &amp;amp; Minis will get to make a meaningful intergenerational connection right away!&lt;/p&gt;
+
+&lt;p&gt;So how do we go about solving this matching problem? Previously, we had a human administrator look through all the users who needed matches (much as you just did) and searched for the optimal solution by hand. As you might expect, this system did not work perfectly, and we ended up leaving out some of our Bigs &amp;amp; Minis. With Big &amp;amp; Mini 2.0, however, we have a new way of doing things: with an algorithm.&lt;/p&gt;
+
+&lt;p&gt;The algorithm, coded in Java, works as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Construct a weighted graph with Bigs &amp;amp; Minis as nodes.
+ a. The weights correspond to the number of connections a Big or a Mini has with another Big or Mini.
+ b. Edges are stored in an adjacency list&lt;/li&gt;
+  &lt;li&gt;At the same time, construct a list storing the number of edges each node has.&lt;/li&gt;
+  &lt;li&gt;Sort the list of edge counts in increasing order.&lt;/li&gt;
+  &lt;li&gt;For the node(s) with the least number of edges:
+ a. Sort the list of nodes by weight and pick the one with the lowest weighted edge (the least number of possible matches with a given Big/Mini).
+ b. Put this match onto a separate list as a pair and remove them from the main adjacency list.&lt;/li&gt;
+  &lt;li&gt;Repeat step 4 until there are no remaining nodes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Using this algorithm, we end up maximizing the number of matches, by matching the least available people first. Because of the flexibility of this approach, we could even change the weights of the edges to account for factors like common interests or geographic proximity.&lt;/p&gt;
+
+&lt;p&gt;Huge thanks to &lt;a href=&quot;https://michaelzhao.xyz/about&quot;&gt;Michael Zhao&lt;/a&gt; for writing this algorithm and Grace Liu for implementing it.&lt;/p&gt;
+
+&lt;p&gt;After the algorithm returns a list of matches, the matched Bigs &amp;amp; Minis are removed from the staging area and given their matches with an initial time and meeting link, which will automatically show up on their Big &amp;amp; Mini dashboard. When the matches have finished processing, the browser automatically downloads a CSV containing the automatic matches made this week, for the convenience of the system administrator.&lt;/p&gt;
+
+&lt;p&gt;By automating the boring administrative parts of the job, Big &amp;amp; Mini 2.0 frees up our team to focus on more important things, like interacting with our users and making sure our Bigs &amp;amp; Minis have the best experience they possibly can.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This article was originally posted &lt;a href=&quot;https://bigandmini.org/whatsnewpage/ourposts/engineeringPost&quot;&gt;on the Big &amp;amp; Mini website&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 13 Jun 2020 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/bigandmini-automated-matching/</link>
+        <guid isPermaLink="true">http://localhost:4000/bigandmini-automated-matching/</guid>
+        
+        <category>programming</category>
+        
+        <category>javascript</category>
+        
+        <category>java</category>
+        
+        <category>aws</category>
+        
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>How to be Productive This Summer</title>
         <description>&lt;p&gt;What do you want to accomplish this summer break? Let’s say you want to do something meaningful. And yet, you may find that the weeks start to blur by without your accomplishing anything, and as soon as you know it summer will be over. The most rewarding goals require that you schedule time to sit down and get to work. If you’re like me, scheduling time to do hard things is easier said than done, but behavioral science research has yielded some answers that might make our lives a little bit easier.&lt;/p&gt;
 
 &lt;p&gt;No matter what it is you might want to do — learn a new language, write a book, or improve your cooking skills — being productive will require you to set aside focused time each day to work.&lt;/p&gt;
@@ -74,7 +215,7 @@
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;While this schedule may not work for everyone, it serves as a starting point for planning a productive day. After following the schedule for a while, I’ve come to enjoy the sense of accomplishment at having finished difficult tasks in the morning, giving me the freedom to relax without feeling guilty. If you follow a different schedule or tried out this one, leav a comment below!&lt;/p&gt;
 </description>
-        <pubDate>Thu, 16 Apr 2020 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 17 May 2020 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/daily-schedule/</link>
         <guid isPermaLink="true">http://localhost:4000/daily-schedule/</guid>
         
@@ -614,29 +755,6 @@
         <category>essays</category>
         
         <category>science</category>
-        
-      </item>
-    
-      <item>
-        <title>How to make toast</title>
-        <description>&lt;p&gt;Though not everyone can make a juicy Beef Wellington or perfectly crunchy macarons, well-toasted bread should be something we can all have. After all, the materials are so simple: a toaster and a slice of bread. It couldn’t be so hard, right? Wrong.&lt;/p&gt;
-
-&lt;p&gt;In fact, perfectly-toasted bread is not merely a simple daily task; it is a science. Consistently creating a crispy, golden-brown exterior and a soft, flavorful interior requires extreme care, from the cooking time to the model of toaster, to even the way the bread is sliced.&lt;/p&gt;
-
-&lt;p&gt;Fortunately for us, this delicacy has been meticulously researched. We even know how to make toast without a toaster. Unfortunately, reading all that information about toast would take a lifetime, so here’s a simple flowchart for all your toast-making needs:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/toast-flowchart.jpg&quot; alt=&quot;Toast flowchart&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So now you know more than you ever wanted to know about making toast. Time to revel in your enlightenment and savor the glorious golden-brown toast. Pretty soon, you’ll be making the perfect toast for lunch and dinner, when friends come over, when you’re hosting a meal for the General Assembly of the United Nations! Or maybe just for breakfast.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 09 Sep 2018 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/how-to-make-toast/</link>
-        <guid isPermaLink="true">http://localhost:4000/how-to-make-toast/</guid>
-        
-        
-        <category>food</category>
-        
-        <category>tutorials</category>
         
       </item>
     

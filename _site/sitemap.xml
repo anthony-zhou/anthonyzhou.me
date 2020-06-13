@@ -46,7 +46,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/daily-schedule/</loc>
-<lastmod>2020-04-16T00:00:00-05:00</lastmod>
+<lastmod>2020-05-17T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/bigandmini-automated-matching/</loc>
+<lastmod>2020-06-13T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/projects/2019-11-10-you-are-not-a-loan/</loc>
@@ -134,6 +138,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page3/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/old-pages/projects-old.html</loc>
