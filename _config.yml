@@ -1,7 +1,7 @@
 # Site
 name: "Anthony Zhou"
 title: "Anthony Zhou"
-description: "Psychology, Economics, Programming, or anything interesting. Updated biweekly."
+description: "Psychology, Economics, Programming, or anything interesting."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
