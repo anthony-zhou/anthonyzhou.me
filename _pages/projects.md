@@ -14,7 +14,8 @@ permalink: /tutorials
     </div>
     <div class="row">
 
-    {% for post in site.projects %}
+    {% assign projects = site.projects | reverse %}
+    {% for post in projects %}
         {% if post.categories contains "tutorials" %}
             {% include featuredbox.html %}
         {% endif %}
