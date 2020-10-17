@@ -5,8 +5,8 @@
     <description>Psychology, Economics, Programming, or anything interesting.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Aug 2020 15:41:28 -0500</pubDate>
-    <lastBuildDate>Sun, 09 Aug 2020 15:41:28 -0500</lastBuildDate>
+    <pubDate>Sat, 17 Oct 2020 18:31:14 -0500</pubDate>
+    <lastBuildDate>Sat, 17 Oct 2020 18:31:14 -0500</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -494,7 +494,7 @@
 
 &lt;p&gt;Emily Mugler, an engineer on the Facebook Reality Labs BCI team, describes how the conventional approach of electroencephalography (EEG), where a cap of electrodes is placed on the subjects head, was just not fast enough for patients with ALS to communicate their ideas effectively. “It sometimes took 70 minutes for a patient to type a single sentence,” she says.&lt;/p&gt;
 
-&lt;p&gt;Later, some labs attempted using electrocorticography (ECoG), which was faster but required a surgical operation inserting electrodes into the brain. Herein lies the problem that plagued past attempt to develop an effective BCI: fast technologies tend to be too invasive, whereas noninvasive solutions tend to be too slow. Researchers found themselves perplexed with the problem of getting inside the brain without physically getting inside the brain.&lt;/p&gt;
+&lt;p&gt;Later, some labs attempted using electrocorticography (ECoG), which was faster but required a surgical operation inserting electrodes into the brain. Herein lies the problem that plagued past attempts to develop an effective BCI: fast technologies tend to be too invasive, whereas noninvasive solutions tend to be too slow. Researchers found themselves perplexed with the problem of getting inside the brain without physically getting inside the brain.&lt;/p&gt;
 
 &lt;p&gt;Facebook Reality Labs, together with the lab at UCSF, plans to solve this problem with near-infrared light: by beaming harmless light waves into the subject’s brain, a wearable device can sense blood oxygenation—much like in an fMRI (functional magnetic resonance imaging) machine—and use the measurements to guess at brain activity. While the system is currently “bulky, slow, and unreliable,” the UCSF researchers have successfully converted thoughts to words in real time and hope to reach a speed of 100 words per minute on a 1000 word vocabulary with an error of less than 17% (&lt;a href=&quot;https://www.nature.com/articles/s41467-019-10994-4&quot;&gt;Read more in their &lt;em&gt;Nature Communications&lt;/em&gt; journal article&lt;/a&gt;).&lt;/p&gt;
 
@@ -534,9 +534,9 @@
 &lt;h3 id=&quot;further-reading-and-works-cited&quot;&gt;Further reading and works cited&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;An article on the Neuralink: https://venturebeat.com/2019/07/16/neuralinks-technology-embeds-tiny-wires-in-the-brain-to-read-electrical-pulses/&lt;/li&gt;
-  &lt;li&gt;The Neuralink plans to start clinical trials by the end of 2020: https://www.cnbc.com/2019/07/17/elon-musk-brain-machine-startup-neuralink-plans-human-trials-in-2020.html&lt;/li&gt;
-  &lt;li&gt;The Wikipedia article talking about glial scarring and broken electrodes: https://en.wikipedia.org/wiki/Neuralink&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://venturebeat.com/2019/07/16/neuralinks-technology-embeds-tiny-wires-in-the-brain-to-read-electrical-pulses/&quot;&gt;VentureBeat on the Neuralink&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cnbc.com/2019/07/17/elon-musk-brain-machine-startup-neuralink-plans-human-trials-in-2020.html&quot;&gt;Neuralink plans to start clinical trials by the end of 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Neuralink&quot;&gt;Wikipedia article describing glial scarring and broken electrodes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 03 Feb 2020 00:00:00 -0600</pubDate>

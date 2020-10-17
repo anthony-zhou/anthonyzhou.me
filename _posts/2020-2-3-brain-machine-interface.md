@@ -63,6 +63,6 @@ No matter what, it remains essential that the public holds Facebook, Neuralink, 
 
 ### Further reading and works cited
 
-- An article on the Neuralink: https://venturebeat.com/2019/07/16/neuralinks-technology-embeds-tiny-wires-in-the-brain-to-read-electrical-pulses/
-- The Neuralink plans to start clinical trials by the end of 2020: https://www.cnbc.com/2019/07/17/elon-musk-brain-machine-startup-neuralink-plans-human-trials-in-2020.html
-- The Wikipedia article talking about glial scarring and broken electrodes: https://en.wikipedia.org/wiki/Neuralink
+- [VentureBeat on the Neuralink](https://venturebeat.com/2019/07/16/neuralinks-technology-embeds-tiny-wires-in-the-brain-to-read-electrical-pulses/)
+- [Neuralink plans to start clinical trials by the end of 2020](https://www.cnbc.com/2019/07/17/elon-musk-brain-machine-startup-neuralink-plans-human-trials-in-2020.html)
+- [Wikipedia article describing glial scarring and broken electrodes](https://en.wikipedia.org/wiki/Neuralink)
