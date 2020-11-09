@@ -5,7 +5,6 @@ date: 2020-5-17
 description: "A sample daily schedule, designed to maximize your productivity."
 image: assets/images/2020/5/schedule.jfif
 author: anthony
-featured: true
 categories: [tutorials, essay]
 tags: [scheduling, productivity, planning]
 ---
