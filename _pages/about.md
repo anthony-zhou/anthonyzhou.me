@@ -23,7 +23,7 @@ comments: true
 
     <p>Maybe, though, there is a thread of sanity amidst the madness: thanks to modern psychology, we now know that "better" is a highly subjective experience, which depends mainly on your reference point. So making the world a better place requires that, in addition to technical skill, we must acquire an understanding of how humans think.</p>
 
-    <p>Now that I have explained exactly nothing about the subject matter of this blog, here's a little about me: I am currently a high school junior at the Texas Academy of Math and Science in Denton, Texas. As you can probably tell from this blog, I'm not quite sure what I want to study in college, because just about everything seems interesting! In my free time, I like to play trumpet, piano, and guitar, rock climb, hike, travel, play soccer, hang out with friends, and eat fried rice (not always at the same time).</p>
+    <p>Now that I have explained exactly nothing about the subject matter of this blog, here's a little about me: I am currently a high school senior at the Texas Academy of Math and Science in Denton, Texas. As you can probably tell from this blog, I'm not quite sure what I want to study in college, because just about everything seems interesting! In my free time, I like to play trumpet, piano, and guitar, rock climb, hike, travel, play soccer, hang out with friends, and eat fried rice (not always at the same time).</p>
 
     <p>But what about the <a href="projects">projects</a> section — how do those play into this? I won't abuse the fried rice metaphor anymore, so I will simply say that my project reports are a way of documenting cool technologies I try out or things I help build that I think have the potential to help other people.</p>
 
