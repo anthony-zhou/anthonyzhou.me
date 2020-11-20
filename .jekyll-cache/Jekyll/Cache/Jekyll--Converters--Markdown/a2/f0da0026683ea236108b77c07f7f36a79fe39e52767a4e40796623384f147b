@@ -1,0 +1,254 @@
+I"R<p>Here’s how to set up a simple barcode scanning function, starting from a basic flutter app. In this tutorial we’ll be using the <a href="https://pub.dev/packages/barcode_scan">barcode_scan Flutter package</a>. The package site has its own tutorial, but the tutorial has some outdated information, so I thought I’d try and correct that here.</p>
+
+<h1 id="set-up-the-configuration-files">Set up the configuration files</h1>
+<p>As listed on <a href="https://pub.dev/packages/barcode_scan">barcode_scan’s about page</a> on Dart Pub, start by making the following changes:</p>
+
+<h2 id="for-android">For Android:</h2>
+
+<p>Add this line to your AndroidManifest.xml to request permission to use the user’s camera:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>    &lt;uses-permission android:name="android.permission.CAMERA" /&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Add this line (to allow the BarcodeScanner activity) to your AndroidManifest.xml. Do NOT modify the name.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>    &lt;activity android:name="com.apptreesoftware.barcodescan.BarcodeScannerActivity"/&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Install the Kotlin plugin for Android Studio or your default editor</p>
+
+<p>Edit your project-level build.gradle file to look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>      buildscript {
+          ext.kotlin_version = '1.2.31'
+          ...
+          dependencies {
+              ...
+              classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+          }
+      }
+      ...
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Edit your app-level build.gradle file to look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>    apply plugin: 'kotlin-android'
+    ...
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+        ...
+    }
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In your pubspec.yaml file, add <code class="language-plaintext highlighter-rouge">barcode_scan: ^1.0.0</code> to the list of dependencies, as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>    dependencies:
+      flutter:
+        sdk: flutter
+      # other dependencies...
+      barcode_scan: ^1.0.0
+
+Note: for some reason many tutorials, including that of the publishers themselves, say to add `barcode_scan: ^0.0.3` to your pubspec.yaml file. This tends to cause problems because 0.0.3 is an unsupported version of this dependency.
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Click “Packages get” in Android Studio or run flutter packages get in your project folder.</p>
+
+<h2 id="for-ios">For iOS:</h2>
+<p>To use on iOS, you must add the the camera usage description to your Info.plist</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>    &lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+    &lt;string&gt;Camera permission is required for barcode scanning.&lt;/string&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="write-the-testing-code">Write the testing code</h1>
+<p>The package barcode_scan should now be successfully installed and configured in your flutter application. Now all that remains is to use the package in your app!</p>
+
+<p>Outside of the formatting, the key to this example is the call to <code class="language-plaintext highlighter-rouge">BarcodeScanner.scan()</code>, which uses the imported package <code class="language-plaintext highlighter-rouge">barcode_scan</code>.</p>
+
+<h2 id="completed-code-in-maindart">Completed code in main.dart</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+</pre></td><td class="rouge-code"><pre>import 'dart:async';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main() {
+  runApp(new MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() =&gt; new _MyAppState();
+}
+
+class _MyAppState extends State&lt;MyApp&gt; {
+  String barcode = "";
+
+  @override
+  initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Barcode Scanner'),
+          ),
+          body: Center(
+            child: Column(
+              children: &lt;Widget&gt;[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Press the button to scan an item:"),
+                ),
+                Container(
+                  child: RaisedButton(onPressed: scan, child: Text("Scan")),
+                  padding: const EdgeInsets.all(8.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(barcode),
+                ),
+              ],
+            ),
+          )),
+    );
+  }
+
+  //scan a barcode, store result in this.barcode
+  Future scan() async {
+    try {
+      //use barcode_scan to scan the barcode
+      String barcode = await BarcodeScanner.scan();
+
+      //if the barcode has been obtained, display it
+      if (barcode.length &gt; 0)
+        setState(
+            () =&gt; this.barcode = "The barcode you scanned was: " + barcode);
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          this.barcode = 'Camera permission was not granted';
+        });
+      } else {
+        setState(() =&gt; this.barcode = 'Unknown error: $e');
+      }
+    } on FormatException {
+      //the user probably just pressed the back button, no need to print an error message
+      setState(() =&gt; this.barcode = '');
+    } catch (e) {
+      setState(() =&gt; this.barcode = 'Unknown error: $e');
+    }
+  }
+}
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

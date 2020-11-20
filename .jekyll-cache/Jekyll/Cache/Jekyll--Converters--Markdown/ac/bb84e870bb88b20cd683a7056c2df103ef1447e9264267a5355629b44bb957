@@ -1,0 +1,60 @@
+I"M	<div class="section" id="projects">
+    <h1 class="section-heading">SELECTED WORK</h1>
+    <ul id="project-list">
+      <li>
+        <a target="_blank" href="https://apalebluedot.world/">
+          <div class="project">
+            <div class="inner">
+              <img class="project-img" src="/assets/images/PaleBlueDot.jpg" alt="pale blue dot" />
+              <h3>A Pale Blue Dot</h3>
+              <p>an homage to Carl Sagan</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.verdantleaf.org">
+          <div class="project">
+            <div class="inner">
+              <img class="project-img" src="/assets/images/leaf-background.jpg" alt="leaf background" />
+              <h3>Verdant Leaf</h3>
+              <p>an article publishing site</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.uta.edu/zhoulab">
+          <div class="project">
+            <div class="inner">
+              <img class="project-img" src="/assets/images/zhoulab-screenshot.png" alt="Zhou Lab Group Website Screenshot" />
+              <h3>Zhou Lab</h3>
+              <p>a university research group website</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="http://www.verdantlife.org/nutrition-calculator.html">
+          <div class="project">
+            <div class="inner">
+              <img class="project-img" src="/assets/images/Kale.jpg" alt="kale" />
+              <h3>Verdant Life</h3>
+              <p>a nutrition calculator</p>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+<div class="section" id="about">
+    <h1 class="section-heading">ABOUT ME</h1>
+    <div class="center-text">
+      <p>I'm a full stack web developer who believes technology should have a conscience. In addition to the above projects, I also contribute to open source. You can find some of my work on <a target="_blank" class="special-link" href="https://github.com/anthony-zhou">Github</a> and
+      <a target="_blank" class="special-link" href="https://www.linkedin.com/in/anthonyzhou42">LinkedIn</a>. </p>
+      <p>When I'm not coding, I enjoy reading, playing trumpet, piano, and guitar, and traveling the world.</p>
+    </div>
+    </div>
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+:ET

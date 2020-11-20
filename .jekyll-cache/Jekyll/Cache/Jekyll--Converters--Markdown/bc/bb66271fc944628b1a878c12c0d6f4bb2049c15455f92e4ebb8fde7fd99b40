@@ -1,0 +1,2 @@
+I"b<p>Here’s how to set up a simple barcode scanning function, starting from a basic flutter app. In this tutorial we’ll be using the <a href="https://pub.dev/packages/barcode_scan">barcode_scan Flutter package</a>. The package site has its own tutorial, but the tutorial has some outdated information, so I thought I’d try and correct that here.</p>
+:ET
