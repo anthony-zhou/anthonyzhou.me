@@ -14,7 +14,7 @@ Liupanshui is a city of incredible contrast. On one side is the “capital of co
 
 The first thing you’ll notice is the air. Old Liupanshui is a steel town, and the air hangs thick with soot. Flecks of coal, ranging from microscopic to corn-flake size, transform the sky into a soupy sort of oatmeal. Once a major employer, the local steel company has taken a hard hit in recent years, burdened by the unprecedented rise of automation. 
 
-We coast through the unkempt streets in a sleek Honda CR-V — my brother and I, my mother and my sister — searching for the past. At last we arrive. In the span of a couple dozen years, the landscape has mutated so that the dilapidated buildings are now hundreds of feet from the road, barely visible through the thick smog. But the corrugated metal roofs and the ancient wooden walls reveal their identity:
+We coast through the unkempt streets in a sleek Honda CR-V — my brother and I, my mother and her sister — searching for the past. At last we arrive. In the span of a couple dozen years, the landscape has mutated so that the dilapidated buildings are now hundreds of feet from the road, barely visible through the thick smog. But the corrugated metal roofs and the ancient wooden walls reveal their identity:
 
 This is the site of my mother’s childhood home. We pull off to the shoulder and snap a few photos. Then we pile back in the car. As we drive on, my mom regales us with tales of the past. when they were little, she and my aunt would have to make tea to cover up the flavor of water, because it was tainted thick with charcoal and chemicals. 
 
