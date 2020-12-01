@@ -57,6 +57,10 @@
 <lastmod>2020-10-15T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/book-recommendations-2020/</loc>
+<lastmod>2020-12-01T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/projects/2019-11-10-you-are-not-a-loan/</loc>
 <lastmod>2019-11-10T00:00:00-06:00</lastmod>
 </url>
@@ -89,6 +93,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/drafts/2020-11-20-body-temperature-aging/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/drafts/2020-12-1-thinking-fast-and-slow/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/drafts/2020-6-26-social-responsibility/</loc>
@@ -154,6 +161,12 @@
 <loc>http://localhost:4000/category/media/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/category/books/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/reading/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/page2/</loc>
 </url>
 <url>
@@ -161,6 +174,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/old-pages/projects-old.html</loc>
-<lastmod>2020-04-14T16:20:05-05:00</lastmod>
+<lastmod>2020-12-01T11:01:52-06:00</lastmod>
 </url>
 </urlset>
