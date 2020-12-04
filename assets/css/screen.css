@@ -754,9 +754,9 @@ span.navigation {
     text-align: center;
 }
 
-.pagination {
+/* .pagination {
     display: block;
-}
+} */
 
 iframe {
     max-width: 100%;

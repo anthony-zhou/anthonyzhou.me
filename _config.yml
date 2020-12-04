@@ -42,6 +42,8 @@ jekyll-archives:
 
 # Pagination
 paginate: 6
+paginate_trail: 5
+paginate_show_first_and_last: false
 paginate_path: /page:num/
 
 # Other
