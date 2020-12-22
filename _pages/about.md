@@ -16,7 +16,7 @@ comments: true
 
     <ul>
         <li>Science news (in <a href="/">Blog</a>)</li>
-        <li>Personal projects (in <a href="/projects">Projects</a>)</li>
+        <li>Personal projects (in <a href="/tutorials">Projects</a>)</li>
     </ul>
 
     <p>Occasionally, I'll mix things up a bit by blogging about my personal experiences and opinions. As a food lover, I hope this site will be like a nice big helping of my mom's fried rice — sure, the ingredients don't always sound like they go together (probably because they're all leftovers from yesterday), but if you give it a try it just makes sense. Hopefully my articles on economics, psychology, and Florentine security guards will go together just as well as edamame and scallions and fajita chicken.</p>
