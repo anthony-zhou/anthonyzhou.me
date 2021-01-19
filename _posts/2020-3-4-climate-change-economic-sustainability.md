@@ -5,7 +5,6 @@ date: 2020-3-4
 description: "An analysis of investment incentives reveals a possible light at the end of the tunnel for the climate crisis."
 image: assets/images/economics-of-sustainability.png
 author: anthony
-featured: true
 categories: [essay, economics]
 tags: [climate change, investment, sustainability]
 ---
