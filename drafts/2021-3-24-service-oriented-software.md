@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Writing reliable software at an early-stage startup"
-date: 2021-2-15
+date: 2021-3-24
 description: "Building software reliably and quickly in a service-oriented world."
 image: assets/images/2020/8/browserscenario.png
 author: anthony
