@@ -17,7 +17,7 @@ While I don't hope to provide all the answers to building technology at a startu
 
 The best measure of a great new technology is that it becomes boring quickly. Like, duh, who *wouldn't* use a countertop radiation chamber to heat their Hot Pockets faster! That's how we know the microwave was successful.
 
-To get to the point of being boring, technology has to be reliable enough that people can take it for granted, and make it a part of their daily lives. When it comes to software, reliability doesn't just improve the user experience -- with the right principles in mind, writing reliable code speeds up the development process. This way, we can spend less time fixing bugs, and more time creating awesome new experiences for our users.
+To get to the point of being boring, technology has to be reliable enough that people can take it for granted and make it a part of their daily lives. When it comes to software, reliability doesn't just improve the user experience -- with the right principles in mind, writing reliable code speeds up the development process. This way, we can spend less time fixing bugs, and more time creating awesome new experiences for our users.
 
 # Setting the scene
 
