@@ -139,7 +139,7 @@ Our goal is usually to notice problems before the users do, which means setting 
 
 With these two main causes in mind (browser compatibility and edge cases), our production error tracking software has two simple requirements: it needs to report the user's browser, device, and (ideally) identity, and it needs to enrich errors with custom context -- like, for example, the text you were typing into that emoji-unfriendly textbox when it suddenly decided to break. These requirements are the same regardless of whether your app is a nutrition tracker or Instagram for dogs. 
 
-WHen a feature is not unique to your app's main purpose, you might consider using an external service. Bug tracking platforms like Sentry and Bugsnag are getting better every day, and are relatively simple to set up.
+When a feature is not unique to your app's main purpose, you might consider using an external service. Bug tracking platforms like Sentry and Bugsnag are getting better every day, and are relatively simple to set up.
 
 One caveat: bug tracking softwares can be pricey, so you'll have to weigh the benefits of production bug detection with the material cost of the service. Compared to integration testing, bug reporting in a service-oriented architecture is more important at a larger scale, where there are many more edge cases and strange browsers to contend with. 
 
