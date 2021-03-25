@@ -15,7 +15,7 @@ At a startup, the rapid pace of growth demands that every team member learns qui
 
 While I don't hope to provide all the answers to building technology at a startup, I would like to share some of the lessons I've learned in the past year. Most importantly, I hope to spark a conversation on the best way to approach software at an early-stage startup, and on taking that software to scale. 
 
-The best measure of a great new technology is that it becomes boring quickly. Like, duh, who *wouldn't* use a radiation chamber to heat their Hot Pockets faster!
+The best measure of a great new technology is that it becomes boring quickly. Like, duh, who *wouldn't* use a countertop radiation chamber to heat their Hot Pockets faster! That's how you know the microwave was successful.
 
 To get to the point of being boring, technology has to be reliable enough that people can take it for granted, and make it a part of their daily lives. When it comes to software, reliability doesn't just improve the user experience -- with the right principles in mind, writing reliable code speeds up the development process. This way, we can spend less time fixing bugs, and more time creating awesome new experiences for our users.
 
