@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Writing reliable software at an early-stage startup"
+title: "Writing reliable software in a service-oriented architecture"
 date: 2021-3-24
 description: "Building software reliably and quickly in a service-oriented world."
 image: assets/images/2021/3/avocado.jpg
