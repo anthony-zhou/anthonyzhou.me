@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Thoughts on Futarchy"
-date: 2021-2-15
+date: 2021-12-13
 description: "A new system of governance"
-image: assets/images/2020/8/browserscenario.png
+image: assets/images/2021/12/market.jpg
 author: anthony
 categories: [politics, economics]
 tags: [prediction, voting]
