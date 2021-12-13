@@ -2,7 +2,7 @@
 layout: post
 title: "Thoughts on Futarchy"
 date: 2021-2-15
-description: "A new system of government"
+description: "A new system of governance"
 image: assets/images/2020/8/browserscenario.png
 author: anthony
 categories: [politics, economics]
@@ -38,3 +38,9 @@ If you had some mechanism (ideally market-based) to successfully identify the mo
 Assuming these sorts of systems can be implemented, futarchy looks like a promising improvement to democracy, one in which we can not only give voice to our personal values but also benefit from the knowledge of experts in their chosen domains. 
 
 But the implementation is precisely the hard part -- it's easy to see plenty of ways this system could go completely wrong, and there are many unresolved uncertainties. As a result, the most logical first step is to design a small-scale test of the system, perhaps at the scale of a local government, as a way of seeing whether futarchy makes any sense whatsoever. 
+
+## Further Reading
+
+- [Robin Hanson's original manifesto](http://mason.gmu.edu/~rhanson/futarchy.html)
+- [Wikipedia on Prediction Markets](https://en.wikipedia.org/wiki/Prediction_market)
+- [Ethereum blog article introducing futarchy](https://blog.ethereum.org/2014/08/21/introduction-futarchy/)
