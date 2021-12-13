@@ -5,7 +5,6 @@ date: 2021-1-19
 description: "The loneliness problem, Social Networking 2.0, and the promise of better digital connection."
 image: assets/images/2021/1/alsopeople.jpg
 author: anthony
-featured: true
 categories: [psychology, business, society]
 tags: [loneliness, connection, social networks]
 ---
