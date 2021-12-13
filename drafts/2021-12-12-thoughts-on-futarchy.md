@@ -15,7 +15,7 @@ Despite its shortcomings, we have learned to accept democracy as our main form o
 
 In fact, even the founders of American democracy (now the model for most democracies globally) recognized that pure democracy would not be effective. That's how we ended up with elected representatives -- the idea is that most people know little to nothing about the implications of this or that policy, so they should not be entrusted with those decisions. Instead, a small, educated elite (i.e. Congress) will make informed decisions on behalf of their constituents, in a way that benefits everyone. As a further enhancement, Congress will receive input from experts (often industry professionals, lobbyists, and academics), who provide important context for making policy in a given sector.
 
-Clearly, though, this system doesn't really work as intended. Representatives, once elected, often start acting selfishly. Even if not, they tend to capitulate to powerful corporate lobbying arms, and make policy decisions that favor the powerful at the expense of their actual constitutents.
+Clearly, though, this system doesn't really work as intended. Representatives, once elected, often start acting selfishly. Even if not, they tend to capitulate to powerful corporate lobbying arms, and make policy decisions that favor the powerful at the expense of their actual constituents.
 
 Even if their solution was imperfect, the problem identified by the Founding Fathers is a real one: if not everyone is equally capable of making beneficial decisions, then who should be entitled to define policies? In other words, how can we make a compromise between the values of pure democracy and the differential ability of experts to make good decisions?
 
