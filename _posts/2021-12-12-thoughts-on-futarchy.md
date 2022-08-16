@@ -5,7 +5,6 @@ date: 2021-12-13
 description: "A new system of governance"
 image: assets/images/2021/12/market.jpg
 author: anthony
-featured: true
 categories: [politics, economics]
 tags: [prediction, voting]
 ---
