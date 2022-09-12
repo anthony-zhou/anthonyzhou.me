@@ -23,9 +23,9 @@ comments: true
 
     <p>Maybe, though, there is a thread of sanity amidst the madness: thanks to modern psychology, we now know that "better" is a highly subjective experience, which depends mainly on your reference point. So making the world a better place requires that, in addition to technical skill, we must acquire an understanding of how humans think.</p>
 
-    <p>Now that I have explained exactly nothing about the subject matter of this blog, here's a little about me: I am currently a college freshman at Columbia University in New York.  In my free time, I like to play trumpet, piano, and guitar, rock climb, hike, travel, play soccer, hang out with friends, and eat fried rice (not always at the same time).</p>
+    <p>Now that I have explained exactly nothing about the subject matter of this blog, here's a little about me: I am currently a college undergrad at Columbia University in New York.  In my free time, I like to play trumpet, piano, and guitar, rock climb, hike, travel, play soccer, hang out with friends, and eat fried rice (not always at the same time).</p>
 
-    <p>But what about the <a href="projects">projects</a> section — how do those play into this? I won't abuse the fried rice metaphor anymore, so I will simply say that my project reports are a way of documenting cool technologies I try out or things I help build that I think have the potential to help other people.</p>
+    <p>But what about the <a href="tutorials">projects</a> section — how do those play into this? I won't abuse the fried rice metaphor anymore, so I will simply say that my project reports are a way of documenting cool technologies I try out or things I help build that I think have the potential to help other people.</p>
 
     <p>So that, in just under 300 words, is what you can expect from this website — I might come back later and revise this page if I ever decide to do a complete 180 and start blogging about fashion or something. For now, though, I will take a break and go eat some fajita chicken fried rice. If you ever want to chat, drop me a line at <a href="mailto:azhou.blog@gmail.com">azhou.blog@gmail.com</a>!</p>
 
