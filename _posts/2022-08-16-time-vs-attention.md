@@ -5,7 +5,6 @@ date: 2022-08-16
 description: "Difference between managing time and managing attention."
 image: assets/images/2022/08/clock.jpg
 author: anthony
-featured: true
 categories: [productivity]
 tags: [time, focus, attention, decision-making]
 ---
