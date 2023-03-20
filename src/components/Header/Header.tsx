@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import HorizontalLine from '@/widgets/HorizontalLine';
 
 export default function Header() {
   const links = [
@@ -10,15 +11,18 @@ export default function Header() {
   ];
 
   return (
-    <div className="flex justify-between">
-      <div>Logo</div>
-      <div className="flex">
-        {links.map(({ href, label }) => (
-          <Link href={href} key={`${href}${label}`}>
-            {label}
-          </Link>
-        ))}
+    <>
+      <div className="flex justify-between pt-8">
+        <div>Logo</div>
+        <div className="flex space-x-12">
+          {links.map(({ href, label }) => (
+            <Link href={href} key={`${href}${label}`} className="opacity-50 hover:opacity-100 transition-opacity">
+              {label}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+      <HorizontalLine />
+    </>
   );
 }

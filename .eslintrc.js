@@ -9,6 +9,14 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-    'import/extensions': ['off']
+    'import/extensions': ['off'],
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": [
+          "jsx", "global"
+        ]
+      }
+    ]
   }
 }
