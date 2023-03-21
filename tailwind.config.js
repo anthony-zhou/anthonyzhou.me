@@ -12,6 +12,8 @@ module.exports = {
         'display': ['var(--font-righteous)', ...fontFamily.sans],
       },
     },
-    plugins: [],
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

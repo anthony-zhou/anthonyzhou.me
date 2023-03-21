@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <>
       <div className="flex justify-between pt-8">
-        <div>Logo</div>
+        <Link href="/"><div>Logo</div></Link>
         <div className="flex space-x-12">
           {links.map(({ href, label }) => (
             <Link href={href} key={`${href}${label}`} className="opacity-50 hover:opacity-100 transition-opacity">
