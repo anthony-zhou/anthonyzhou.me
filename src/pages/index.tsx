@@ -7,7 +7,7 @@ import Resources from '@/components/HomePage/Resources';
 import { getSortedPostsData } from '@/lib/posts';
 
 type HomeProps = {
-  allPostsData: { date: string; title: string; id: string }[];
+  allPostsData: { date: string; title: string; id: string, categories: any[] }[];
 };
 
 export default function Home({ allPostsData }: HomeProps) {
@@ -24,13 +24,15 @@ export default function Home({ allPostsData }: HomeProps) {
       </div>
       <HorizontalLine />
       <div>
-        <h2 className="text-2xl font-display text-center">Latest</h2>
+        <h2 className="text-2xl font-display text-center mb-2">Latest</h2>
         <table className="w-full">
           <tbody>
-            {allPostsData.map(({ id, date, title }) => (
-              <tr key={id} onClick={() => router.push(`posts/${id}`)}>
+            {allPostsData.slice(0, 6).map(({
+              id, date, title, categories,
+            }) => (
+              <tr className="cursor-pointer" key={id} onClick={() => router.push(`posts/${id}`)}>
                 <td width="15%">{date}</td>
-                <td width="15%">Philosophy</td>
+                <td width="15%">{categories[categories.length - 1]}</td>
                 <td>{title}</td>
               </tr>
             ))}

@@ -6,6 +6,13 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+const formatDate = (date: Date) => {
+  const year = date.getFullYear();
+  const monthName = date.toLocaleString('default', { month: 'long' });
+  const day = date.getDate();
+  return `${day} ${monthName.slice(0, 3)} ${year}`;
+};
+
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
@@ -19,16 +26,21 @@ export function getSortedPostsData() {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
+    const result = {
+      ...matterResult.data,
+      date: formatDate(new Date(matterResult.data.date)),
+      isoDate: new Date(matterResult.data.date).toISOString(),
+    };
 
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...result,
     };
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a.isoDate < b.isoDate) {
       return 1;
     }
     return -1;
