@@ -62,6 +62,11 @@ export async function getPostData(id: string) {
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
+  const result = {
+    ...matterResult.data,
+    date: formatDate(new Date(matterResult.data.date)),
+    isoDate: new Date(matterResult.data.date).toISOString(),
+  };
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
@@ -73,6 +78,6 @@ export async function getPostData(id: string) {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...result,
   };
 }
