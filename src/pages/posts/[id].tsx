@@ -7,6 +7,7 @@ type PostProps = {
   postData: {
     title: string;
     date: string;
+    description: string;
     contentHtml: string;
   }
 };
@@ -18,7 +19,13 @@ export default function Post({ postData }: PostProps) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className="text-3xl">{postData.title}</h1>
+        <h1 className="text-3xl font-bold mb-4">{postData.title}</h1>
+        <div className="text-2xl">{postData.description}</div>
+        <div className="text-sm mb-4">
+          Anthony Zhou |
+          {' '}
+          {postData.date}
+        </div>
 
         <article className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
