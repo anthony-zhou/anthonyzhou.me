@@ -1,60 +1,101 @@
 import React from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import HorizontalLine from '@/widgets/HorizontalLine';
-import Resources from '@/components/HomePage/Resources';
 import { getSortedPostsData } from '@/lib/posts';
+import Footer from '@/components/Footer';
 
 type HomeProps = {
   allPostsData: { date: string; title: string; id: string, categories: any[] }[];
+  tutorialsData: { date: string; title: string; id: string, categories: any[] }[];
 };
 
-export default function Home({ allPostsData }: HomeProps) {
+export default function Home({ allPostsData, tutorialsData }: HomeProps) {
   const router = useRouter();
+
+  const projects = [
+    {
+      emoji: '🦦',
+      title: 'Snapnotes',
+      description: 'AI-powered guided reader to read texts faster. Work in progress.',
+      link: 'https://snapnotes.app',
+    },
+    {
+      emoji: '🌲',
+      title: 'TreeChat',
+      description: 'A chat app that plants trees',
+      link: 'https://treechat.org',
+    },
+    {
+      emoji: '💬',
+      title: 'Big & Mini',
+      description: 'Platform to connect youth and seniors for 1:1 conversations',
+      link: 'https://bigandmini.org',
+    },
+  ];
 
   return (
     <Layout>
-      <div className="md:flex space-x-10 justify-between">
-        <div className="flex flex-col justify-start">
-          <h1 className="text-5xl font-display mb-10 mt-10">Anthony Zhou</h1>
-          <p>Psychology, Economics, Programming, or anything interesting.</p>
+      <div className="text-[#4B4B4B]">
+        <div className="mb-5 mt-5">I study computer science and cognitive science at Columbia University in New York.</div>
+        <div className="mb-2">here are some of my projects:</div>
+
+        <div className="ml-10">
+          {projects.map(({
+            emoji, title, description, link,
+          }) => (
+            <Link target="_blank" href={link} className="group">
+              <div className="flex rounded-md px-5 py-5 bg-gray-300 transition bg-opacity-0 group-hover:bg-opacity-50">
+                <div className="mr-1">{emoji}</div>
+                <div className="font-bold w-32">{title}</div>
+                <div className="">{description}</div>
+              </div>
+            </Link>
+          ))}
+
         </div>
-        <Image className="rounded-3xl" src="/images/claymation_piano.png" alt="Claymation piano with bookshelf in background." width={260} height={260} />
+
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold">essays</h2>
+          <div className="italic">what I&rsquo;ve been thinking about lately</div>
+
+          {allPostsData.slice(0, 6).map(({
+            id, date, title,
+          }) => (
+            <Link href={`/posts/${id}`} key={id} className="flex justify-between transition py-2 px-3 rounded-md hover:bg-gray-300">
+              <h2>{title}</h2>
+              <div className="w-32">{date}</div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold">tutorials</h2>
+          <div className="italic">things I&rsquo;ve learned</div>
+          {tutorialsData.slice(0, 6).map(({
+            id, date, title,
+          }) => (
+            <Link href={`/posts/${id}`} key={id} className="flex justify-between transition py-2 px-3 rounded-md hover:bg-gray-300">
+              <h2>{title}</h2>
+              <div className="w-32">{date}</div>
+            </Link>
+          ))}
+        </div>
       </div>
       <HorizontalLine />
-      <div>
-        <h2 className="text-2xl font-display text-center mb-2">Latest</h2>
-        <table className="w-full">
-          <tbody>
-            {allPostsData.slice(0, 6).map(({
-              id, date, title, categories,
-            }) => (
-              <tr className="cursor-pointer" key={id} onClick={() => router.push(`posts/${id}`)}>
-                <td width="15%">{date}</td>
-                <td width="15%">{categories[categories.length - 1]}</td>
-                <td>{title}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="mt-6">
-        <h2 className="text-2xl font-display text-center">My Favorites</h2>
-        <p>Favorite blog posts go here.</p>
-      </div>
-      <HorizontalLine />
-      <Resources />
-      <HorizontalLine />
+      <Footer />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const tutorialsData = getSortedPostsData({ category: 'tutorials' });
   return {
     props: {
       allPostsData,
+      tutorialsData,
     },
   };
 }

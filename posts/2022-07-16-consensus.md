@@ -6,7 +6,7 @@ description: "A foray into the history of distributed computing and how it relat
 image: assets/images/2022/07/network_earth.jpg
 author: anthony
 featured: true
-categories: [programming, technology]
+categories: [programming, technology, tutorials]
 tags: [blockchain, distributed-computing, cryptography]
 ---
 

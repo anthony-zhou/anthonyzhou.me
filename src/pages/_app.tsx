@@ -1,15 +1,15 @@
 import React from 'react';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import { Righteous, Roboto } from 'next/font/google';
+// import { Righteous } from 'next/font/google';
 
-const righteous = Righteous({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-righteous',
-});
+// const righteous = Righteous({
+//   subsets: ['latin'],
+//   weight: '400',
+//   variable: '--font-righteous',
+// });
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
+// const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>
         {`
         :root {
-          font-family: ${roboto.style.fontFamily};
-          --font-righteous: ${righteous.style.fontFamily};
+          background-color: #F5F4F0;
+          font-family: 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, sans-serif;
         }
         `}
 

@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['var(--font-righteous)', ...fontFamily.sans],
+        'display': ['Helvetica Neue', ...fontFamily.sans],
       },
     },
   },

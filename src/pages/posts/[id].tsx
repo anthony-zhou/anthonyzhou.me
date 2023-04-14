@@ -19,15 +19,14 @@ export default function Post({ postData }: PostProps) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className="text-3xl font-bold mb-4">{postData.title}</h1>
-        <div className="text-2xl">{postData.description}</div>
+        <h1 className="text-3xl font-bold mt-10">{postData.title}</h1>
+        <div className="text-2xl mb-4 italic">{postData.description}</div>
         <div className="text-sm mb-4">
           Anthony Zhou |
           {' '}
           {postData.date}
         </div>
-
-        <article className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <article className="prose-lg" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
   );

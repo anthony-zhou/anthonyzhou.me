@@ -13,7 +13,7 @@ const formatDate = (date: Date) => {
   return `${day} ${monthName.slice(0, 3)} ${year}`;
 };
 
-export function getSortedPostsData() {
+export function getSortedPostsData(options?: { category: string }) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData: any[] = fileNames.map((fileName) => {
@@ -38,13 +38,19 @@ export function getSortedPostsData() {
       ...result,
     };
   });
+
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  const sortedData = allPostsData.sort((a, b) => {
     if (a.isoDate < b.isoDate) {
       return 1;
     }
     return -1;
   });
+
+  if (options?.category) {
+    return sortedData.filter(({ categories: c }) => c.includes(options?.category));
+  }
+  return sortedData;
 }
 
 export function getAllPostIds() {
