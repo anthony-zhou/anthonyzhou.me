@@ -38,10 +38,21 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
   return (
     <Layout>
       <div className="text-[#4B4B4B]">
-        <div className="mb-5 mt-5">I study computer science and cognitive science at Columbia University in New York.</div>
-        <div className="mb-2">here are some of my projects:</div>
+        {/* <div className="border-2 border-black rounded-xl px-10 py-5 mt-5"> */}
+        <h1 className="text-xl font-bold mb-5">programmer, writer, student</h1>
+        <div className="mb-2">
+          I study
+          {' '}
+          computer science and cognitive science
+          {' '}
+          @
+          {' '}
+          Columbia.
+        </div>
 
-        <div className="ml-10">
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold">projects</h2>
+          <div className="italic">what I&rsquo;ve been working on</div>
           {projects.map(({
             emoji, title, description, link,
           }) => (
@@ -55,6 +66,7 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
           ))}
 
         </div>
+        {/* </div> */}
 
         <div className="mt-6">
           <h2 className="text-2xl font-bold">essays</h2>

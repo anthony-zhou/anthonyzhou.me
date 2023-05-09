@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import HorizontalLine from '@/widgets/HorizontalLine';
 
 export default function Header() {
   const links = [
     { href: '/writing', label: 'Writing' },
     { href: '/books', label: 'Books' },
-    { href: '/projects', label: 'Projects' },
+    // { href: '/projects', label: 'Projects' },
     { href: '/about', label: 'About' },
   ];
 
