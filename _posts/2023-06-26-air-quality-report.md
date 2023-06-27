@@ -44,7 +44,7 @@ In order to solve PG&E’s methane problems, we would need a much better device 
 
 So utility companies didn’t seem like a good first customer. What about weather forecasting? The key question here was whether local sensor networks could improve forecasting. 
 
-In the past few decades, weather forecasts have been improving by about a day each decade. In other words, if in 2000 we could predict 8 days in advance with 90% accuracy, by 2010 we could predict 9 days in advance with 90% accuracy. However, we are projected to lose a day of prediction with every degree in global warming — so our weather models need to improve if we are to preserve our predictive power. 
+In the past few decades, weather forecasts have been improving by about a day each decade. In other words, if in 2000 we could predict 8 days in advance with 90% accuracy, by 2010 we could predict 9 days in advance with 90% accuracy. However, we are projected to lose a day of prediction with every 3 degrees in global warming — so our weather models need to improve if we are to preserve our predictive power. 
 
 One of the main ways we could improve our weather forecasting is by incorporating deep learning into forecasting models. The Dark Sky founders did this a few years ago, and their results were good enough that they got acquired by Apple and incorporated into Apple weather forecasts. But deep learning thrives on good input data, so improving deep learning forecasts also requires that we improve the quality and quantity of underlying data that we collect — this is precisely the gap filled by local sensor networks. 
 
