@@ -10,7 +10,7 @@ categories: [climate, report]
 tags: [air, pollution, sensors]
 ---
 
-I spent last summer (2022) working to found a startup with the goal of improving air quality. By August 2022, we decided to shut down. But why? Perhaps the best reason is that our other opportunities were more exciting. However, even that answer begs the question of why this air quality project wasn’t as exciting in the first place. 
+I spent last summer working to found a startup with the goal of improving air quality. By August 2022, we decided to shut down. But why? Perhaps the best reason is that our other opportunities were more exciting. However, even that answer begs the question of why this air quality project wasn’t as exciting in the first place. 
 
 To make the story short, I would cite two reasons for failure. First, sensor networks would require a lot of public funds, and those funds could be used more effectively. Instead of pursuing local sensors, survey-based and remote-sensing based approaches would likely be sufficient. More importantly, we found that low-cost sensors are not quite precise enough yet. To build our sensor network, we would need to perform hardware research to design better devices. 
 
