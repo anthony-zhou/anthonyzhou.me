@@ -19,7 +19,7 @@ comments: true
         <li>Personal projects (in <a href="/tutorials">Projects</a>)</li>
     </ul>
 
-    <p>Occasionally, I'll mix things up a bit by blogging about my personal experiences and opinions. As a food lover, I hope this site will be like a nice big helping of my mom's fried rice — sure, the ingredients don't always sound like they go together (probably because they're all leftovers from yesterday), but if you give it a try it just makes sense. Hopefully my articles on economics, psychology, and Florentine security guards will go together just as well as edamame and scallions and fajita chicken.</p>
+    <p>Occasionally, I'll mix things up a bit by blogging about my personal experiences and opinions. As a food lover, I hope this site will be like a nice big helping of my mom's fried rice — sure, the ingredients don't always sound like they go together (probably because they're all leftovers from yesterday) — but if you give it a try it just makes sense. Hopefully my articles on economics, psychology, and Florentine security guards will go together just as well as edamame and scallions and fajita chicken.</p>
 
     <p>Maybe, though, there is a thread of sanity amidst the madness: thanks to modern psychology, we now know that "better" is a highly subjective experience, which depends mainly on your reference point. So making the world a better place requires that, in addition to technical skill, we must acquire an understanding of how humans think.</p>
 
