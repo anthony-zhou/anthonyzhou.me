@@ -28,6 +28,7 @@ export function getSortedPostsData(options?: { category: string }) {
     const matterResult = matter(fileContents);
     const result = {
       ...matterResult.data,
+      preview: `${matterResult.content.split(' ').slice(0, 25).join(' ')}...`,
       date: formatDate(new Date(matterResult.data.date)),
       isoDate: new Date(matterResult.data.date).toISOString(),
     };

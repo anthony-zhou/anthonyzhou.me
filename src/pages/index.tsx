@@ -6,9 +6,10 @@ import HorizontalLine from '@/widgets/HorizontalLine';
 import { getSortedPostsData } from '@/lib/posts';
 import Footer from '@/components/Footer';
 import Heading from '@/components/Heading';
+import ArticleCard from '@/components/ArticleCard/ArticleCard';
 
 type HomeProps = {
-  allPostsData: { date: string; title: string; id: string, categories: any[] }[];
+  allPostsData: { date: string; title: string; id: string, categories: any[], image: string, preview: string }[];
   tutorialsData: { date: string; title: string; id: string, categories: any[] }[];
 };
 
@@ -47,38 +48,16 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
         <Heading text="Featured" />
 
         <div className="mt-6">
-          <h2 className="text-2xl font-bold">projects</h2>
-          <div className="italic">what I&rsquo;ve been working on</div>
-          {projects.map(({
-            emoji, title, description, link,
-          }) => (
-            <Link target="_blank" href={link} className="group">
-              <div className="flex rounded-md px-5 py-5 bg-gray-300 transition bg-opacity-0 group-hover:bg-opacity-50">
-                <div className="mr-1">{emoji}</div>
-                <div className="font-bold w-32">{title}</div>
-                <div className="">{description}</div>
-              </div>
-            </Link>
-          ))}
-
-        </div>
-        {/* </div> */}
-
-        <div className="mt-6">
-          <h2 className="text-2xl font-bold">essays</h2>
-          <div className="italic">what I&rsquo;ve been thinking about lately</div>
-
-          {allPostsData.slice(0, 6).map(({
-            id, date, title,
-          }) => (
-            <Link href={`/posts/${id}`} key={id} className="flex justify-between transition py-2 px-3 rounded-md hover:bg-gray-300">
-              <h2>{title}</h2>
-              <div className="w-32">{date}</div>
-            </Link>
-          ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            {allPostsData.slice(0, 6).map(({
+              id, date, title, image, preview,
+            }) => (
+              <ArticleCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <h2 className="text-2xl font-bold">tutorials</h2>
           <div className="italic">things I&rsquo;ve learned</div>
           {tutorialsData.slice(0, 6).map(({
@@ -89,7 +68,7 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
               <div className="w-32">{date}</div>
             </Link>
           ))}
-        </div>
+        </div> */}
       </div>
       <HorizontalLine />
       <Footer />
