@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import HorizontalLine from '@/widgets/HorizontalLine';
 import { getSortedPostsData } from '@/lib/posts';
 import Footer from '@/components/Footer';
+import Heading from '@/components/Heading';
 
 type HomeProps = {
   allPostsData: { date: string; title: string; id: string, categories: any[] }[];
@@ -37,18 +38,13 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
 
   return (
     <Layout>
-      <div className="text-[#4B4B4B]">
-        {/* <div className="border-2 border-black rounded-xl px-10 py-5 mt-5"> */}
-        <h1 className="text-xl font-bold mb-5">programmer, writer, student</h1>
-        <div className="mb-2">
-          I study
-          {' '}
-          computer science and cognitive science
-          {' '}
-          @
-          {' '}
-          Columbia.
+      <div>
+        <div className="py-10">
+          <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>
+          <h1 className="text-xl mb-5">Psychology, Economics, Programming, or anything interesting.</h1>
         </div>
+
+        <Heading text="Featured" />
 
         <div className="mt-6">
           <h2 className="text-2xl font-bold">projects</h2>

@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'display': ['Helvetica Neue', ...fontFamily.sans],
+        'righteous': ['Righteous', ...fontFamily.sans]
       },
     },
   },

@@ -10,21 +10,22 @@ import { Merriweather } from 'next/font/google';
 //   variable: '--font-righteous',
 // });
 
-const merriweather = Merriweather({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-merriweather',
-});
+// const merriweather = Merriweather({
+//   subsets: ['latin'],
+//   weight: '400',
+//   variable: '--font-merriweather',
+// });
 
 // const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={merriweather.className}>
+    <main>
       <style jsx global>
         {`
         :root {
-          background-color: #FCFCFA;
+          {/* background-color: #FCFCFA; */}
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
           {/* font-family: 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, sans-serif; */}
           {/* font-family: 'Merriweather'; */}
         }
