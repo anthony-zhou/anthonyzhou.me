@@ -1,3 +1,3 @@
-import Header from './ArticleCard';
+import ArticleCard from './ArticleCard';
 
-export default Header;
+export default ArticleCard;

@@ -54,6 +54,10 @@ export function getSortedPostsData(options?: { category: string }) {
   return sortedData;
 }
 
+export function getFeaturedPostsData() {
+  return getSortedPostsData().filter(({ featured }) => featured);
+}
+
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => ({

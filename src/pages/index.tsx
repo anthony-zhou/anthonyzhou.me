@@ -3,17 +3,20 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import HorizontalLine from '@/widgets/HorizontalLine';
-import { getSortedPostsData } from '@/lib/posts';
+import { getFeaturedPostsData, getSortedPostsData } from '@/lib/posts';
 import Footer from '@/components/Footer';
 import Heading from '@/components/Heading';
-import ArticleCard from '@/components/ArticleCard/ArticleCard';
+import ArticleCard from '@/components/ArticleCard';
+import FeaturedCard from '@/components/FeaturedCard';
 
 type HomeProps = {
-  allPostsData: { date: string; title: string; id: string, categories: any[], image: string, preview: string }[];
-  tutorialsData: { date: string; title: string; id: string, categories: any[] }[];
+  allPostsData: { date: string; title: string; id: string, categories: any[],
+    image: string, preview: string }[];
+  featuredPostsData: { date: string; title: string; id: string, categories: any[],
+    image: string, preview: string }[];
 };
 
-export default function Home({ allPostsData, tutorialsData }: HomeProps) {
+export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
   const router = useRouter();
 
   const projects = [
@@ -47,12 +50,24 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
 
         <Heading text="Featured" />
 
+        <div className="my-6 mb-10">
+          <div className="grid md:grid-cols-2 gap-8">
+            {featuredPostsData.map(({
+              id, date, title, image, preview, categories,
+            }) => (
+              <FeaturedCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
+            ))}
+          </div>
+        </div>
+
+        <Heading text="All Posts" />
+
         <div className="mt-6">
           <div className="grid md:grid-cols-3 gap-8">
-            {allPostsData.slice(0, 6).map(({
-              id, date, title, image, preview,
+            {allPostsData.slice(0, 20).map(({
+              id, date, title, image, preview, categories,
             }) => (
-              <ArticleCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} />
+              <ArticleCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
             ))}
           </div>
         </div>
@@ -77,12 +92,13 @@ export default function Home({ allPostsData, tutorialsData }: HomeProps) {
 }
 
 export async function getStaticProps() {
+  const featuredPostsData = getFeaturedPostsData();
   const allPostsData = getSortedPostsData();
-  const tutorialsData = getSortedPostsData({ category: 'tutorials' });
+  // const tutorialsData = getSortedPostsData({ category: 'tutorials' });
   return {
     props: {
       allPostsData,
-      tutorialsData,
+      featuredPostsData,
     },
   };
 }

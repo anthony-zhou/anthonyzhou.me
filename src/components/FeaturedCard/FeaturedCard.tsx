@@ -12,13 +12,15 @@ type ArticleProps = {
   categories: string[]
 };
 
-export default function ArticleCard({
+export default function FeaturedCard({
   url, title, preview, author, date, image, categories,
 }: ArticleProps) {
   return (
     <Link href={url}>
-      <div className="flex flex-col h-full border-2 border-gray-100 rounded-md">
-        <img alt={title} src={image} className="w-full object-contain" />
+      <div className="flex h-full border-2 border-gray-100 rounded-md">
+        <div className="h-full">
+          <img alt={title} src={image} className="h-full object-cover" />
+        </div>
         <div className="p-5 flex flex-col justify-between h-full">
           <div>
             <h1 className="font-bold text-xl">{title}</h1>
