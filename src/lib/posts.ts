@@ -28,6 +28,7 @@ export function getSortedPostsData(options?: { category: string }) {
     const matterResult = matter(fileContents);
     const result = {
       ...matterResult.data,
+      image: matterResult.data.image.startsWith('/') ? matterResult.data.image : `/${matterResult.data.image}`,
       preview: `${matterResult.content.split(' ').slice(0, 25).join(' ')}...`,
       date: formatDate(new Date(matterResult.data.date)),
       isoDate: new Date(matterResult.data.date).toISOString(),
@@ -75,6 +76,7 @@ export async function getPostData(id: string) {
   const matterResult = matter(fileContents);
   const result = {
     ...matterResult.data,
+    image: matterResult.data.image.startsWith('/') ? matterResult.data.image : `/${matterResult.data.image}`,
     date: formatDate(new Date(matterResult.data.date)),
     isoDate: new Date(matterResult.data.date).toISOString(),
   };
