@@ -1,5 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebook, faFacebookF, faLinkedin, faLinkedinIn, faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
@@ -14,7 +19,9 @@ type PostProps = {
 };
 
 export default function Post({ postData }: PostProps) {
-  console.log(postData);
+  // const router = useRouter();
+
+  const url = window.location.href;
 
   return (
     <Layout>
@@ -30,8 +37,27 @@ export default function Post({ postData }: PostProps) {
         <div className="order-2 md:order-1 md:col-span-2">
           <div className="sticky top-16">
             <div className="flex flex-col justify-between text-center opacity-40">
-              <p>Share</p>
-              <p>Share links go here</p>
+              <div className="flex flex-col gap-3">
+                <p>Share</p>
+                <a href={`https://twitter.com/intent/tweet?text=${postData.title}&url=${url}`} target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    className="text-xl"
+                  />
+                </a>
+                <a href={`https://facebook.com/sharer.php?u=${url}`} target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon
+                    icon={faFacebookF}
+                    className="text-xl"
+                  />
+                </a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon
+                    icon={faLinkedinIn}
+                    className="text-xl"
+                  />
+                </a>
+              </div>
               <div className="h-0.5 w-8 bg-gray-400 mx-auto my-4" />
               <p>N comments</p>
             </div>
@@ -41,12 +67,6 @@ export default function Post({ postData }: PostProps) {
         <article className="order-1 md:order-2 md:col-span-9 -flex-1">
           <h1 className="text-4xl font-bold">{postData.title}</h1>
           <img className="my-4" src={postData.image} alt={postData.description} />
-          {/* <div className="text-2xl mb-4 italic">{postData.description}</div> */}
-          {/* <div className="text-sm mb-4">
-          Anthony Zhou |
-          {' '}
-          {postData.date}
-        </div> */}
           <article className="prose-lg font-merriweather" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
       </div>

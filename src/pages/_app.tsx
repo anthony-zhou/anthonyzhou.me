@@ -3,6 +3,10 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 // import { Righteous } from 'next/font/google';
 import { Merriweather } from 'next/font/google';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+
+config.autoAddCss = false;
 
 // const righteous = Righteous({
 //   subsets: ['latin'],
