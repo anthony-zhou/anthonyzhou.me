@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import SearchBar from '../SearchBar';
 
 export default function Header() {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,7 @@ export default function Header() {
         <div className="flex space-x-12">
           {links.map(({ href, label }) => (
             <div className="flex flex-col justify-center">
-              <Link href={href} key={`${href}${label}`} className="opacity-50 hover:opacity-100 transition-opacity">
+              <Link href={href} key={`${href}${label}`} className={`opacity-50 hover:opacity-100 transition-opacity ${href === router.asPath ? 'opacity-100' : ''}`}>
                 {label}
               </Link>
             </div>
