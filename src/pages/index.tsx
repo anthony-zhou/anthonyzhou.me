@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import Layout from '@/components/Layout';
 import HorizontalLine from '@/widgets/HorizontalLine';
 import { getFeaturedPostsData, getSortedPostsData } from '@/lib/posts';
@@ -15,35 +17,86 @@ type HomeProps = {
 };
 
 export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
+  const [pageNumber, setPageNumber] = useState(1);
+  const totalNumPages = Math.floor(allPostsData.length / 6);
+
+  const movePage = (newPageNum: number) => {
+    setPageNumber(newPageNum);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
+
   return (
     <Layout>
       <div>
         <div className="py-10">
           <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>
-          <h1 className="text-xl mb-5">Psychology, Economics, Programming, or anything interesting. NOTE: As of 8/26/23, I&apos;m currently migrating from Jekyll to Next.js so some features may be temporarily missing.  </h1>
+          <h1 className="text-xl mb-5">Psychology, Economics, Programming, or anything interesting. </h1>
         </div>
 
-        <Heading text="Featured" />
-
-        <div className="my-6 mb-10">
-          <div className="grid md:grid-cols-2 gap-8">
-            {featuredPostsData.map(({
-              id, date, title, image, preview, categories,
-            }) => (
-              <FeaturedCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
-            ))}
-          </div>
-        </div>
+        { pageNumber === 1
+          ? (
+            <>
+              <Heading text="Featured" />
+              <div className="my-6 mb-10">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {featuredPostsData.map(({
+                    id, date, title, image, preview, categories,
+                  }) => (
+                    <FeaturedCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
+                  ))}
+                </div>
+              </div>
+            </>
+          )
+          : null}
 
         <Heading text="All Posts" />
 
         <div className="mt-6">
           <div className="grid md:grid-cols-3 gap-8">
-            {allPostsData.slice(0, 20).map(({
+            {allPostsData.slice((pageNumber - 1) * 6, pageNumber * 6).map(({
               id, date, title, image, preview, categories,
             }) => (
               <ArticleCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
             ))}
+          </div>
+        </div>
+
+        <div className="mt-10 w-full border-b-[0.5px] border-gray-400 flex justify-center">
+          <FontAwesomeIcon
+            icon={faCaretUp}
+            className="text-3xl -mb-[11px] text-[#eaeaea]"
+          />
+        </div>
+
+        <div className="flex justify-center mt-5">
+          <div className="flex gap-2 font-bold text-sm">
+            <button
+              type="button"
+              className="text-green-500 disabled:text-gray-400 hover:text-green-700 transition-colors"
+              onClick={() => movePage(pageNumber - 1)}
+              disabled={pageNumber === 1}
+            >
+              « Prev
+            </button>
+            {
+            [...Array(5).keys()]
+              .map((i) => (
+                <button type="button" onClick={() => movePage(i + 1)} className="text-green-500 disabled:text-gray-400 hover:text-green-700 transition-colors" disabled={i + 1 === pageNumber}>
+                  {i + 1}
+                </button>
+              ))
+          }
+            <button
+              type="button"
+              className="text-green-500 disabled:text-gray-400 hover:text-green-700 transition-colors"
+              onClick={() => movePage(pageNumber + 1)}
+              disabled={pageNumber === totalNumPages}
+            >
+              Next »
+
+            </button>
+
           </div>
         </div>
 
