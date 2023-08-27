@@ -16,7 +16,8 @@ type PostProps = {
     description: string;
     contentHtml: string;
     image: string;
-  }
+  },
+  numComments: number
 };
 
 function DisqusComments({ url, title } : { url: string, title: string }) {
@@ -37,7 +38,7 @@ function DisqusComments({ url, title } : { url: string, title: string }) {
   );
 }
 
-export default function Post({ postData }: PostProps) {
+export default function Post({ postData, numComments }: PostProps) {
   const router = useRouter();
 
   const url = typeof window !== 'undefined' ? window.location.href : `https://anthonyzhou.com${router.asPath}`;
@@ -78,20 +79,32 @@ export default function Post({ postData }: PostProps) {
                 </a>
               </div>
               <div className="h-0.5 w-8 bg-gray-400 mx-auto my-4" />
-              <p>N comments</p>
+              <a href="#comments">
+                {numComments}
+                {' '}
+                comments
+              </a>
             </div>
 
           </div>
         </div>
-        <article className="order-1 md:order-2 md:col-span-9 -flex-1">
+
+        <article className="order-1 md:col-span-9 md:order-2 -flex-1">
           <h1 className="text-4xl font-bold">{postData.title}</h1>
           <img className="my-4" src={postData.image} alt={postData.description} />
-          <article className="prose-lg font-merriweather" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <article
+            className="prose-lg font-merriweather"
+            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          />
         </article>
-        <DisqusComments title={postData.title} url={url} />
 
       </div>
-
+      <div className="grid grid-cols-11">
+        <div className="md:col-span-2" />
+        <div className="col-span-11 md:col-span-9 mt-6" id="comments">
+          <DisqusComments title={postData.title} url={url} />
+        </div>
+      </div>
     </Layout>
   );
 }
@@ -106,9 +119,23 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id);
+  const commentData = await (await fetch(`https://disqus.com/api/3.0/threads/set.json?api_key=${process.env.DISQUS_API_KEY}&forum=anthonyzhou&thread:ident=A dream to save the air - public reflection`, { method: 'GET' })).json();
+
+  if (commentData) {
+    if (commentData.response) {
+      return {
+        props: {
+          postData,
+          numComments: commentData.response[0].posts,
+        },
+      };
+    }
+  }
+
   return {
     props: {
       postData,
+      numComments: 0,
     },
   };
 }
