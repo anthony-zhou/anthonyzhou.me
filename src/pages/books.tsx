@@ -8,10 +8,7 @@ export default function Books() {
   return (
     <Layout>
       <div className="prose">
-        <div className="flex items-center">
-          <Image src={lshape} alt="L-shaped" height={75} className="mt-0" />
-          <h2 className="-mt-4">Books</h2>
-        </div>
+        <h2 className="text-4xl mt-10">Books</h2>
         <div className="mb-5 mt-5">I enjoyed most of these books; standouts are bolded. </div>
         <ul className="mb-10">
           <li>The Next Shift - Gabriel Winant</li>
