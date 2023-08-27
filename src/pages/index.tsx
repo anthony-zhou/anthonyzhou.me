@@ -45,7 +45,7 @@ export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
       <div>
         <div className="py-10">
           <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>
-          <h1 className="text-xl mb-5">Psychology, Economics, Programming, or anything interesting.</h1>
+          <h1 className="text-xl mb-5">Psychology, Economics, Programming, or anything interesting. NOTE: As of 8/26/23, I&apos;m currently migrating from Jekyll to Next.js so some features may be temporarily missing.  </h1>
         </div>
 
         <Heading text="Featured" />

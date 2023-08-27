@@ -5,6 +5,7 @@ import {
   faFacebook, faFacebookF, faLinkedin, faLinkedinIn, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
+import { DiscussionEmbed } from 'disqus-react';
 import Layout from '@/components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
@@ -18,10 +19,28 @@ type PostProps = {
   }
 };
 
-export default function Post({ postData }: PostProps) {
-  // const router = useRouter();
+function DisqusComments({ url, title } : { url: string, title: string }) {
+  const disqusShortname = 'anthonyzhou';
 
-  const url = window.location.href;
+  const disqusConfig = {
+    url,
+    identifier: title, // Single post id
+    title, // Single post title
+  };
+  return (
+    <div>
+      <DiscussionEmbed
+        shortname={disqusShortname}
+        config={disqusConfig}
+      />
+    </div>
+  );
+}
+
+export default function Post({ postData }: PostProps) {
+  const router = useRouter();
+
+  const url = typeof window !== 'undefined' ? window.location.href : `https://anthonyzhou.com${router.asPath}`;
 
   return (
     <Layout>
@@ -69,7 +88,10 @@ export default function Post({ postData }: PostProps) {
           <img className="my-4" src={postData.image} alt={postData.description} />
           <article className="prose-lg font-merriweather" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
+        <DisqusComments title={postData.title} url={url} />
+
       </div>
+
     </Layout>
   );
 }
