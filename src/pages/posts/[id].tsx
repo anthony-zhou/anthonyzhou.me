@@ -5,9 +5,9 @@ import {
   faFacebookF, faLinkedinIn, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
-import { DiscussionEmbed } from 'disqus-react';
 import Layout from '@/components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
+import CommentSection from '@/components/CommentSection';
 
 type PostProps = {
   postData: {
@@ -19,24 +19,6 @@ type PostProps = {
   },
   numComments: number
 };
-
-function DisqusComments({ url, title } : { url: string, title: string }) {
-  const disqusShortname = 'anthonyzhou';
-
-  const disqusConfig = {
-    url,
-    identifier: title, // Single post id
-    title, // Single post title
-  };
-  return (
-    <div>
-      <DiscussionEmbed
-        shortname={disqusShortname}
-        config={disqusConfig}
-      />
-    </div>
-  );
-}
 
 export default function Post({ postData, numComments }: PostProps) {
   const router = useRouter();
@@ -102,7 +84,7 @@ export default function Post({ postData, numComments }: PostProps) {
       <div className="grid grid-cols-11">
         <div className="md:col-span-2" />
         <div className="col-span-11 md:col-span-9 mt-6" id="comments">
-          <DisqusComments title={postData.title} url={url} />
+          <CommentSection title={postData.title} url={url} />
         </div>
       </div>
     </Layout>

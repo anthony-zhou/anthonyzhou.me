@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import SearchBar from '../SearchBar';
 
 export default function Header() {
@@ -11,15 +13,10 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
-      console.log(currentScrollTop);
-      console.log(`Last scroll${lastScrollTop}`);
 
-      // If scrolling up
       if (currentScrollTop < lastScrollTop) {
-        console.log('SCROLLING UP');
         setHeaderVisible(true);
       } else {
-        console.log('SCROLLING DOWN');
         setHeaderVisible(false);
       }
 
@@ -49,6 +46,16 @@ export default function Header() {
               </Link>
             </div>
           ))}
+
+          <div className="flex flex-col justify-center">
+            <Link href="https://github.com/anthony-zhou" target="_blank">
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="text-md opacity-50 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+          </div>
+
           <div className="flex flex-col justify-center">
             <SearchBar />
           </div>
