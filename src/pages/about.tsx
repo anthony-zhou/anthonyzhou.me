@@ -15,12 +15,9 @@ export default function About() {
   return (
     <Layout>
       <div className="prose prose-lg">
-        <div className="flex items-center">
-          <Image src={lshape} alt="L-shaped" height={75} className="mt-0" />
-          <h2 className="-mt-4">About</h2>
-        </div>
+        <h2 className="text-4xl mt-10">About</h2>
 
-        <Image src={profileImage} alt="profile image" className="rounded-full w-1/2 float-left mr-5" />
+        <Image src={profileImage} alt="profile image" className="rounded-full w-1/2 float-left mr-20" />
         <p>
           Hi there!
           My name is Anthony Zhou and
