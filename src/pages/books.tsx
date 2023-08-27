@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Image from 'next/image';
 import Layout from '@/components/Layout';
-import lshape from '@/components/L.svg';
 
 export default function Books() {
   return (
     <Layout>
       <div className="prose">
-        <h2 className="text-4xl mt-10">Books</h2>
+        <h2 className="text-4xl mt-10">Bookshelf</h2>
         <div className="mb-5 mt-5">I enjoyed most of these books; standouts are bolded. </div>
         <ul className="mb-10">
           <li>The Next Shift - Gabriel Winant</li>

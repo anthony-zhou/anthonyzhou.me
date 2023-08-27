@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import SearchBar from '../SearchBar';
 
 export default function Header() {
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -29,13 +30,13 @@ export default function Header() {
 
   const links = [
     { href: '/', label: 'Writing' },
-    { href: '/books', label: 'Books' },
+    { href: '/books', label: 'Bookshelf' },
     // { href: '/projects', label: 'Projects' },
     { href: '/about', label: 'About' },
   ];
 
   return (
-    <div className={`py-4 z-50 transition-transform sticky top-0 bg-white shadow-sm ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div className={`py-4 px-10 z-50 transition-transform sticky top-0 bg-white shadow-sm ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container mx-auto flex justify-between">
         <Link href="/"><div className="font-righteous text-4xl">AZ</div></Link>
         <div className="flex space-x-12">
@@ -46,6 +47,9 @@ export default function Header() {
               </Link>
             </div>
           ))}
+          <div className="flex flex-col justify-center">
+            <SearchBar />
+          </div>
         </div>
       </div>
     </div>

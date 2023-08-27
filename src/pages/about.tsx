@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 import profileImage from '@/components/profile.jpg';
-import lshape from '@/components/L.svg';
 
 export default function About() {
   const paragraphs = [

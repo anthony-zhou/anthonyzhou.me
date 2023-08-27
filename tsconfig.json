@@ -27,9 +27,11 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "scripts/generate_index.js"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "index"
   ]
 }
