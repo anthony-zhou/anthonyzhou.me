@@ -22,7 +22,7 @@ export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
 
   const movePage = (newPageNum: number) => {
     setPageNumber(newPageNum);
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' } as unknown as ScrollToOptions); // see https://github.com/microsoft/TypeScript/issues/47441
   };
 
   return (
