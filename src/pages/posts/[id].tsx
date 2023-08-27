@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faFacebook, faFacebookF, faLinkedin, faLinkedinIn, faTwitter,
+  faFacebookF, faLinkedinIn, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
 import { DiscussionEmbed } from 'disqus-react';

@@ -1,6 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Layout from '@/components/Layout';
 import HorizontalLine from '@/widgets/HorizontalLine';
 import { getFeaturedPostsData, getSortedPostsData } from '@/lib/posts';
@@ -17,29 +15,6 @@ type HomeProps = {
 };
 
 export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
-  const router = useRouter();
-
-  const projects = [
-    {
-      emoji: '🦦',
-      title: 'Snapnotes',
-      description: 'AI-powered guided reader to read texts faster. Work in progress.',
-      link: 'https://snapnotes.app',
-    },
-    {
-      emoji: '🌲',
-      title: 'TreeChat',
-      description: 'A chat app that plants trees',
-      link: 'https://treechat.org',
-    },
-    {
-      emoji: '💬',
-      title: 'Big & Mini',
-      description: 'Platform to connect youth and seniors for 1:1 conversations',
-      link: 'https://bigandmini.org',
-    },
-  ];
-
   return (
     <Layout>
       <div>
@@ -78,7 +53,8 @@ export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
           {tutorialsData.slice(0, 6).map(({
             id, date, title,
           }) => (
-            <Link href={`/posts/${id}`} key={id} className="flex justify-between transition py-2 px-3 rounded-md hover:bg-gray-300">
+            <Link href={`/posts/${id}`} key={id}
+            className="flex justify-between transition py-2 px-3 rounded-md hover:bg-gray-300">
               <h2>{title}</h2>
               <div className="w-32">{date}</div>
             </Link>
