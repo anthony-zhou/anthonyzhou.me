@@ -36,8 +36,8 @@ export default function Header() {
   ];
 
   return (
-    <div className={`py-4 px-10 z-50 transition-transform sticky top-0 bg-white shadow-sm ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="container mx-auto flex justify-between">
+    <div className={`py-4 z-50 transition-transform sticky top-0 bg-white shadow-sm ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className="container mx-auto px-10 flex justify-between">
         <Link href="/"><div className="font-righteous text-4xl">AZ</div></Link>
         <div className="flex space-x-12">
           {links.map(({ href, label }) => (
