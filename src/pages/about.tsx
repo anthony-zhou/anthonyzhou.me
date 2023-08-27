@@ -36,7 +36,7 @@ export default function About() {
             Kumbaya!
           </p>
 
-          <Image src={profileImage} alt="profile image" className="my-0" />
+          <Image src={profileImage} alt="profile image" className="my-0 " />
 
           <p>On this blog, I will mainly post two types of articles:</p>
 
