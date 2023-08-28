@@ -28,7 +28,9 @@ export default function Post({ postData, numComments }: PostProps) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>
+          {postData.title}
+        </title>
       </Head>
       <div className="py-10">
         <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>

@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Head from 'next/head';
 import Layout from '@/components/layouts/Layout';
 
 export default function Books() {
   return (
     <Layout>
+      <Head>
+        <title>Bookshelf | Anthony Zhou</title>
+      </Head>
       <div className="prose">
         <h2 className="text-4xl mt-10">Bookshelf</h2>
         <div className="mb-5 mt-5">I enjoyed most of these books; standouts are bolded. </div>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Layout from '@/components/layouts/Layout';
 import profileImage from '@/components/profile.jpg';
 import Heading from '@/components/Heading';
@@ -20,7 +21,9 @@ export default function About() {
 
   return (
     <Layout>
-
+      <Head>
+        <title>About | Anthony Zhou</title>
+      </Head>
       <div className="py-10">
         <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>
         <h1 className="text-xl mb-5">Psychology, Economics, Programming, or anything interesting. </h1>

@@ -17,7 +17,7 @@ const generateIndex = () => {
   const fileNames = readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+    const id = fileName.split('-').slice(3).join('-').replace(/\.md$/, '');
 
     // Read markdown file as string
     const fullPath = join(postsDirectory, fileName);

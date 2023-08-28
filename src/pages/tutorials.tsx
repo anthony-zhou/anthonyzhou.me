@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { getNumPostsByCategory, getSortedPostsData } from '@/lib/posts';
 import HorizontalLine from '@/widgets/HorizontalLine';
 import ArticleCard from '@/components/ArticleCard';
@@ -9,6 +10,9 @@ export default function Tutorials({ tutorialsData, categoryCounts }: { tutorials
   categoryCounts: { [key: string]: number } }) {
   return (
     <ArticleLayout categoryCounts={categoryCounts}>
+      <Head>
+        <title>Tutorials | Anthony Zhou</title>
+      </Head>
       <div>
         <div className="py-10">
           <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>

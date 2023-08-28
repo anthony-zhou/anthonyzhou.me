@@ -28,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "scripts/generate_index.js"
+    "scripts/generate_index.mjs"
   ],
   "exclude": [
     "node_modules",

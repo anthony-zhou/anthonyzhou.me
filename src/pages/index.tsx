@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import Head from 'next/head';
 import HorizontalLine from '@/widgets/HorizontalLine';
 import { getFeaturedPostsData, getNumPostsByCategory, getSortedPostsData } from '@/lib/posts';
 import Heading from '@/components/Heading';
@@ -27,6 +28,9 @@ export default function Home({ allPostsData, featuredPostsData, categoryCounts }
 
   return (
     <ArticleLayout categoryCounts={categoryCounts}>
+      <Head>
+        <title>Home | Anthony Zhou</title>
+      </Head>
       <div>
         <div className="py-10">
           <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>
