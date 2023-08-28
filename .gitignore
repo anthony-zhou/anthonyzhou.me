@@ -1,7 +1,7 @@
+node_modules
+.next
+
+# Mac OS
 .DS_Store
-*.swp
-.sass-cache
-*~
-.jekyll-cache
-_site
-vendor
+
+.env
