@@ -20,9 +20,9 @@ export default function Tutorials({ tutorialsData, categoryCounts }: { tutorials
         <div className="mt-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tutorialsData.map(({
-              id, date, title, image, preview, categories,
+              id, date, title, image, preview,
             }) => (
-              <ArticleCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
+              <ArticleCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
             ))}
           </div>
         </div>

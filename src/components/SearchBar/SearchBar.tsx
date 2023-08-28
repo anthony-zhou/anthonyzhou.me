@@ -109,7 +109,7 @@ function SearchBar({ open, setOpen }
             <h3 className="font-bold text-gray-500 mb-2">Results</h3>
             <ul>
               {results
-                .map((result, i) => (
+                .map((result) => (
                   <div className="mb-4 ml-2 p-2 rounded-md">
                     <Link href={`/posts/${result.id}`}>
                       <div>

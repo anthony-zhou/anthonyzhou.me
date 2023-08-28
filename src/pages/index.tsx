@@ -40,9 +40,9 @@ export default function Home({ allPostsData, featuredPostsData, categoryCounts }
               <div className="my-6 mb-10">
                 <div className="grid md:grid-cols-2 gap-8">
                   {featuredPostsData.map(({
-                    id, date, title, image, preview, categories,
+                    id, date, title, image, preview,
                   }) => (
-                    <FeaturedCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
+                    <FeaturedCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
                   ))}
                 </div>
               </div>
@@ -55,9 +55,9 @@ export default function Home({ allPostsData, featuredPostsData, categoryCounts }
         <div className="mt-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allPostsData.slice((pageNumber - 1) * 6, pageNumber * 6).map(({
-              id, date, title, image, preview, categories,
+              id, date, title, image, preview,
             }) => (
-              <ArticleCard title={title} url={`/posts/${id}`} author="Anthony Zhou" date={date} preview={preview} image={image} categories={categories} />
+              <ArticleCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
             ))}
           </div>
         </div>

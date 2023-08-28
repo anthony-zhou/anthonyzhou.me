@@ -18,8 +18,6 @@ export default function handler(
     return;
   }
 
-  console.log(query);
-
   // loop through posts searching for the query term
 
   const relevantPosts = data.filter((post) => post.title.includes(query)

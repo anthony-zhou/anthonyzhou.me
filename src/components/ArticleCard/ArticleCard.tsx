@@ -5,16 +5,13 @@ type ArticleProps = {
   url: string,
   title: string,
   preview: string,
-  author: string,
   date: string,
   image: string,
-  categories: string[]
 };
 
 export default function ArticleCard({
-  url, title, preview, author, date, image, categories,
+  url, title, preview, date, image,
 }: ArticleProps) {
-  console.log(author, categories);
   return (
     <Link href={url}>
       <div className="flex flex-col h-full border-[1px] border-[rgba(0,0,0,.125)] rounded-md">

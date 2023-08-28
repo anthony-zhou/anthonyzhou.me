@@ -48,7 +48,6 @@ export default function Header() {
     // { href: '/projects', label: 'Projects' },
     { href: '/about', label: 'About' },
   ];
-  console.log(router.asPath);
 
   return (
     <div className={`py-4 z-50 transition-transform sticky top-0 bg-white shadow-sm ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -73,7 +72,7 @@ export default function Header() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <SearchBar open={searchbarOpen} setOpen={setSearchbarOpen}/>
+            <SearchBar open={searchbarOpen} setOpen={setSearchbarOpen} />
           </div>
         </div>
       </div>
