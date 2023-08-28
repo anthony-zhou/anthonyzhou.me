@@ -46,7 +46,7 @@ export default function Home({ allPostsData, featuredPostsData, categoryCounts }
                   {featuredPostsData.map(({
                     id, date, title, image, preview,
                   }) => (
-                    <FeaturedCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
+                    <FeaturedCard key={title} title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
                   ))}
                 </div>
               </div>
@@ -61,7 +61,7 @@ export default function Home({ allPostsData, featuredPostsData, categoryCounts }
             {allPostsData.slice((pageNumber - 1) * 6, pageNumber * 6).map(({
               id, date, title, image, preview,
             }) => (
-              <ArticleCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
+              <ArticleCard key={title} title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
             ))}
           </div>
         </div>

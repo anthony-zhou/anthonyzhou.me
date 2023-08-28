@@ -26,7 +26,7 @@ export default function Tutorials({ tutorialsData, categoryCounts }: { tutorials
             {tutorialsData.map(({
               id, date, title, image, preview,
             }) => (
-              <ArticleCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
+              <ArticleCard key={title} title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
             ))}
           </div>
         </div>

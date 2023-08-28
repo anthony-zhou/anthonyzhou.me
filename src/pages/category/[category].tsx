@@ -25,7 +25,7 @@ export default function CategoryPage({ posts, categoryCounts, category }:
             {posts.map(({
               id, date, title, image, preview,
             }) => (
-              <ArticleCard title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
+              <ArticleCard key={title} title={title} url={`/posts/${id}`} date={date} preview={preview} image={image} />
             ))}
           </div>
         </div>
