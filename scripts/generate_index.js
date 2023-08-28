@@ -48,7 +48,9 @@ const generateIndex = () => {
     return -1;
   });
 
-  return `export const posts = ${JSON.stringify(sortedData)}`;
+  return `const posts = ${JSON.stringify(sortedData)}
+  
+  export default posts;`;
 };
 
 if (!existsSync('index')) {
