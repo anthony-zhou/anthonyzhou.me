@@ -1,16 +1,17 @@
 import { faFile, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  Dispatch, SetStateAction, useCallback, useEffect, useState,
+} from 'react';
 
-function SearchBar() {
+function SearchBar({ open, setOpen }
+: { open: boolean, setOpen: Dispatch<SetStateAction<boolean>> }) {
   const KEY_NAME_ESC = 'Escape';
   const KEY_EVENT_TYPE = 'keyup';
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<any[] | null>(null);
   const searchInputRef = React.useRef<HTMLInputElement>(null);
-
-  const [showSearchBox, setShowSearchBox] = useState(false);
 
   const handleSearch = () => {
     if (!query) {
@@ -26,15 +27,15 @@ function SearchBar() {
 
   const handleBackgroundClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
-      setShowSearchBox(false);
+      setOpen(false);
     }
-  }, [setShowSearchBox]);
+  }, [setOpen]);
 
   const handleEscKey = useCallback((event: KeyboardEvent) => {
     if (event.key === KEY_NAME_ESC) {
-      setShowSearchBox(false);
+      setOpen(false);
     }
-  }, [setShowSearchBox]);
+  }, [setOpen]);
 
   useEffect(() => {
     document.addEventListener(KEY_EVENT_TYPE, handleEscKey, false);
@@ -47,19 +48,19 @@ function SearchBar() {
   // Function to focus and disable scrolling when search box is open
 
   useEffect(() => {
-    if (showSearchBox && searchInputRef.current) {
+    if (open) {
+      setQuery('');
+      document.body.className += 'h-screen overflow-hidden';
+    }
+    if (open && searchInputRef.current) {
       // Set focus to the input element
       searchInputRef.current.focus();
-    }
-
-    if (showSearchBox) {
-      document.body.className += 'h-screen overflow-hidden';
     }
 
     return () => {
       document.body.className = document.body.className.replace('h-screen overflow-hidden', '');
     };
-  }, [showSearchBox]);
+  }, [open]);
 
   return (
     <>
@@ -67,7 +68,7 @@ function SearchBar() {
         <button
           type="button"
           className="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity"
-          onClick={() => setShowSearchBox(true)}
+          onClick={() => setOpen(true)}
         >
           <FontAwesomeIcon
             icon={faSearch}
@@ -77,12 +78,10 @@ function SearchBar() {
         </button>
       </div>
 
-      {showSearchBox && (
+      {open && (
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
       <div
         className="fixed overflow-auto !mx-0 top-0 left-0 w-screen h-screen bg-white bg-opacity-[0.98] flex justify-center cursor-default"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') setShowSearchBox(false);
-        }}
         onClick={handleBackgroundClick}
         role="button"
         tabIndex={0}
@@ -110,8 +109,8 @@ function SearchBar() {
             <h3 className="font-bold text-gray-500 mb-2">Results</h3>
             <ul>
               {results
-                .map((result) => (
-                  <div className="mb-4 ml-2">
+                .map((result, i) => (
+                  <div className="mb-4 ml-2 p-2 rounded-md">
                     <Link href={`/posts/${result.id}`}>
                       <div>
                         <FontAwesomeIcon

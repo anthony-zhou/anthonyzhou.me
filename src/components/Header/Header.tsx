@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +8,21 @@ import SearchBar from '../SearchBar';
 export default function Header() {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
+  const [searchbarOpen, setSearchbarOpen] = useState(false); // for the searchbar
   const router = useRouter();
+
+  const handleKeyPress = useCallback((event: KeyboardEvent) => {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+      setSearchbarOpen(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +73,7 @@ export default function Header() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <SearchBar />
+            <SearchBar open={searchbarOpen} setOpen={setSearchbarOpen}/>
           </div>
         </div>
       </div>
