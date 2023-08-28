@@ -53,7 +53,7 @@ export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
         <Heading text="All Posts" />
 
         <div className="mt-6">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allPostsData.slice((pageNumber - 1) * 6, pageNumber * 6).map(({
               id, date, title, image, preview, categories,
             }) => (
