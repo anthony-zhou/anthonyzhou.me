@@ -5,8 +5,7 @@ date: 2022-07-16
 description: "A foray into the history of distributed computing and how it relates to blockchain technology."
 image: assets/images/2022/07/network_earth.jpg
 author: anthony
-featured: true
-categories: [programming, technology, tutorials]
+categories: [programming, technology]
 tags: [blockchain, distributed-computing, cryptography]
 ---
 
