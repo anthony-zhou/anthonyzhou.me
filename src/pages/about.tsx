@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layouts/Layout';
 import profileImage from '@/components/profile.jpg';
 import Heading from '@/components/Heading';
 import CommentSection from '@/components/CommentSection';

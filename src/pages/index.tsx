@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
-import Layout from '@/components/Layout';
 import HorizontalLine from '@/widgets/HorizontalLine';
-import { getFeaturedPostsData, getSortedPostsData } from '@/lib/posts';
-import Footer from '@/components/Footer';
+import { getFeaturedPostsData, getNumPostsByCategory, getSortedPostsData } from '@/lib/posts';
 import Heading from '@/components/Heading';
 import ArticleCard from '@/components/ArticleCard';
 import FeaturedCard from '@/components/FeaturedCard';
+import ArticleLayout from '@/components/layouts/ArticleLayout/ArticleLayout';
 
 type HomeProps = {
   allPostsData: { date: string; title: string; id: string, categories: any[],
     image: string, preview: string }[];
   featuredPostsData: { date: string; title: string; id: string, categories: any[],
     image: string, preview: string }[];
+  categoryCounts: { [key: string]: number };
 };
 
-export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
+export default function Home({ allPostsData, featuredPostsData, categoryCounts }: HomeProps) {
   const [pageNumber, setPageNumber] = useState(1);
   const totalNumPages = Math.floor(allPostsData.length / 6);
 
@@ -26,7 +26,7 @@ export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
   };
 
   return (
-    <Layout>
+    <ArticleLayout categoryCounts={categoryCounts}>
       <div>
         <div className="py-10">
           <div className="font-righteous mb-2"><h1 className="text-4xl">Anthony Zhou</h1></div>
@@ -99,35 +99,23 @@ export default function Home({ allPostsData, featuredPostsData }: HomeProps) {
 
           </div>
         </div>
-
-        {/* <div className="mt-6">
-          <h2 className="text-2xl font-bold">tutorials</h2>
-          <div className="italic">things I&rsquo;ve learned</div>
-          {tutorialsData.slice(0, 6).map(({
-            id, date, title,
-          }) => (
-            <Link href={`/posts/${id}`} key={id}
-            className="flex justify-between transition py-2 px-3 rounded-md hover:bg-gray-300">
-              <h2>{title}</h2>
-              <div className="w-32">{date}</div>
-            </Link>
-          ))}
-        </div> */}
       </div>
       <HorizontalLine />
-      <Footer />
-    </Layout>
+    </ArticleLayout>
   );
 }
 
 export async function getStaticProps() {
   const featuredPostsData = getFeaturedPostsData();
   const allPostsData = getSortedPostsData();
+  const categoryCounts = getNumPostsByCategory();
+
   // const tutorialsData = getSortedPostsData({ category: 'tutorials' });
   return {
     props: {
       allPostsData,
       featuredPostsData,
+      categoryCounts,
     },
   };
 }

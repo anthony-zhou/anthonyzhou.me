@@ -29,10 +29,12 @@ export default function Header() {
 
   const links = [
     { href: '/', label: 'Writing' },
+    { href: '/tutorials', label: 'Tutorials' },
     { href: '/books', label: 'Bookshelf' },
     // { href: '/projects', label: 'Projects' },
     { href: '/about', label: 'About' },
   ];
+  console.log(router.asPath);
 
   return (
     <div className={`py-4 z-50 transition-transform sticky top-0 bg-white shadow-sm ${headerVisible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -41,7 +43,7 @@ export default function Header() {
         <div className="flex space-x-12">
           {links.map(({ href, label }) => (
             <div className="flex flex-col justify-center">
-              <Link href={href} key={`${href}${label}`} className={`opacity-50 hover:opacity-100 transition-opacity ${href === router.asPath ? 'opacity-100' : ''}`}>
+              <Link href={href} key={`${href}${label}`} className={`opacity-50 hover:opacity-100 transition-opacity ${href === router.asPath ? '!opacity-100' : ''}`}>
                 {label}
               </Link>
             </div>

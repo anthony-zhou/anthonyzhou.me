@@ -94,3 +94,15 @@ export async function getPostData(id: string) {
     ...result,
   };
 }
+
+export function getNumPostsByCategory() {
+  const sortedPosts = getSortedPostsData();
+
+  return sortedPosts
+    .map((post) => post.categories)
+    .flat()
+    .reduce((result, category) => ({
+      ...result,
+      [category]: (result[category] ?? 0) + 1,
+    }), {});
+}

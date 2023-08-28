@@ -5,7 +5,7 @@ import {
   faFacebookF, faLinkedinIn, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layouts/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import CommentSection from '@/components/CommentSection';
 

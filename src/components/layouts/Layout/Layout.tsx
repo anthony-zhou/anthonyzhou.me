@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../Header';
-import SubscribeForm from '../SubscribeForm';
+import Header from '@/components/Header';
+import SubscribeForm from '@/components/SubscribeForm';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
