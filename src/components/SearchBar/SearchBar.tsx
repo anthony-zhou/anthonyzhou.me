@@ -1,6 +1,6 @@
 import { faFile, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, {
   Dispatch, SetStateAction, useCallback, useEffect, useState,
 } from 'react';
@@ -12,6 +12,7 @@ function SearchBar({ open, setOpen }
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<any[] | null>(null);
   const searchInputRef = React.useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const handleSearch = () => {
     if (!query) {
@@ -49,7 +50,6 @@ function SearchBar({ open, setOpen }
 
   useEffect(() => {
     if (open) {
-      setQuery('');
       document.body.className += 'h-screen overflow-hidden';
     }
     if (open && searchInputRef.current) {
@@ -111,7 +111,13 @@ function SearchBar({ open, setOpen }
               {results
                 .map((result) => (
                   <div className="mb-4 ml-2 p-2 rounded-md">
-                    <Link href={`/posts/${result.id}`}>
+                    <button
+                      type="button"
+                      className="text-left"
+                      onClick={() => {
+                        router.push(`/posts/${result.id}`).then(() => { setOpen(false); setQuery(''); });
+                      }}
+                    >
                       <div>
                         <FontAwesomeIcon
                           icon={faFile}
@@ -122,7 +128,7 @@ function SearchBar({ open, setOpen }
                       <div>
                         {result.preview}
                       </div>
-                    </Link>
+                    </button>
                   </div>
                 ))}
             </ul>
