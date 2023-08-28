@@ -1,3 +1,4 @@
 .eslintrc.js
 tailwind.config.js
 next.config.js
+index/data.js
