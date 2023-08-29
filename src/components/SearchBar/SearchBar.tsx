@@ -50,7 +50,8 @@ function SearchBar({ open, setOpen }
 
   useEffect(() => {
     if (open) {
-      document.body.className += 'h-screen overflow-hidden';
+      document.body.className += 'h-screen overflow-hidden fixed';
+      document.body.style.top = `-${window.scrollY}px`;
     }
     if (open && searchInputRef.current) {
       // Set focus to the input element
@@ -58,7 +59,7 @@ function SearchBar({ open, setOpen }
     }
 
     return () => {
-      document.body.className = document.body.className.replace('h-screen overflow-hidden', '');
+      document.body.className = document.body.className.replace('h-screen overflow-hidden fixed', '');
     };
   }, [open]);
 
