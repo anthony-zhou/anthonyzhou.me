@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-  Html, Main, NextScript,
+  Html, Main, NextScript, Head,
 } from 'next/document';
 import Script from 'next/script';
 
 export default function Document() {
   return (
     <Html lang="en">
+      <Head />
       <Script src="https://www.googletagmanager.com/gtag/js?id=UA-155734640-1" />
       <Script id="google-analytics">
         {`
