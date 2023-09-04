@@ -5,12 +5,13 @@ type ProjectCardProps = {
   title: string,
   description: string,
   techStack: string[],
+  alt: string, // alt text for image
   image: string, // image source
   details: React.ReactNode, // content to show in a popup
 };
 
 export default function ProjectCard({
-  title, description, techStack, image, details,
+  title, description, techStack, image, alt, details,
 }:ProjectCardProps) {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -24,8 +25,8 @@ export default function ProjectCard({
 
   return (
     <>
-      <button type="button" className="border-[1px] border-[rgba(0,0,0,.125)] rounded-lg text-left" onClick={() => openModal()}>
-        <img src={image} alt="TreeChat screenshots" className="w-full object-cover" />
+      <button type="button" className="border-[1px] border-[rgba(0,0,0,.125)] rounded-lg text-left flex flex-col justify-start" onClick={() => openModal()}>
+        <img src={image} alt={alt} className="w-full object-cover" />
         <div className="p-5">
           <h1 className="font-bold text-[1.3rem]">{title}</h1>
           <p className="opacity-50 mt-2 text-[0.95rem]">{description}</p>
