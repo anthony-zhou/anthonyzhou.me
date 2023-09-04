@@ -113,7 +113,7 @@ export default function Projects() {
           description="Read books faster with AI sparknotes for pdfs and epubs."
           techStack={['Supabase', 'GPT-4', 'Python', 'Modal', 'Next.js']}
           alt="Subset of the dependency graph for the NCAR CESM climate model. Represents functions and their dependencies, as an input to GPT-4. "
-          image="/assets/projects/cli_screenshot.png"
+          image="/assets/projects/snapnotes_screenshot.png"
           details={(
             <div className="flex flex-col gap-4">
               <div className="opacity-50">

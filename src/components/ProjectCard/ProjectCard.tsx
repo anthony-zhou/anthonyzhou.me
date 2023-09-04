@@ -26,11 +26,11 @@ export default function ProjectCard({
   return (
     <>
       <button type="button" className="border-[1px] border-[rgba(0,0,0,.125)] rounded-lg text-left flex flex-col justify-start" onClick={() => openModal()}>
-        <img src={image} alt={alt} className="w-full object-cover" />
+        <img src={image} alt={alt} className="w-full object-cover rounded-t-lg" />
         <div className="p-5">
           <h1 className="font-bold text-[1.3rem]">{title}</h1>
           <p className="opacity-50 mt-2 text-[0.95rem]">{description}</p>
-          <div className="flex gap-2 mt-4">
+          <div className="flex gap-2 mt-4 flex-wrap">
             {techStack.map((technology) => (<div className="p-1 border-[1px] border-[rgba(0,0,0,.125)] rounded-lg text-sm opacity-50">{technology}</div>))}
           </div>
         </div>
