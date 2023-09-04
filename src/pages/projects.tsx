@@ -25,23 +25,37 @@ export default function Projects() {
       <div className="grid md:grid-cols-2">
         <ProjectCard
           title="TreeChat"
-          description="You send messages, we plant trees. TreeChat is the free messaging app that reforests the planet as you chat."
+          description="TreeChat is the free messaging app that reforests the planet as you chat. You send messages, we plant trees."
           techStack={['DynamoDB', 'GraphQL', 'TypeScript', 'Jest', 'Flutter']}
           image="/assets/projects/treechat_screenshots.png"
           details={(
-            <div className="md:flex gap-2">
+            <div className="md:flex gap-4">
               <div className="opacity-50">
                 <p className="mt-4">
                   What happens when we build products that make sustainability
-                  a benefit instead of a tradeoff?
+                  a feature instead of a tradeoff?
                 </p>
                 <p className="mt-4">
-                  TreeChat was an app my brother and I built to show how the chat apps
+                  TreeChat was an app my brother and I built to show how the apps
                   we use every day can be made just as well in
                   a way that doesn&apos;t harm the planet.
                 </p>
+                <p className="mt-4">
+                  Beyond providing the same features as existing chat apps — like
+                  group messages, contact sync, and reactions — TreeChat features
+                  an eco-friendly shop offering sustainable products through affiliate links.
+                </p>
+                <p className="mt-4">
+                  Environmentalists have long recognized that lifestyle changes
+                  can affirm our commitments to sustainability, even if their impact is small.
+                </p>
+                <p className="mt-4">
+                  We don’t want to just sit back and wait for someone
+                  else to solve the problem of climate change.
+                  It’s time for each and every one of us to play
+                  our own part in helping our planet breathe again. And it starts now.
+                </p>
               </div>
-
               <div className="">
                 <video className="w-full" autoPlay loop muted>
                   <source src="/assets/projects/treechat_demo.mp4" type="video/mp4" />
