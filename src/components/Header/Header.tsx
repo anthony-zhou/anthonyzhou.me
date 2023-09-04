@@ -46,8 +46,8 @@ export default function Header() {
   const links = [
     { href: '/', label: 'Writing' },
     { href: '/tutorials', label: 'Tutorials' },
-    { href: '/books', label: 'Bookshelf' },
     { href: '/projects', label: 'Projects' },
+    { href: '/books', label: 'Bookshelf' },
     { href: '/about', label: 'About' },
   ];
 
