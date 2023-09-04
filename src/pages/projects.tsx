@@ -143,7 +143,7 @@ export default function Projects() {
                 </p>
                 <p className="mt-4">
                   For the purpose of review, taking notes seems
-                  like wasted time, since you&apos;e just trying
+                  like wasted time, since you&apos;re just trying
                   to copy information from paragraph form into bullet form.
                 </p>
                 <p className="mt-4">
