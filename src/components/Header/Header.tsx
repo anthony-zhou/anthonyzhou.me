@@ -47,7 +47,7 @@ export default function Header() {
     { href: '/', label: 'Writing' },
     { href: '/tutorials', label: 'Tutorials' },
     { href: '/books', label: 'Bookshelf' },
-    // { href: '/projects', label: 'Projects' },
+    { href: '/projects', label: 'Projects' },
     { href: '/about', label: 'About' },
   ];
 
