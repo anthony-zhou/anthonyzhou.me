@@ -16,7 +16,7 @@ export default function FeaturedCard({
     <Link href={url}>
       <div className="grid grid-cols-12 h-full border-[1px] border-[rgba(0,0,0,.125)] rounded-md">
         <div className="h-full col-span-12 lg:col-span-5">
-          <img alt={title} src={image} className="h-full object-cover" />
+          <img alt={title} src={image} className="h-full object-cover rounded-t-md lg:rounded-tr-none lg:rounded-bl-md" />
         </div>
         <div className="p-5 flex flex-col h-full justify-between gap-8 col-span-12 lg:col-span-7">
           <div>
