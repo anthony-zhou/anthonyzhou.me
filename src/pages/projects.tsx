@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '@/components/layouts/Layout';
 import demoSvg from '../components/demo.svg';
+import ProjectCard from '@/components/ProjectCard';
 
 function ProjectItem({ children }: { children: React.ReactNode }) {
   return (
@@ -20,9 +21,40 @@ export default function Projects() {
       <Head>
         <title>Projects | Anthony Zhou</title>
       </Head>
-      <div>
-        <ul>
-          <ProjectItem>
+
+      <div className="grid md:grid-cols-2">
+        <ProjectCard
+          title="TreeChat"
+          description="You send messages, we plant trees. TreeChat is the free messaging app that reforests the planet as you chat."
+          techStack={['DynamoDB', 'GraphQL', 'TypeScript', 'Jest', 'Flutter']}
+          image="/assets/projects/treechat_screenshots.png"
+          details={(
+            <div className="md:flex gap-2">
+              <div className="opacity-50">
+                <p className="mt-4">
+                  What happens when we build products that make sustainability
+                  a benefit instead of a tradeoff?
+                </p>
+                <p className="mt-4">
+                  TreeChat was an app my brother and I built to show how the chat apps
+                  we use every day can be made just as well in
+                  a way that doesn&apos;t harm the planet.
+                </p>
+              </div>
+
+              <div className="">
+                <video className="w-full" autoPlay loop muted>
+                  <source src="/assets/projects/treechat_demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+)}
+        />
+      </div>
+      {/* <div>
+        <ul> */}
+      {/* <ProjectItem>
             <div className="flex flex-col md:flex-row justify-between">
               <div className="flex flex-col justify-between">
                 <h3 className="font-bold text-xl mb-2">TreeChat</h3>
@@ -90,7 +122,7 @@ export default function Projects() {
           <li>Floodgate reactor: Aleph, climate API, tastebase, network sensors</li>
           <li>Big & Mini</li>
         </ul>
-      </div>
+      </div> */}
     </Layout>
   );
 }
