@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
@@ -26,7 +27,14 @@ export default function ProjectCard({
   return (
     <>
       <button type="button" className="border-[1px] border-[rgba(0,0,0,.125)] rounded-lg text-left flex flex-col justify-start" onClick={() => openModal()}>
-        <img src={image} alt={alt} className="w-full object-cover rounded-t-lg" />
+        <div className="relative w-full h-56">
+          <Image
+            src={image}
+            alt={alt}
+            className="object-cover rounded-t-lg"
+            fill
+          />
+        </div>
         <div className="p-5">
           <h1 className="font-bold text-[1.3rem]">{title}</h1>
           <p className="opacity-50 mt-2 text-[0.95rem]">{description}</p>
