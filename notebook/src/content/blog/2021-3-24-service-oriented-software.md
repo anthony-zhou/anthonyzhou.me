@@ -72,11 +72,11 @@ So we want to optimize development speed. Great!
 
 At the beginning, it's really exhilirating to develop lots of new features really fast. Move fast and break things, right? But if you completely disregard code quality, your software will likely start to look like this:
 
-![Number of Bugs over time](../assets/images/2021/3/bugs_over_time.png)
+![Number of Bugs over time](/assets/images/2021/3/bugs_over_time.png)
 
 Why? Because, the more complicated a software is, the more components it has that could go wrong. If your program is deeply coupled, that is, if every module depends on every other module, you end up exponentially increasing the chance of something going wrong at the connections between the parts. 
 
-![Connections and nodes](../assets/images/2021/3/connections_and_nodes.png)
+![Connections and nodes](/assets/images/2021/3/connections_and_nodes.png)
 
 Mathematically speaking, if we let the number of modules equal *n*, the number of connections in the system is equal to the sum of the integers from 1 to n-1. For example, for a piece of software with 5 modules, the total number of connections is 1 + 2 + 3 + 4 = 10 connections.
 
@@ -84,7 +84,7 @@ Another way to get the same result is to evalute n(n-1)/2. As an example, for n=
 
 Even if not every piece of your software is connected to all the others, this math demonstrates how the number of connections in a program scales **superlinearly** with the number of modules it has. This sucks, because it means your time will start to look like this:
 
-![Connections and nodes](../assets/images/2021/3/bugs_vs_features.png)
+![Connections and nodes](/assets/images/2021/3/bugs_vs_features.png)
 
 Anyone familiar with <ins>technical debt</ins> has likely seen these graphs before. But what does this mean in a service-oriented context? How do we still optimize developer time by making our software sustainable, reliable, and maintainable?
 
@@ -106,7 +106,7 @@ We'll tackle these components one by one, then see how they fit together to crea
 
 Remember this picture from earlier?
 
-![Connections and nodes](../assets/images/2021/3/connections_and_nodes.png)
+![Connections and nodes](/assets/images/2021/3/connections_and_nodes.png)
 
 With a service-oriented architecture, this kind of complexity is inevitable. Each individual service -- each node on the graph -- is very simple. The complexity lies in the connections. As we saw earlier, the more complex something is, the more likely it is to break!
 

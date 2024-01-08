@@ -2,7 +2,6 @@
 title: "Why logical consistency doesn't make sense for moral systems"
 pubDate: 2022-11-16
 description: "Exploring the implications of logical consistency for moral and practical goals."
-featured: true
 categories: [ethics, philosophy]
 tags: [empiricism, rationality, decision-making]
 ---
