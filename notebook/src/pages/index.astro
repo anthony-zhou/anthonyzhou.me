@@ -1,0 +1,69 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import HomepageLink from "../components/HomepageLink.astro";
+
+const posts = await getCollection("blog");
+
+const category = (category: string) =>
+	posts.filter(
+		({ data: { categories } }) =>
+			categories && categories.includes(category),
+	);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main class="prose prose-lg container mx-auto">
+			<h1>Explativity</h1>
+			<p>
+				The online notebook of Anthony Zhou. </p>
+
+			<div class="grid grid-cols-2">
+				<div>
+					<h2>Perception</h2>
+					<ul>
+						{
+							category("perception").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+					<h2>History</h2>
+					<ul>
+						{
+							category("history").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+					<h2>Social Psychology</h2>
+					<ul>
+						{
+							category("social").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+				</div>
+				<div>
+					<h2>Computing</h2>
+					<ul>
+						{
+							category("computing").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+					<h2>Philosophy</h2>
+					<ul>
+						{
+							category("philosophy").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
