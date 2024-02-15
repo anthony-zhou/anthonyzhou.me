@@ -2,7 +2,7 @@
 title: "Abstraction = problem solving?"
 pubDate: 2022-01-08
 description: "When and why traversing layers of abstraction is useful. "
-categories: [problem-solving, productivity]
+categories: [philosophy, problem-solving, productivity]
 ---
 
 Here's a contention that you may or may not agree with:

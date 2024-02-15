@@ -1,8 +1,8 @@
 ---
-title: "The Third Bowl: Building online communities centered around connection"
+title: "Building connected communities online"
 pubDate: 2021-1-19
 description: "The loneliness problem, Social Networking 2.0, and the promise of better digital connection."
-categories: [psychology, business, society]
+categories: [social, psychology, business, society]
 tags: [loneliness, connection, social networks]
 ---
 

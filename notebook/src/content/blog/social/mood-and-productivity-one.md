@@ -1,8 +1,8 @@
 ---
-title: "How does happiness affect your creative output?"
+title: "Happiness and creativity"
 pubDate: 2020-1-8
 description: "What is happiness useful for?"
-categories: [psychology, essays, science]
+categories: [social, psychology, essays, science]
 tags: [happiness]
 ---
 
@@ -19,7 +19,7 @@ Our increasing understanding of neuroscience and psychology gives us revolutiona
 
 First off, let's turn our attention to a hot topic of the moment: happiness. There is certainly great value to the pursuit of happiness, but neglecting the less desirable emotions may not be sustainable. Where should happiness be applied, and when does it hinder us more than it helps? Read on to find out.
 
-# Mood and productivity, Part One: What is happiness good for?
+# What is happiness good for?
 
 In the modern world, there is no shortage of "positive psychology" books, videos, and courses promising to help people find happiness in life. All these sources take for granted that happiness is an ideal goal. Intuitively, it seems obvious: a happy life is a good life. And yet, a growing body of evidence demonstrates that happiness is just one facet in living a life of fulfilment. What follows is an attempt to question the assumptions of those who promise the "good life" through happiness alone by presenting a more nuanced and scientific perspective, along with a guide to the areas where happiness might be best applied and where other emotions are more effective.
 

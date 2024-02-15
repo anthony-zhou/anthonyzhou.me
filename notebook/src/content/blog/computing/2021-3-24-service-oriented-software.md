@@ -1,8 +1,8 @@
 ---
-title: "Writing reliable software in a service-oriented architecture"
+title: "Reliability in Service-Oriented Software"
 pubDate: 2021-3-24
 description: "Building software reliably and quickly in a service-oriented world."
-categories: [programming, tutorials]
+categories: [computing, programming, tutorials]
 tags: [startups, software architecture, business, microservices]
 ---
 

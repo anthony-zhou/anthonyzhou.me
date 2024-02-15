@@ -1,8 +1,8 @@
 ---
-title: "Can we achieve symbiosis with machines? Neuralink and Facebook try to answer the question."
+title: "Symbiosis with machines"
 pubDate: 2020-2-3
-description: "Recent attempts to create a brain-machine interface."
-categories: [psychology, essays, science]
+description: "Recent attempts to create a brain-machine interface, the symbiosis between human and machine."
+categories: [social, psychology, essays, science]
 tags: [neuroscience, artificial intelligence]
 ---
 Today's internet-enabled devices are competing for our attention, all the time. What if there was some way we could escape the loop of digital addiction? What if we could become one with our machines?

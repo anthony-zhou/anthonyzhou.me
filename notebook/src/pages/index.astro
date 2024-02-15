@@ -1,12 +1,18 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getCollection } from 'astro:content';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import HomepageLink from "../components/HomepageLink.astro";
 
+const posts = await getCollection("blog");
 
-const posts = await getCollection('blog')
+const category = (category: string) =>
+	posts.filter(
+		({ data: { categories } }) =>
+			categories && categories.includes(category),
+	);
 ---
 
 <!doctype html>
@@ -16,42 +22,47 @@ const posts = await getCollection('blog')
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="prose prose-2xl container mx-auto">
-			<h1>Anthony's Notebook</h1>
+		<main class="prose prose-lg container mx-auto">
+			<h1>Explativity</h1>
 			<p>
-				The online notebook of <a href="https://anthonyzhou.com">Anthony Zhou</a>.
-			</p>
+				The online notebook of Anthony Zhou. </p>
 
-			<p>My main interests lie in economics, psychology, and programming. </p>
-
-			<h2>Psychology and Mental Health</h2>
-			<ul>
-				{["cultural-intelligence", "mood-and-productivity-one", "2021-1-29-the-third-bowl"]
-				.map((cSlug) => posts.find(({slug}) => slug === cSlug)!)
-				.map(({slug, data: { title }}) => (
-				<li><a href={`/blog/${slug}`}>{title}</a></li>
-
-				))}
-			</ul>
-
-			<h2>Software systems</h2>
-			<ul>
-				{["2021-3-24-service-oriented-software", "2022-07-16-consensus"]
-				.map((cSlug) => posts.find(({slug}) => slug === cSlug)!)
-				.map(({slug, data: { title }}) => (
-				<li><a href={`/blog/${slug}`}>{title}</a></li>
-				))}
-			</ul>
-
-			<h2>Miscellaneous</h2>
-			<ul>
-				{["2021-12-12-thoughts-on-futarchy", "2022-01-08-abstraction", "2022-01-20-airports", "2022-11-16-on-logical-consistency"]
-				.map((cSlug) => posts.find(({slug}) => slug === cSlug)!)
-				.map(({slug, data: { title }}) => (
-				<li><a href={`/blog/${slug}`}>{title}</a></li>
-
-				))}
-			</ul>
+			<div class="grid grid-cols-2">
+				<div>
+					<h2>Perception</h2>
+					<ul>
+						{
+							category("perception").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+					<h2>History</h2>
+					<ul>
+						{
+							category("history").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+					<h2>Social Psychology</h2>
+					<ul>
+						{
+							category("social").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+				</div>
+				<div>
+					<h2>Computing</h2>
+					<ul>
+						{
+							category("computing").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+					<h2>Philosophy</h2>
+					<ul>
+						{
+							category("philosophy").map((post) => <HomepageLink post={post} />)
+						}
+					</ul>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>

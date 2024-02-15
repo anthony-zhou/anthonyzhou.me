@@ -1,8 +1,8 @@
 ---
-title: "Futarchy: Government by betting markets"
+title: "Government by betting markets"
 pubDate: 2021-12-13
-description: "A new system of governance"
-categories: [politics, economics]
+description: "A system of governance called futarchy, where decisions are made by betting."
+categories: [politics, economics, philosophy]
 tags: [prediction, voting]
 ---
 

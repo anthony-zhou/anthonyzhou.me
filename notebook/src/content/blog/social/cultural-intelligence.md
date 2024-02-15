@@ -1,8 +1,8 @@
 ---
-title: "Looking for a definition of intelligence"
+title: "Defining intelligence quantitatively"
 pubDate: 2020-1-15
 description: "Improving the way we define intelligence"
-categories: [psychology, essays, science]
+categories: [social, psychology, essays, science]
 tags: [intelligence]
 ---
 

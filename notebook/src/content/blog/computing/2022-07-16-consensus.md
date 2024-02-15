@@ -1,8 +1,8 @@
 ---
-title: "Understanding blockchain from a distributed computing perspective"
+title: "Consensus in Distributed Systems"
 pubDate: 2022-07-16
 description: "A foray into the history of distributed computing and how it relates to blockchain technology."
-categories: [programming, technology]
+categories: [computing, programming, technology]
 tags: [blockchain, distributed-computing, cryptography]
 ---
 
