@@ -24,27 +24,33 @@ const category = (category: string) =>
 		<Header title={SITE_TITLE} />
 		<main class="prose prose-lg container mx-auto">
 			<h1>Explativity</h1>
-			<p>
-				The online notebook of Anthony Zhou. </p>
+			<p>The online notebook of Anthony Zhou.</p>
 
 			<div class="grid grid-cols-2">
 				<div>
 					<h2>Perception</h2>
 					<ul>
 						{
-							category("perception").map((post) => <HomepageLink post={post} />)
+							category("perception").map((post) => (
+								<HomepageLink post={post} />
+							))
 						}
 					</ul>
-					<h2>History</h2>
+					<h2>Cognition</h2>
 					<ul>
 						{
-							category("history").map((post) => <HomepageLink post={post} />)
+							category("cognition").map((post) => (
+								<HomepageLink post={post} />
+							))
 						}
 					</ul>
+
 					<h2>Social Psychology</h2>
 					<ul>
 						{
-							category("social").map((post) => <HomepageLink post={post} />)
+							category("social").map((post) => (
+								<HomepageLink post={post} />
+							))
 						}
 					</ul>
 				</div>
@@ -52,13 +58,25 @@ const category = (category: string) =>
 					<h2>Computing</h2>
 					<ul>
 						{
-							category("computing").map((post) => <HomepageLink post={post} />)
+							category("computing").map((post) => (
+								<HomepageLink post={post} />
+							))
 						}
 					</ul>
 					<h2>Philosophy</h2>
 					<ul>
 						{
-							category("philosophy").map((post) => <HomepageLink post={post} />)
+							category("philosophy").map((post) => (
+								<HomepageLink post={post} />
+							))
+						}
+					</ul>
+					<h2>History</h2>
+					<ul>
+						{
+							category("history").map((post) => (
+								<HomepageLink post={post} />
+							))
 						}
 					</ul>
 				</div>
