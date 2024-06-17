@@ -1,0 +1,54 @@
+---
+title: "Semantic Memory"
+pubDate: 2024-06-06
+description: "How we remember our knowledge of the world"
+categories: [cognition, psychology, essays, science]
+---
+
+When I was in high school, everyone in my English class was required to use a software called Membean to learn vocabulary. This software, the website assured us, was designed to teach us “scientifically,” using the technique of spaced repetition. Spaced repetition works by exploiting the shape of the forgetting curve [1] – after each time rehearsing a concept, the decay time slows down, until the concept effectively enters long-term memory. Membean, and software like it, gradually lengthen the time between practice exercises for each word, helping users rehearse words whenever they get towards a low point on the forgetting curve. Whether because of spaced repetition or otherwise, the software seems to have worked – I catch myself using Membean words to this day, like incongruent, obsolescent, and so on. Other apps using spaced repetition include Anki, which supports custom flash card decks, and Duolingo, which is focused on language learning. 
+
+The promise of these tools is compelling: to help you remember things forever. They hope to achieve this by hacking the brain’s inbuilt learning mechanisms, in ways that would rarely be encountered naturally – how many times would I see “incongruent” in my daily life? – and are approximated by formal education systems. To this end, learning techniques that target semantic memory have may be the most effective example of cognitive function enhancement, compared to our attempts to improve attention, working memory, and other functions.  
+
+Thus, further knowledge of semantic memory – that is, memory for world knowledge as distinct from memory for events – seems likely to yield improvements in pedagogy. For example, how is semantic memory implemented in the brain? To what extent is semantic memory hierarchical? And how should these insights inspire or cast doubt upon artificial systems that seek to enhance semantic memory?  
+
+The neural basis of semantic memory is tough to isolate to a single brain region, perhaps because the remembered concepts span a wide range of features and modalities. For example, semantic memory can encode the call of a mockingbird, the sight of a German Shephard, and the definition of a vector space in linear algebra. Each of these modalities – sound, sight, and abstract idea – has its own associated perceptual and imagery-associated regions, which should understandably be involved in encoding such memories to avoid redundancy. Assuming this to be true leaves two possibilities: either semantic memory is a distributed process across a variety of brain regions, or it depends on a brain region to centrally coordinate the encoding of memories.  
+
+In a 2007 review, Patterson and colleagues investigated this very question by considering patients with semantic dementia – a neurodegenerative disorder causing the degradation of semantic memory [2]. They observe that semantic dementia almost always cooccurred with damage to the anterior temporal lobe (ATL), implying that it might be a hub for semantic memory. Moreover, the region is conveniently located between sensorimotor areas, episodic memory areas in the medial temporal lobe, and limbic areas, making it an ideal location for an amodal hub combining sensorimotor, event-related, and affective information. However, they noted that neuroimaging evidence, due to technological limitations at the time, had yet to yield definitive evidence.  
+
+In contrast to Patterson’s point of view, a 2011 review by Binder and Desai argued that the anterior temporal lobe is not a hub for semantic memory – they say the dementia evidence is inconclusive [3]. Instead, they promote a view in which perceptual networks, such as visual and auditory processing systems, function as the modality-specific portions of semantic memory, and conceptual memory functions through the progressive abstraction and association of these multimodal networks. They call their view “embodied abstraction,” to reflect that semantic memory is better thought of as an abstraction layer over perceptual networks as opposed to a separate representation system. As an extension of this view, Binder offers the idea of “convergence zones” that connect sensory modalities, which in practice seems to differ from the ATL-hub view both in implicating different brain regions and grounding representations in their sensorimotor modalities [4]. Taking the search for embodied abstractions yet further, Huth and co-authors identified a consistent functional mapping, in which the same brain areas correspond to the same kinds of semantic concepts across individuals [5]. Continued refinement of this “semantic atlas,” especially in clarifying the role of brain areas currently assumed to be functionally homogenous, could yield evidence of convergence zones specific to different kinds of concepts.  
+
+But what can these neuroimaging and lesion studies say about the underlying structure – that is, the computational structure – of memory and learning? For this, we need computational models to explain the behavioral and neural evidence. As Kumar describes in a 2021 review, semantic memory models broadly fall into three categories: associative, distributional, and feature-based models. Associative models see memory as a graph, in which concepts are nodes and relations between concepts are edges. For example, if a person knows that a bird is an animal, the nodes for “animal” and “bird” might be connected by a “is-a” relationship, because a bird is an animal [6]. In support of this view, people seemed to take more time to process deeper hierarchical relationships, which is explained well by graph traversal. Feature-based models imagine that concepts are encoded as combinations of features – for example, one person’s model might encode that a bird is a thing that moves and has feathers and wings. An animal is a thing that moves. Therefore, a bird is an animal because it overlaps in that feature. While associative models are effective for explaining relationship memory, feature-based models are more effective for explaining object recognition. However, as Kumar notes, both models lack a plausible method for learning. This is where distributional semantic models (DSMs) excel. DSMs are trained to learn distributions of semantic information in the real world, most commonly distributions of words. The simplest versions of distributional semantic models are cooccurrence matrices, which increment a counter whenever two words are seen in the same sentence. For example, “dog” and “cat” often appear in similar contexts, so their cooccurrence vectors would encode their similarity. While many related words don’t ever cooccur and cooccurrence fails to capture word order, more sophisticated DSMs can also account these issues using techniques like neural networks and positional encoding. In fact, the transformer, the underlying architecture of GPT-4 and other language models, can also be considered a DSM. One critique of DSMs is that they step away from biological plausibility by training upon terabytes of text-only data. However, it seems like ongoing research in multimodal and low-resource models should make DSMs ever more plausible in modelling both learning and memory.  
+
+But sophisticated computational models are not much use without conceptual explanations for their results. One such explanation comes in the idea of representational geometries – that is, information can be conceptualized in terms of points in a multidimensional space [7], with dimensions corresponding roughly to ideas like “color” or “shape” or even “gender bias awareness” (as seen in a recent Anthropic post attempting to interpret their large language model Claude) [8].  Representational geometry is an abstraction that is plausible across both artificial systems – which straightforwardly encode these points as vectors – and brain systems, which can encode representational geometries via firing patterns and firing rates. According to this framework, sensorimotor areas encode simple features like color and shape, whereas dedicated areas – perhaps “convergence zones” – are needed for conceptual features, and semantic memories consist of combinations of these dimensions.  
+
+With the ongoing search for neural convergence zones, the development of distributional semantic models, and the theoretical explanations of representational geometry, the study of semantic memory mirrors the shift in the focus of AI from symbolic AI to machine learning, with the goal of learning plausible distributions of concepts rather than specifying them beforehand. The increasing convergence of such systems might suggest that we will develop increasingly accurate models of semantic memory with which to design educational systems. On the other hand, the results from new educational techniques is likely to be eclipsed by progress in artificial systems, as we develop machine learning systems with ever-more sophisticated semantic memory abilities.  
+
+ 
+
+ 
+
+  
+
+  
+
+References 
+
+ 
+
+[1] Murre, J. M., & Dros, J. (2015). Replication and Analysis of Ebbinghaus' Forgetting Curve. PloS one, 10(7), e0120644. https://doi.org/10.1371/journal.pone.0120644 
+
+[2] Patterson K, Nestor PJ, Rogers TT (2007). Where do you know what you know? The representation of semantic knowledge in the human brain. Nature Reviews Neuroscience, 8, 976-988.  
+
+[3] Binder JR, Desai RH (2011). The neurobiology of semantic memory. Trends in Cognitive Sciences, 15, 527-536. 
+
+[4] Binder JR (2016). In defense of abstract conceptual representations. Psychonomic Bulletin & Review, 23, 1096-1108. 
+
+[5] Huth AG, de Heer WA, et al. (2016). Natural speech reveals the semantic maps that tile human cerebral cortex. Nature, 532, 453-458. 
+
+[6] Kumar AA (2021). Semantic memory: A review of methods, models, and current challenges. Psychonomic Bulletin & Review, 28, 40-80. 
+
+[7] Borghesani V, Piazza M (2017). The neuro-cognitive representations of symbols: the case of concrete words. Neuropsychologia, 105, 4-17. 
+
+[8] Templeton, A., Conerly, T., Marcus, J., Lindsey, J., Bricken, T., Chen, B., Pearce, A., Citro, C., Ameisen, E., Jones, A., Cunningham, H., Turner, N. L., McDougall, C., MacDiarmid, M., Freeman, C. D., Sumers, T. R., Rees, E., Batson, J., Jermyn, A., Carter, S., Olah, C., & Henighan, T. (2024). Scaling monosemanticity: Extracting interpretable features from Claude 3 Sonnet. *Transformer Circuits Thread*. https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html 
+
+ 
