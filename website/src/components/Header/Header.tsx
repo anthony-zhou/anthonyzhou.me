@@ -44,7 +44,8 @@ export default function Header() {
   }, [lastScrollTop]);
 
   const links = [
-    { href: '/', label: 'Writing' },
+    { href: '/', label: 'Home' },
+    { href: '/writing', label: 'Writing' },
     { href: '/tutorials', label: 'Tutorials' },
     { href: '/projects', label: 'Projects' },
     { href: '/books', label: 'Bookshelf' },
