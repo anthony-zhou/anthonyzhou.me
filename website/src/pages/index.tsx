@@ -27,6 +27,7 @@ export default function Home({ feedData }: HomeProps) {
               <h2 className="text-lg font-bold">{post.title}</h2>
               <p className="text-sm text-gray-500">
                 By
+                {' '}
                 <strong>{post.author}</strong>
                 {' '}
                 |
