@@ -10,4 +10,4 @@ Growing up, we often hear the advice to "live a story worth telling." Miller dec
 
 Miller is good at making ordinary moments feel profound. One doesn't have to kill the Dark Lord or gather all the infinity stones to live a story worth telling. 
 
-The idea of living a story worth telling is also one of the 27 ways to live outlined in Derek Sivers's book *How to Live* (he calls it "making memories"). It's cool to see these viewpoints fully articulated, even if I don't always adopt them myself. 
+The idea of living a story worth telling is also one of the 27 ways to live outlined in Derek Sivers's book *How to Live* (he calls it "making memories"). It's cool to see these viewpoints fully articulated.
