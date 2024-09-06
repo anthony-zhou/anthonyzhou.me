@@ -31,6 +31,7 @@ export default function Home({ feedData }: HomeProps) {
                 <strong>{post.author}</strong>
                 {' '}
                 |
+                {' '}
                 {post.date}
               </p>
               <article
