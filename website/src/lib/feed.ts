@@ -13,20 +13,21 @@ const formatDate = (date: Date) => {
   return `${day} ${monthName.slice(0, 3)} ${year}`;
 };
 
-export async function getSortedFeedData() {
+export default async function getSortedFeedData() {
   const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []) => {
     const files = fs.readdirSync(dirPath);
+    let allFiles: string[] = arrayOfFiles;
 
     files.forEach((file) => {
       const fullPath = path.join(dirPath, file);
       if (fs.statSync(fullPath).isDirectory()) {
-        arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+        allFiles = getAllFiles(fullPath, allFiles);
       } else {
-        arrayOfFiles.push(fullPath);
+        allFiles.push(fullPath);
       }
     });
 
-    return arrayOfFiles;
+    return allFiles;
   };
 
   const fileNames = getAllFiles(feedDirectory);
@@ -46,8 +47,8 @@ export async function getSortedFeedData() {
     };
 
     const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
+      .use(html)
+      .process(matterResult.content);
     const contentHtml = processedContent.toString();
 
     // Combine the data with the id

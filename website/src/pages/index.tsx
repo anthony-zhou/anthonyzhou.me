@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 import Head from 'next/head';
 import HorizontalLine from '@/widgets/HorizontalLine';
-import { getFeaturedPostsData, getNumPostsByCategory, getSortedPostsData } from '@/lib/posts';
-import Heading from '@/components/Heading';
-import ArticleCard from '@/components/ArticleCard';
-import FeaturedCard from '@/components/FeaturedCard';
-import ArticleLayout from '@/components/layouts/ArticleLayout/ArticleLayout';
-import { getSortedFeedData } from '@/lib/feed';
+
+import getSortedFeedData from '@/lib/feed';
 import Layout from '@/components/layouts/Layout';
 
 type HomeProps = {
@@ -28,27 +22,33 @@ export default function Home({ feedData }: HomeProps) {
         </div>
 
         <div>
-            {feedData.map((post) => (
-                <div className="mb-4" key={post.id}>
-                    <h2 className="text-lg font-bold">{post.title}</h2>
-                    <p className="text-sm text-gray-500">By <strong>{post.author}</strong> | {post.date}</p>
-                    <article
-                        className="prose prose-sm font-merriweather mt-4"
-                        dangerouslySetInnerHTML={{ __html: post.text }}
-                    />
-                    <HorizontalLine />
-                </div>
-            ))}
+          {feedData.map((post) => (
+            <div className="mb-4" key={post.id}>
+              <h2 className="text-lg font-bold">{post.title}</h2>
+              <p className="text-sm text-gray-500">
+                By
+                <strong>{post.author}</strong>
+                {' '}
+                |
+                {post.date}
+              </p>
+              <article
+                className="prose prose-sm font-merriweather mt-4"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: post.text }}
+              />
+              <HorizontalLine />
+            </div>
+          ))}
         </div>
 
-       
       </div>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-    const feedData = await getSortedFeedData();
+  const feedData = await getSortedFeedData();
   return {
     props: {
       feedData,
