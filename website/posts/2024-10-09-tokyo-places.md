@@ -10,7 +10,7 @@ categories: [travel]
 tags: [tokyo]
 ---
 
-After living in Tokyo for a few months, I have visited many areas of the city. Here’s what I’ve learned about what each area of the city is like. Mostly I explored sub-areas within Shibuya and Shinjuku, as well as certain areas around the south of central Tokyo. 
+After living in Tokyo for a few months, I got to visit many areas of the city. Still, in many ways I've barely scratched the surface. Here’s what I’ve learned about what each area of the city is like. 
 
 ## Sendagaya (Shibuya)
 
