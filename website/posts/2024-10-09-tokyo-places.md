@@ -30,7 +30,7 @@ Apparently this place is colloquially called “baba,” which I think is much l
 
 ## Roppongi
 
-## Roppongi is like Ginza but even more Ginza. It’s all new development with Western-style apartments and shopping malls. Honestly a very nice place to be if you are looking for an upscale experience. Plus, it’s walking distance from Tokyo Tower. The Mori Art Museum was somewhat interesting, but the Tokyo City View in the same building is probably skippable. Apparently the Gonpachi Izakaya in Roppongi is where they filmed Kill Bill, so I’d like to check it out sometime. 
+Roppongi is like Ginza but even more Ginza. It’s all new development with Western-style apartments and shopping malls. Honestly a very nice place to be if you are looking for an upscale experience. Plus, it’s walking distance from Tokyo Tower. The Mori Art Museum was somewhat interesting, but the Tokyo City View in the same building is probably skippable. Apparently the Gonpachi Izakaya in Roppongi is where they filmed Kill Bill, so I’d like to check it out sometime. 
 
 ## Shinjuku, Kabukicho
 
