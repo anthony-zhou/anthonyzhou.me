@@ -5,7 +5,6 @@ date: 2023-06-26
 description: "Reflecting on our project to implement community-level air quality monitoring"
 image: assets/images/2023/06/air_pollution.jpeg
 author: anthony
-featured: true
 categories: [climate, report]
 tags: [air, pollution, sensors]
 ---
