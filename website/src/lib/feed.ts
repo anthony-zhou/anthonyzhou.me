@@ -52,10 +52,14 @@ export default async function getSortedFeedData() {
     const contentHtml = processedContent.toString();
 
     // Combine the data with the id
+    console.log(contentHtml);
+    const preview = contentHtml.match(/<(\w+)[^>]*>([\s\S]*?)<\/\1>/)?.[0] || contentHtml;
+    // console.log(preview);
     return {
       id,
       ...result,
       text: contentHtml,
+      preview,
     };
   }));
 
@@ -66,4 +70,47 @@ export default async function getSortedFeedData() {
     }
     return -1;
   });
+}
+
+export function getAllFeedIds() {
+  const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []) => {
+    const files = fs.readdirSync(dirPath);
+    let allFiles: string[] = arrayOfFiles;
+
+    files.forEach((file) => {
+      const fullPath = path.join(dirPath, file);
+      if (fs.statSync(fullPath).isDirectory()) {
+        allFiles = getAllFiles(fullPath, allFiles);
+      } else {
+        allFiles.push(fullPath);
+      }
+    });
+
+    return allFiles;
+  };
+
+  const fileNames = getAllFiles(feedDirectory);
+  return fileNames.map((fullPath) => ({
+    params: {
+      id: path.relative(feedDirectory, fullPath).replace(/\.md$/, ''),
+    },
+  }));
+}
+
+export async function getFeedData(id: string) {
+  const fullPath = path.join(feedDirectory, `${id}.md`);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+  const matterResult = matter(fileContents);
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+  const contentHtml = processedContent.toString();
+
+  return {
+    id,
+    text: contentHtml,
+    ...matterResult.data,
+    date: formatDate(new Date(matterResult.data.date)),
+  };
 }

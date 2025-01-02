@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Improving air quality at the community level"
+title: "Improving Air Quality at the Community Level"
 date: 2023-06-26
 description: "Reflecting on our project to implement community-level air quality monitoring"
 image: assets/images/2023/06/air_pollution.jpeg

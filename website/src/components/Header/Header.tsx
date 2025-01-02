@@ -68,7 +68,7 @@ export default function Header() {
         <div className="hidden md:flex md:flex-row z-50 bg-white gap-6">
 
           {links.map(({ href, label }) => (
-            <div className="flex flex-col justify-center">
+            <div key={`${href}${label}`} className="flex flex-col justify-center">
               <Link href={href} key={`${href}${label}`} className={`opacity-50 hover:opacity-100 transition-opacity ${href === router.asPath ? '!opacity-100' : ''}`}>
                 {label}
               </Link>
@@ -94,7 +94,7 @@ export default function Header() {
       <div className={`flex flex-col z-50 bg-white gap-6 container mx-auto px-10 transition-all duration-150 overflow-clip ${menuOpen ? 'h-auto pt-6' : 'h-0'}`}>
 
         {links.map(({ href, label }) => (
-          <div className="flex flex-col justify-center">
+          <div key={`${href}${label}`} className="flex flex-col justify-center">
             <Link href={href} key={`${href}${label}`} className={`opacity-50 hover:opacity-100 transition-opacity ${href === router.asPath ? '!opacity-100' : ''}`} onClick={() => setMenuOpen(false)}>
               {label}
             </Link>
