@@ -52,7 +52,6 @@ export default async function getSortedFeedData() {
     const contentHtml = processedContent.toString();
 
     // Combine the data with the id
-    console.log(contentHtml);
     const preview = contentHtml.match(/<(\w+)[^>]*>([\s\S]*?)<\/\1>/)?.[0] || contentHtml;
     // console.log(preview);
     return {
