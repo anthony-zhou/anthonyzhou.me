@@ -89,6 +89,7 @@ export default function Home({ feedData, posts }: HomeProps) {
               </div>
               <p className="mt-12">
                 For more informal writing, visit the
+                {' '}
                 <a href="/writing" className="text-blue-500">writing page</a>
                 .
               </p>
@@ -119,6 +120,7 @@ export default function Home({ feedData, posts }: HomeProps) {
 
           <p className="mt-8">
             For more academic writing, visit the
+            {' '}
             <a href="https://scratchpad.anthonyzhou.com/" className="text-blue-500">scratchpad</a>
             .
           </p>
