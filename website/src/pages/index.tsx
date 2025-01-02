@@ -94,7 +94,7 @@ export default function Home({ feedData, posts }: HomeProps) {
                 .
               </p>
             </div>
-            <div>
+            <div className="hidden md:block">
               <img src="/assets/images/ochanomizu.jpg" className="h-80" alt="Ochanomizu" />
               <p className="text-gray-500 text-xs italic">A view from my morning commute.</p>
             </div>
