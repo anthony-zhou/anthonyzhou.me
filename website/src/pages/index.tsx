@@ -44,7 +44,7 @@ export default function Home({ feedData, posts }: HomeProps) {
 
             <div>
               My goal is to build technology that
-              addresses social challenges. My past projects have addressed challenges like
+              addresses social challenges. My past projects have addressed issues like
               {' '}
               <a className="text-blue-500" href="https://bigandmini.org/" target="_blank" rel="noopener noreferrer">loneliness</a>
               ,
