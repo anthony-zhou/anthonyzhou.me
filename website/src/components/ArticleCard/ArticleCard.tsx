@@ -15,7 +15,7 @@ export default function ArticleCard({
   return (
     <Link href={url}>
       <div className="flex flex-col h-full border-[1px] border-[rgba(0,0,0,.125)] rounded-md">
-        <img alt={title} src={image} className="w-full object-contain rounded-t-md" />
+        <img alt={title} src={image} className="w-full h-72 object-cover rounded-t-md" />
         <div className="p-5 flex flex-col justify-between h-full">
           <div>
             <h1 className="font-bold text-[1.3rem]">{title}</h1>
