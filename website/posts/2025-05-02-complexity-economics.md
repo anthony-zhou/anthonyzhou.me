@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why not a foundation model for economics?"
+title: "What toothbrushing can tell us about foundation models for economics"
 date: 2025-05-02
 description: "Black-box models don't give us the explanations we need. "
 image: assets/images/2025/05/toothpaste_frog.jpg
