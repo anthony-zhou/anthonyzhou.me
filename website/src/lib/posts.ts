@@ -26,10 +26,15 @@ export function getSortedPostsData(options?: { category: string }) {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
+
     const result = {
       ...matterResult.data,
       image: matterResult.data.image.startsWith('/') ? matterResult.data.image : `/${matterResult.data.image}`,
-      preview: `${matterResult.content.split(' ').slice(0, 25).join(' ')}...`,
+      preview: `${matterResult.content
+        .replace(/^>+\s*/gm, '') // Remove markdown blockquotes
+        .split(' ')
+        .slice(0, 25)
+        .join(' ')}...`,
       date: formatDate(new Date(matterResult.data.date)),
       isoDate: new Date(matterResult.data.date).toISOString(),
     };

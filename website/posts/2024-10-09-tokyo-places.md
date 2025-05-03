@@ -5,7 +5,6 @@ date: 2024-10-09
 description: "A guide to areas of Tokyo from the summer I lived there."
 image: assets/images/2024/10/shinjuku_gyoen.jpg
 author: anthony
-featured: true
 categories: [travel]
 tags: [tokyo]
 ---
