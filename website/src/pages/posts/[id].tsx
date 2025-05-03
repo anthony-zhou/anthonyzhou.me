@@ -77,7 +77,7 @@ export default function Post({ postData, numComments }: PostProps) {
           <h1 className="text-4xl font-bold">{postData.title}</h1>
           <img className="my-4" src={postData.image} alt={postData.description} />
           <article
-            className="prose-lg font-merriweather"
+            className="prose prose-lg max-w-none font-merriweather"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </article>

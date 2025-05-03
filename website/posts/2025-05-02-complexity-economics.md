@@ -53,8 +53,7 @@ Now imagine if a complexity scientist decided to study brushing teeth. They migh
 
 Here’s how complexity scientist Doyne Farmer might explain it:
 
-![© David Mackintosh 2023. ](assets/images/2025/05/zero_intelligence.jpg)
-
+![© David Mackintosh 2023. ](/assets/images/2025/05/zero_intelligence.jpg)
 © David Mackintosh 2023. 
 
 The agent-based modeling approach starts from the zero intelligence gate, with the heuristics representing assumptions about real human behavior. These heuristic assumptions sacrifice some of the simplicity of a Rational Economic Actor for a more accurate picture of human behavior. Indeed, complexity economists like Farmer have achieved some success predicting things like real estate prices during COVID — cases where behavior is more determined by heuristics than by rational profit-maximization. 
