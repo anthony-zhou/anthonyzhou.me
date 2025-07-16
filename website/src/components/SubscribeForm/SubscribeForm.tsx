@@ -23,7 +23,18 @@ export default function SubscribeForm() {
         <div className="flex items-center gap-4">
           <img src="/assets/images/az-logo.png" alt="Anthony Zhou logo" className="h-10" />
           {' '}
-          <span>Subscribe to updates on <a target="_blank" rel="noopener noreferrer" href="https://anthonyzhou.substack.com" className="text-blue-500">Substack</a></span>
+          <span>
+            Subscribe to updates on
+            {' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://anthonyzhou.substack.com"
+              className="text-blue-500"
+            >
+              Substack
+            </a>
+          </span>
         </div>
         {/* <form
           action="https://anthonyzhou.us4.list-manage.com/subscribe/post?u=5a6e7d003b2fa5aa5a64c2b43&amp;id=6caec32f58"
@@ -38,12 +49,19 @@ export default function SubscribeForm() {
               type="email"
               placeholder="Email"
               name="EMAIL"
-              className="p-1 w-36 text-sm border-[1px] border-[#EAEAEA] rounded-sm focus:outline-none"
+              className={
+                "p-1 w-36 text-sm border-[1px] border-[#EAEAEA] rounded-sm focus:outline-none"
+              }
               id="mce-EMAIL"
               autoComplete="on"
               required
             />
-            <input type="submit" value="Subscribe" name="subscribe" className="p-1 bg-[#1D8A50] text-white text-sm cursor-pointer" />
+            <input
+              type="submit"
+              value="Subscribe"
+              name="subscribe"
+              className="p-1 bg-[#1D8A50] text-white text-sm cursor-pointer"
+            />
           </div>
         </form> */}
       </div>
