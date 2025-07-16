@@ -5,7 +5,6 @@ date: 2025-05-02
 description: "Black-box models don't give us the explanations we need. "
 image: assets/images/2025/05/toothpaste_frog.jpg
 author: anthony
-featured: true
 categories: [economics]
 tags: [modelling, explanation, science]
 ---
